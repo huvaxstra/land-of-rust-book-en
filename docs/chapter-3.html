@@ -1,0 +1,589 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 3: Space Chocolate Cake Recipe - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="-the-land-of-rust-ferris-the-crabs-space-adventures"><a class="header" href="#-the-land-of-rust-ferris-the-crabs-space-adventures">🦀 The Land of Rust: Ferris the Crab’s Space Adventures</a></h1>
+<h2 id="chapter-3-the-space-chocolate-cake-recipe-functions-parameters--data-types"><a class="header" href="#chapter-3-the-space-chocolate-cake-recipe-functions-parameters--data-types">Chapter 3: The Space Chocolate Cake Recipe (Functions, Parameters &amp; Data Types)</a></h2>
+<blockquote>
+<p>📋 <em>Chapter Outline:</em></p>
+<ul>
+<li><a href="#31-the-big-kitchen-problem">3.1. The Big Kitchen Problem</a></li>
+<li><a href="#32-building-a-magic-machine-parameters--return-values">3.2. Building a Magic Machine (Parameters &amp; Return Values)</a></li>
+<li><a href="#33-flour-vs-sugar-data-types">3.3. Flour vs. Sugar (Data Types)</a></li>
+<li><a href="#34-secret-notes-comments">3.4. Secret Notes (Comments)</a></li>
+<li><a href="#35-summary--project">3.5. Summary &amp; Project</a></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="31-the-big-kitchen-problem"><a class="header" href="#31-the-big-kitchen-problem">3.1. The Big Kitchen Problem</a></h2>
+<h3 id="311-the-story-ferris-and-the-space-chocolate-cake"><a class="header" href="#311-the-story-ferris-and-the-space-chocolate-cake">3.1.1. The Story: Ferris and the Space Chocolate Cake</a></h3>
+<p>Ferris loves space chocolate cake! 🍰 He even has his grandmother’s secret recipe: <em>“200g flour, 150g sugar, 3 eggs, a splash of vanilla, mix well, and bake for 30 minutes.”</em></p>
+<p>The problem is: every time Ferris craves cake, he has to write down and repeat all these steps from scratch. If he wants 10 cakes, he’d write the same instructions 10 times! Exhausting, right? 😮‍💨</p>
+<p>In programming, the exact same thing happens. When we want to do a repetitive task, we shouldn’t rewrite the code every time. What’s the solution? Using a <strong>Function</strong>!</p>
+<h3 id="312-introducing-functions-as-recipes"><a class="header" href="#312-introducing-functions-as-recipes">3.1.2. Introducing Functions as Recipes</a></h3>
+<p>A function is exactly like a magical recipe with a name. Whenever you call that name, it performs all the steps written inside. You can even give it ingredients (<strong>parameters</strong>) and get a finished result back (<strong>return value</strong>). 🧁✨</p>
+<p>In Rust, we build functions with the keyword <code>fn</code> (short for <em>function</em>). Even <code>main</code> is a special function that the compiler knows is where the program must start.</p>
+<p><img src="../assets/images/3.1.png" alt="[Illustration: A cartoon scene inside a spaceship kitchen. Ferris looks exhausted, surrounded by floating recipe cards that repeat “Mix, Bake, Wait.” A glowing magical cookbook labeled “fn” appears, promising to save the day. Style: vibrant children’s book illustration, warm lighting, playful mood.]"></p>
+<h3 id="313-our-first-simple-function"><a class="header" href="#313-our-first-simple-function">3.1.3. Our First Simple Function</a></h3>
+<p>Let’s build a simple function that just prints a greeting. First, create a new project:</p>
+<pre><code class="language-bash">cargo new cake_functions
+cd cake_functions
+</code></pre>
+<p>Now, in <code>src/main.rs</code>, write this code:</p>
+<pre class="playground"><code class="language-rust">fn main() {
+    say_hello(); // Calling the function
+}
+
+// Defining our function
+fn say_hello() {
+    println!("Hello from inside the function!");
+}</code></pre>
+<p>🔹 <code>fn say_hello() { ... }</code> means: <em>“Create a function named <code>say_hello</code> that takes no input and returns nothing.”</em>
+🔹 Inside <code>main</code>, writing <code>say_hello();</code> tells the computer: <em>“Go run the instructions in this function, then come back.”</em></p>
+<p>When you run <code>cargo run</code>, you’ll see:</p>
+<pre><code>Hello from inside the function!
+</code></pre>
+<h3 id="314-calling-functions"><a class="header" href="#314-calling-functions">3.1.4. Calling Functions</a></h3>
+<p>The real power of a function shines when we want to repeat a task multiple times:</p>
+<pre class="playground"><code class="language-rust">fn main() {
+    say_hello();
+    say_hello();
+    say_hello();
+}</code></pre>
+<p>See how easy that was? Instead of writing <code>println!</code> three times, we just called the function’s name. This keeps our code tidy and much easier to read! 🧹</p>
+<p><img src="../assets/images/3.2.png" alt="[Illustration: An educational illustration showing a large button labeled “say_hello()” being pressed three times. Each press triggers a speech bubble saying “Hello from inside the function!”. Ferris stands beside it giving a thumbs up. Style: clean, cartoon, educational infographic, bright colors.]"></p>
+<hr>
+<h2 id="32-building-a-magic-machine-parameters--return-values"><a class="header" href="#32-building-a-magic-machine-parameters--return-values">3.2. Building a Magic Machine (Parameters &amp; Return Values)</a></h2>
+<p>The <code>say_hello</code> function always does the exact same thing. But more powerful functions can take inputs and produce outputs. Think of them like a magic machine that takes raw materials and delivers a finished product! 🏭</p>
+<h3 id="321-functions-with-input-parameters"><a class="header" href="#321-functions-with-input-parameters">3.2.1. Functions with Input Parameters</a></h3>
+<p>A parameter is like the ingredient we give to a recipe. For example, let’s make a function that takes anyone’s name and greets them:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn greet(name: String) {
+    println!("Hello {}! Welcome!", name);
+}
+<span class="boring">}</span></code></pre>
+<p>🔹 <code>name: String</code> means: <em>“This function expects one parameter called <code>name</code> of type <code>String</code> (text).”</em>
+🔹 Inside the function body, <code>name</code> behaves just like a regular variable.</p>
+<p>Now let’s call it in <code>main</code>:</p>
+<pre class="playground"><code class="language-rust">fn main() {
+    greet(String::from("Ferris"));
+    greet(String::from("Sara"));
+}</code></pre>
+<p>Output:</p>
+<pre><code>Hello Ferris! Welcome!
+Hello Sara! Welcome!
+</code></pre>
+<h3 id="322-multiple-parameters"><a class="header" href="#322-multiple-parameters">3.2.2. Multiple Parameters</a></h3>
+<p>We can add multiple parameters by separating them with commas:</p>
+<pre class="playground"><code class="language-rust">fn bake_cake(flour_grams: i32, sugar_grams: i32, eggs: i32) {
+    println!("Baking a cake with {}g flour, {}g sugar, and {} eggs!", 
+             flour_grams, sugar_grams, eggs);
+}
+
+fn main() {
+    bake_cake(200, 150, 3);
+    bake_cake(300, 200, 4); // A bigger cake!
+}</code></pre>
+<h3 id="323-return-values-with--"><a class="header" href="#323-return-values-with--">3.2.3. Return Values with <code>-&gt;</code></a></h3>
+<p>Some functions produce a result that we want to use later. For example, a function that adds two numbers and gives back the sum. We use <code>-&gt;</code> followed by the return type for this:</p>
+<pre class="playground"><code class="language-rust">fn add(a: i32, b: i32) -&gt; i32 {
+    a + b
+}
+
+fn main() {
+    let sum = add(5, 3);
+    println!("5 + 3 = {}", sum);
+}</code></pre>
+<p>⚠️ <strong>Golden Rust Rule</strong>: In Rust, the <strong>last expression in a function without a semicolon (<code>;</code>) is automatically returned</strong>. In the example above, <code>a + b</code> has no semicolon, so its value is sent back.
+If you add a semicolon (<code>a + b;</code>), the compiler thinks the function returns nothing, but since you promised an <code>i32</code>, it will complain!</p>
+<h3 id="324-early-exit-with-return"><a class="header" href="#324-early-exit-with-return">3.2.4. Early Exit with <code>return</code></a></h3>
+<p>Sometimes we want to exit a function early, before reaching the end, and send back a specific value. We use the <code>return</code> keyword for this. Example: A function that returns <code>0</code> if a number is negative (since length can’t be negative):</p>
+<pre class="playground"><code class="language-rust">fn safe_length(n: i32) -&gt; i32 {
+    if n &lt; 0 {
+        return 0; // Exit immediately, don't continue
+    }
+    n // If not negative, return the number itself
+}
+
+fn main() {
+    println!("Safe length: {}", safe_length(-5)); // 0
+    println!("Safe length: {}", safe_length(10)); // 10
+}</code></pre>
+<p><code>return</code> is like a “quick escape” button from the function! 🏃‍♂️💨</p>
+<h3 id="325-exercise-multiply-and-combine"><a class="header" href="#325-exercise-multiply-and-combine">3.2.5. Exercise: Multiply and Combine</a></h3>
+<ol>
+<li>Write a function called <code>multiply</code> that takes two <code>i32</code> numbers and returns their product.</li>
+<li>Call it in <code>main</code> and print the result.</li>
+<li>Write another function called <code>square</code> that takes one number and calculates its square using <code>multiply</code>.</li>
+</ol>
+<p>💡 <strong>Sample Answer</strong>:</p>
+<pre class="playground"><code class="language-rust">fn multiply(x: i32, y: i32) -&gt; i32 {
+    x * y
+}
+
+fn square(x: i32) -&gt; i32 {
+    multiply(x, x) // We reuse our multiply function!
+}
+
+fn main() {
+    let num = 7;
+    let sq = square(num);
+    println!("The square of {} is {}", num, sq);
+}</code></pre>
+<p><img src="../assets/images/3.3.png" alt="[Illustration: A friendly robot machine labeled “fn” with input hoppers for “flour”, “sugar”, “eggs” and an output conveyor belt delivering a glowing “Cake Result”. Rust syntax arrows connect inputs to outputs. Ferris watches proudly holding a slice. Style: educational cartoon, bright, technical metaphor for children.]"></p>
+<hr>
+<h2 id="33-flour-vs-sugar-data-types"><a class="header" href="#33-flour-vs-sugar-data-types">3.3. Flour vs. Sugar (Data Types)</a></h2>
+<p>In cooking, you can’t swap sugar for salt (unless you want a salty cake! 🧂). In programming, every piece of data has a specific <strong>Type</strong>. Rust is very strict: if you mix up types, the compiler will warn you right away. This strictness prevents many crashes before your program even runs! 🛡️</p>
+<h3 id="331-type-categories"><a class="header" href="#331-type-categories">3.3.1. Type Categories</a></h3>
+<p>Data types in Rust fall into two main groups:</p>
+<ul>
+<li>🔹 <strong>Scalar</strong>: A single value. Like one number, one letter, or a true/false value.</li>
+<li>🔹 <strong>Compound</strong>: A collection of multiple values. Like tuples and arrays.</li>
+</ul>
+<h3 id="332-integers-i32-u32"><a class="header" href="#332-integers-i32-u32">3.3.2. Integers (<code>i32</code>, <code>u32</code>)</a></h3>
+<p>Integers are whole numbers (like <code>5</code>, <code>-42</code>, <code>0</code>). Rust has several, but the most important are:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Type</th><th>Sign</th><th>Approx. Range</th><th>Common Use</th></tr>
+</thead>
+<tbody>
+<tr><td><code>i32</code></td><td>Positive &amp; Negative</td><td>-2B to +2B</td><td>Default for whole numbers</td></tr>
+<tr><td><code>u32</code></td><td>Positive only</td><td>0 to ~4B</td><td>Counting, indexes</td></tr>
+<tr><td><code>u8</code></td><td>Positive only</td><td>0 to 255</td><td>Single bytes, small counters</td></tr>
+</tbody>
+</table>
+</div>
+<p>Example:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let temperature = -5;      // Rust guesses i32 automatically
+let age: u32 = 12;         // We explicitly said u32
+let byte: u8 = 255;        // Fits exactly in one byte
+<span class="boring">}</span></code></pre>
+<h3 id="333-floating-point-numbers-f64"><a class="header" href="#333-floating-point-numbers-f64">3.3.3. Floating-Point Numbers (<code>f64</code>)</a></h3>
+<p>When we need decimal precision (like <code>3.14</code> or <code>2.718</code>), we use floats:</p>
+<ul>
+<li>🔹 <code>f32</code>: Lower precision, 32 bits.</li>
+<li>🔹 <code>f64</code>: Higher precision, 64 bits. Default for decimals.</li>
+</ul>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let pi = 3.1415926535;   // f64
+let gravity: f32 = 9.81; // f32
+<span class="boring">}</span></code></pre>
+<h3 id="334-booleans-bool"><a class="header" href="#334-booleans-bool">3.3.4. Booleans (<code>bool</code>)</a></h3>
+<p>Can only hold two values: <code>true</code> or <code>false</code>. Very useful in conditions:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let is_raining = true;
+let has_umbrella = false;
+
+if is_raining &amp;&amp; !has_umbrella {
+    println!("Oh no, we'll get wet!");
+}
+<span class="boring">}</span></code></pre>
+<h3 id="335-characters-char"><a class="header" href="#335-characters-char">3.3.5. Characters (<code>char</code>)</a></h3>
+<p>A single letter, number, or even an emoji. In Rust, every <code>char</code> takes 4 bytes and can hold any Unicode character. Written with single quotes:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let first_letter = 'A';
+let digit = '7';
+let smiley = '😊';
+let crab = '🦀'; // That's Ferris!
+<span class="boring">}</span></code></pre>
+<h3 id="336-tuples--boxes-side-by-side"><a class="header" href="#336-tuples--boxes-side-by-side">3.3.6. Tuples – Boxes Side by Side</a></h3>
+<p>A tuple lets us group multiple values of <em>different</em> types together. Its length is fixed (you can’t add or remove items later).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let ferris_info = ("Ferris", 42, true, '🦀');
+<span class="boring">}</span></code></pre>
+<p>We access members using a dot and an index (starting from 0):</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>println!("Name: {}", ferris_info.0);     // Ferris
+println!("Age: {}", ferris_info.1);      // 42
+println!("Happy? {}", ferris_info.2);    // true
+<span class="boring">}</span></code></pre>
+<p>You can also “destructure” a tuple to put its values into separate variables:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let (name, age, is_happy, emoji) = ferris_info;
+println!("{} is {} years old and loves {}", name, age, emoji);
+<span class="boring">}</span></code></pre>
+<h3 id="337-arrays--organized-shelves"><a class="header" href="#337-arrays--organized-shelves">3.3.7. Arrays – Organized Shelves</a></h3>
+<p>An array is a collection of multiple values that are <strong>all the same type</strong> and have a <strong>fixed length</strong>. Like a shelf with a set number of slots where you can only put one type of item in each.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let numbers = [10, 20, 30, 40, 50];
+let first = numbers[0]; // 10
+let third = numbers[2]; // 30
+<span class="boring">}</span></code></pre>
+<p>To fill an array with a repeating value:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let all_fives = [5; 10]; // Means [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+<span class="boring">}</span></code></pre>
+<p>📌 <strong>A note for later</strong>: Arrays have a fixed size and are very fast. Later, you’ll learn about <code>Vec</code> (vectors), which can grow and shrink as needed.</p>
+<h3 id="338-exercise-personal-info-tuple"><a class="header" href="#338-exercise-personal-info-tuple">3.3.8. Exercise: Personal Info Tuple</a></h3>
+<p>Create a tuple with your info: Name (<code>String</code>), Height in cm (<code>f64</code>), and whether you have a pet (<code>bool</code>). Then destructure it into separate variables and print a sentence.</p>
+<p>💡 <strong>Sample Answer</strong>:</p>
+<pre class="playground"><code class="language-rust">fn main() {
+    let my_info = (String::from("Aria"), 145.5, true);
+    let (name, height, has_pet) = my_info;
+    
+    println!("My name is {}. I am {} cm tall.", name, height);
+    if has_pet {
+        println!("I have a pet! 🐾");
+    } else {
+        println!("I don't have a pet. 😢");
+    }
+}</code></pre>
+<p><img src="../assets/images/3.4.png" alt="[Illustration: A cartoon sorting robot with labeled bins: “i32”, “String”, “bool”, “char”. Different items (numbers, letters, emojis) are flying into the correct bins. Ferris stands beside holding a checklist. Style: playful, educational, bright vector illustration.]"></p>
+<hr>
+<h2 id="34-secret-notes-comments"><a class="header" href="#34-secret-notes-comments">3.4. Secret Notes (Comments)</a></h2>
+<p>Sometimes we want to write explanations inside our code that the computer will completely ignore, but we (or our friends) can read later to understand <em>why</em> we wrote it that way. These notes are called <strong>Comments</strong>. 📝</p>
+<h3 id="341-single-line-comments-"><a class="header" href="#341-single-line-comments-">3.4.1. Single-Line Comments <code>//</code></a></h3>
+<p>Anything after two slashes <code>//</code> on the same line is treated as a comment. The compiler completely ignores it:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// This is a comment
+let x = 5; // This is also a comment at the end of a line
+<span class="boring">}</span></code></pre>
+<h3 id="342-multi-line-comments--"><a class="header" href="#342-multi-line-comments--">3.4.2. Multi-Line Comments <code>/* */</code></a></h3>
+<p>If you need to write several lines of explanation, use <code>/*</code> to start and <code>*/</code> to end:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>/*
+This is a long comment.
+You can write any explanation you want here.
+The compiler will completely skip this section.
+*/
+fn do_something() { }
+<span class="boring">}</span></code></pre>
+<h3 id="343-when-should-we-comment"><a class="header" href="#343-when-should-we-comment">3.4.3. When Should We Comment?</a></h3>
+<ul>
+<li>
+<p>✅ <strong>Good Comment</strong>:</p>
+</li>
+<li>
+<p>Explains <em>why</em> the code is written this way (e.g., <em>“Because library X has a bug, we must use method Y here”</em>).</p>
+</li>
+<li>
+<p>Documents complex parts for future reference.</p>
+</li>
+<li>
+<p>Marks unfinished work: <code>// TODO: Complete this part later</code>.</p>
+</li>
+<li>
+<p>❌ <strong>Bad Comment</strong>:</p>
+</li>
+<li>
+<p>Explains something already obvious from the code itself.</p>
+</li>
+<li>
+<p>Example: <code>x = x + 1; // Add one to x</code> (The code already says exactly that!)</p>
+</li>
+</ul>
+<h3 id="344-exercise-comment-the-guessing-game"><a class="header" href="#344-exercise-comment-the-guessing-game">3.4.4. Exercise: Comment the Guessing Game</a></h3>
+<p>Open your Chapter 2 guessing game code. Add short explanatory comments for each major section (random number generation, reading input, type conversion, comparison). See how much easier the code becomes to read! 🧐</p>
+<p><img src="../assets/images/3.5.png" alt="[Illustration: Ferris wearing a detective hat, writing a secret note inside a glowing code file. A small compiler robot next to him wears sunglasses and ignores the note. Background: cozy desk with coffee and books. Style: whimsical children’s book illustration, soft lighting.]"></p>
+<hr>
+<h2 id="35-summary--project"><a class="header" href="#35-summary--project">3.5. Summary &amp; Project</a></h2>
+<h3 id="351-what-you-learned"><a class="header" href="#351-what-you-learned">3.5.1. What You Learned</a></h3>
+<p>In this chapter, you discovered:</p>
+<ul>
+<li>✅ What a function is and how to define it with <code>fn</code>.</li>
+<li>✅ How to give parameters and get return values (<code>-&gt;</code>).</li>
+<li>✅ The difference between <code>return</code> and the last expression without a semicolon.</li>
+<li>✅ Main data types: integers, floats, <code>bool</code>, <code>char</code>.</li>
+<li>✅ Tuples for grouping different types.</li>
+<li>✅ Arrays for storing fixed-length lists of the same type.</li>
+<li>✅ Comments for documenting and making code readable.</li>
+</ul>
+<h3 id="352-project-simple-calculator"><a class="header" href="#352-project-simple-calculator">3.5.2. Project: Simple Calculator</a></h3>
+<p>Write a program that takes two decimal numbers (<code>f64</code>) and an operator (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) from the user, then prints the result. Write a separate function for each operation.</p>
+<p>💡 <strong>Structure Hint</strong>:</p>
+<pre class="playground"><code class="language-rust">use std::io;
+
+fn add(a: f64, b: f64) -&gt; f64 { a + b }
+fn subtract(a: f64, b: f64) -&gt; f64 { a - b }
+fn multiply(a: f64, b: f64) -&gt; f64 { a * b }
+fn divide(a: f64, b: f64) -&gt; f64 { a / b }
+
+fn main() {
+    // Get input from user (like in Chapter 2)
+    // Use if or match to detect the operator and call the correct function
+    // If operator is '/' and the second number is 0, print an error (division by zero is impossible!)
+}</code></pre>
+<p>🎁 <strong>Bonus Challenge</strong>: If the user enters an invalid operator, print an error and ask again (you can use <code>loop</code>).</p>
+<h3 id="353-challenge-maximum-number-in-an-array"><a class="header" href="#353-challenge-maximum-number-in-an-array">3.5.3. Challenge: Maximum Number in an Array</a></h3>
+<p>Write a function called <code>max_in_array</code> that takes an array of <code>i32</code> numbers (or a slice of it) and returns the largest value inside.</p>
+<p>💡 <strong>Hint</strong>: Create a <code>max</code> variable initialized with the first element. Use a loop (<code>while</code>) to compare the rest. (We haven’t learned <code>for</code> yet, so we’ll use <code>while</code>.)</p>
+<p>💡 <strong>Sample Answer with <code>while</code></strong>:</p>
+<pre class="playground"><code class="language-rust">fn max_in_array(arr: &amp;[i32]) -&gt; i32 {
+    let mut max = arr[0];
+    let mut i = 1;
+    while i &lt; arr.len() {
+        if arr[i] &gt; max {
+            max = arr[i];
+        }
+        i = i + 1;
+    }
+    max
+}
+
+fn main() {
+    let numbers = [15, 42, 7, 99, 23];
+    let result = max_in_array(&amp;numbers);
+    println!("Largest number: {}", result);
+}</code></pre>
+<p>📌 <strong>Note</strong>: <code>&amp;[i32]</code> means <em>“a reference to a slice of i32 numbers”</em>. This allows the function to look at the array’s contents without taking ownership of it. We’ll talk extensively about these “permissions” in the next chapter!</p>
+<p><img src="../assets/images/3.6.png" alt="[Illustration: Ferris standing proudly next to a computer screen showing completed code. A golden trophy labeled “Chapter 3 Master” sits on the desk. Floating code symbols (fn, i32, {}, //) surround him. Style: celebratory, vibrant children’s book illustration, encouraging mood.]"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter-4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter-4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

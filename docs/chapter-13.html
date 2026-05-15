@@ -1,0 +1,603 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 13: Magic Train and Conversion Factory - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="land-of-rust-ferris-the-space-crabs-adventures"><a class="header" href="#land-of-rust-ferris-the-space-crabs-adventures">Land of Rust: Ferris the Space Crab’s Adventures</a></h1>
+<h2 id="chapter-13-the-magic-train-and-the-transformation-factory-iterators--closures"><a class="header" href="#chapter-13-the-magic-train-and-the-transformation-factory-iterators--closures">Chapter 13: The Magic Train and the Transformation Factory (Iterators &amp; Closures)</a></h2>
+<h3 id="-chapter-index"><a class="header" href="#-chapter-index">📑 Chapter Index</a></h3>
+<p><a href="#131-the-cargo-train-iterator">13.1. The Cargo Train (Iterator)</a><br><a href="#1311-story-the-train-of-stone-wagons">13.1.1. Story: The Train of Stone Wagons</a><br><a href="#1312-what-is-an-iterator">13.1.2. What Is an Iterator?</a><br><a href="#1313-getting-an-iterator-from-a-collection">13.1.3. Getting an Iterator from a Collection</a><br><a href="#1314-the-next-method">13.1.4. The <code>next</code> Method</a><br><a href="#1315-the-for-loop-and-iterator">13.1.5. The <code>for</code> Loop and Iterator</a><br><a href="#1316-exercise-traversing-with-while-let">13.1.6. Exercise: Traversing with <code>while let</code></a><br><a href="#132-machines-along-the-track-adapter-methods">13.2. Machines Along the Track (Adapter Methods)</a><br><a href="#1321-map-transforming-each-element">13.2.1. <code>map</code>: Transforming Each Element</a><br><a href="#1322-filter-selecting-based-on-a-condition">13.2.2. <code>filter</code>: Selecting Based on a Condition</a><br><a href="#1323-chaining">13.2.3. Chaining</a><br><a href="#1324-collect-gathering-results">13.2.4. <code>collect</code>: Gathering Results</a><br><a href="#1325-other-useful-methods-fold-any-all-sum">13.2.5. Other Useful Methods (<code>fold</code>, <code>any</code>, <code>all</code>, <code>sum</code>)</a><br><a href="#1326-exercise-squared-even-numbers">13.2.6. Exercise: Squared Even Numbers</a><br><a href="#133-the-spy-backpack-closures">13.3. The Spy Backpack (Closures)</a><br><a href="#1331-story-ferriss-secret-tool">13.3.1. Story: Ferris’s Secret Tool</a><br><a href="#1332-defining-a-closure">13.3.2. Defining a Closure</a><br><a href="#1333-capturing-variables-from-the-environment">13.3.3. Capturing Variables from the Environment</a><br><a href="#1334-capture-types-fn-fnmut-fnonce">13.3.4. Capture Types (<code>Fn</code>, <code>FnMut</code>, <code>FnOnce</code>)</a><br><a href="#1335-moving-ownership-with-move">13.3.5. Moving Ownership with <code>move</code></a><br><a href="#1336-exercise-multiplier-closure">13.3.6. Exercise: Multiplier Closure</a><br><a href="#134-combining-iterator-and-closure">13.4. Combining Iterator and Closure</a><br><a href="#1341-map-with-a-closure">13.4.1. <code>map</code> with a Closure</a><br><a href="#1342-filter-with-a-closure">13.4.2. <code>filter</code> with a Closure</a><br><a href="#1343-example-reading-lines-from-stdin-and-converting-to-numbers">13.4.3. Example: Reading Lines from stdin and Converting to Numbers</a><br><a href="#1344-filter_map-for-combining-two-jobs">13.4.4. <code>filter_map</code> for Combining Two Jobs</a><br><a href="#135-project-processing-a-log-file">13.5. Project: Processing a Log File</a><br><a href="#1351-structure-of-log-lines">13.5.1. Structure of Log Lines</a><br><a href="#1352-reading-a-file-with-iterator">13.5.2. Reading a File with Iterator</a><br><a href="#1353-filtering-error-lines">13.5.3. Filtering ERROR Lines</a><br><a href="#1354-counting-errors-with-a-hashmap">13.5.4. Counting Errors with a HashMap</a><br><a href="#136-summary-and-challenge">13.6. Summary and Challenge</a><br><a href="#1361-concept-review">13.6.1. Concept Review</a><br><a href="#1362-challenge-implementing-iterator-for-fibonacci">13.6.2. Challenge: Implementing Iterator for Fibonacci</a></p>
+<hr>
+<h3 id="131-the-cargo-train-iterator"><a class="header" href="#131-the-cargo-train-iterator">13.1. The Cargo Train (Iterator)</a></h3>
+<h4 id="1311-story-the-train-of-stone-wagons"><a class="header" href="#1311-story-the-train-of-stone-wagons">13.1.1. Story: The Train of Stone Wagons</a></h4>
+<p>Ferris has a big cargo train whose wagons are filled with sparkling stones from different planets. 🚂💎 He doesn’t want to dump all the stones at once and make a mess on the ground. He prefers the train to move slowly and open only one wagon at a time, delivering one stone at a time. This is called <strong>Iteration</strong>.<br>In programming, when we work with lists or collections, we often need to look at each member one by one. The tool that does this for us in an orderly way is called an <strong>Iterator</strong>.<br><strong>Here we learn how to traverse data without writing long loops – a big step toward professional coding!</strong> 🧙‍♂️</p>
+<blockquote>
+<p>👨‍👩‍👧 <strong>Note for parents and teachers</strong><br>Iterators and Closures are powerful Rust features that enable clean, efficient code. This chapter might be challenging for some children – don’t worry, they will be used many times in later projects. The official Rust book has a whole chapter on Iterators:<br><a href="https://doc.rust-lang.org/book/ch13-00-functional-features.html">doc.rust-lang.org/book/ch13-00-functional-features.html</a></p>
+</blockquote>
+<h4 id="1312-what-is-an-iterator"><a class="header" href="#1312-what-is-an-iterator">13.1.2. What Is an Iterator?</a></h4>
+<p>An Iterator is a smart being that knows how to hand out the members of a collection one by one, in order, and only when asked. In Rust, the <code>Iterator</code> trait is standard; its most important tool is the <code>next</code> method:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Iterator {
+    type Item;
+    fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt;;
+}
+<span class="boring">}</span></code></pre>
+<p>🔹 Every time you call <code>next</code>, it gives you the next member inside <code>Some(member)</code>.<br>🔹 When there are no more members, it returns <code>None</code>.<br>💡 <strong>Golden tip:</strong> Iterators are <strong>lazy</strong>! They don’t do any work until you ask for the next item or collect the results. That means they don’t waste memory or speed! ⏱️</p>
+<h4 id="1313-getting-an-iterator-from-a-collection"><a class="header" href="#1313-getting-an-iterator-from-a-collection">13.1.3. Getting an Iterator from a Collection</a></h4>
+<p>To get an Iterator from a vector or array, you have three main ways:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Method</th><th>Output type</th><th>Simple explanation</th></tr>
+</thead>
+<tbody>
+<tr><td><code>.iter()</code></td><td><code>&amp;T</code></td><td>Only <strong>looks</strong> (immutable borrow). The collection stays untouched.</td></tr>
+<tr><td><code>.iter_mut()</code></td><td><code>&amp;mut T</code></td><td>Looks and <strong>allows modification</strong>.</td></tr>
+<tr><td><code>.into_iter()</code></td><td><code>T</code></td><td>Takes <strong>ownership</strong>. After it finishes, you can’t use the collection anymore.</td></tr>
+</tbody>
+</table>
+</div>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let v = vec![10, 20, 30];
+
+let iter1 = v.iter();       // only looks
+let iter2 = v.iter_mut();   // can modify
+let iter3 = v.into_iter();  // takes ownership (v cannot be used after this line)
+<span class="boring">}</span></code></pre>
+<h4 id="1314-the-next-method"><a class="header" href="#1314-the-next-method">13.1.4. The <code>next</code> Method</a></h4>
+<p>You can manually call <code>next</code> to see how it works:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let v = vec!["apple", "banana", "orange"];
+let mut iter = v.iter(); // must be mutable because the internal position changes
+
+assert_eq!(iter.next(), Some(&amp;"apple"));
+assert_eq!(iter.next(), Some(&amp;"banana"));
+assert_eq!(iter.next(), Some(&amp;"orange"));
+assert_eq!(iter.next(), None); // nothing left!
+<span class="boring">}</span></code></pre>
+<h4 id="1315-the-for-loop-and-iterator"><a class="header" href="#1315-the-for-loop-and-iterator">13.1.5. The <code>for</code> Loop and Iterator</a></h4>
+<p>The good news is that you don’t have to deal with <code>next</code> yourself! The <code>for</code> loop in Rust automatically creates an Iterator behind the scenes and continues until <code>None</code> is returned:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let names = vec!["Ferris", "Bill", "Luna"];
+for name in &amp;names {   // &amp;names is exactly the same as names.iter()
+    println!("Hello {}!", name);
+}
+<span class="boring">}</span></code></pre>
+<p>⚠️ If you write <code>for name in names</code> (without <code>&amp;</code>), the loop takes ownership of <code>names</code>, and you cannot use it after the loop.</p>
+<h4 id="1316-exercise-traversing-with-while-let"><a class="header" href="#1316-exercise-traversing-with-while-let">13.1.6. Exercise: Traversing with <code>while let</code></a></h4>
+<p>Using <code>while let</code> and <code>next()</code>, traverse the vector <code>["a", "b", "c"]</code> and print each element.</p>
+<p>💡 <strong>Answer:</strong></p>
+<pre class="playground"><code class="language-rust">fn main() {
+    let v = vec!["a", "b", "c"];
+    let mut iter = v.iter();
+    
+    while let Some(item) = iter.next() {
+        println!("{}", item);
+    }
+}</code></pre>
+<p><code>while let</code> means: “As long as <code>next</code> returns <code>Some</code>, run the code. When it returns <code>None</code>, stop automatically.” Very clean! ✨</p>
+<p><img src="../assets/images/13.1.png" alt="[Illustration: A friendly cartoon crab (Ferris) standing on a platform next to a colorful train. Each train car has a glowing gem inside. A conveyor arm lifts one gem at a time as the train moves slowly. Background: starry sky with a control panel showing “next() → Some(gem)”. Style: vibrant children’s book illustration, playful tech metaphor, soft lighting, 16:9.]"></p>
+<hr>
+<h3 id="132-machines-along-the-track-adapter-methods"><a class="header" href="#132-machines-along-the-track-adapter-methods">13.2. Machines Along the Track (Adapter Methods)</a></h3>
+<h4 id="1321-map-transforming-each-element"><a class="header" href="#1321-map-transforming-each-element">13.2.1. <code>map</code>: Transforming Each Element</a></h4>
+<p>On the train track there are machines that take stones, change their shape or colour, and send them to the next wagon. In Rust, these are called <strong>Adapters</strong>. The most famous one is <code>map</code>. It takes a Closure and applies it to each element:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let numbers = vec![1, 2, 3];
+let doubled: Vec&lt;_&gt; = numbers.iter().map(|x| x * 2).collect();
+println!("{:?}", doubled); // [2, 4, 6]
+<span class="boring">}</span></code></pre>
+<p>⚠️ <strong>Note:</strong> <code>map</code> by itself does nothing! It just creates a new Iterator that says: “When I am asked, I will perform this transformation.”</p>
+<h4 id="1322-filter-selecting-based-on-a-condition"><a class="header" href="#1322-filter-selecting-based-on-a-condition">13.2.2. <code>filter</code>: Selecting Based on a Condition</a></h4>
+<p>There’s also a machine that only lets stones pass if they satisfy a certain condition. If the condition is <code>true</code>, the stone passes; if <code>false</code>, it falls off the track. To make working with references easier, we use <code>.copied()</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let numbers = vec![1, 2, 3, 4, 5];
+let evens: Vec&lt;i32&gt; = numbers.iter().copied().filter(|&amp;x| x % 2 == 0).collect();
+println!("{:?}", evens); // [2, 4]
+<span class="boring">}</span></code></pre>
+<p><code>.copied()</code> turns <code>&amp;i32</code> into actual <code>i32</code> values, so we don’t have to deal with <code>|&amp;&amp;x|</code>.</p>
+<h4 id="1323-chaining"><a class="header" href="#1323-chaining">13.2.3. Chaining</a></h4>
+<p>The beauty of Iterators is that you can chain machines one after another:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let numbers = vec![1, 2, 3, 4, 5];
+let result: Vec&lt;_&gt; = numbers.iter()
+    .copied()
+    .filter(|&amp;x| x % 2 == 0)   // first keep only evens
+    .map(|x| x * 10)           // then multiply by 10
+    .collect();                // finally collect them
+println!("{:?}", result); // [20, 40]
+<span class="boring">}</span></code></pre>
+<p>This chain does <strong>no computation</strong> until it hits <code>.collect()</code> or <code>.sum()</code>. Rust is smart enough to optimize the whole pipeline! 🧠⚡</p>
+<h4 id="1324-collect-gathering-results"><a class="header" href="#1324-collect-gathering-results">13.2.4. <code>collect</code>: Gathering Results</a></h4>
+<p><code>collect</code> is the final station. It takes an Iterator and gathers all the results into a new Collection (like <code>Vec</code> or <code>HashMap</code>). You usually need to specify the type: <code>Vec&lt;_&gt;</code> or <code>::&lt;Vec&lt;i32&gt;&gt;</code>.</p>
+<h4 id="1325-other-useful-methods"><a class="header" href="#1325-other-useful-methods">13.2.5. Other Useful Methods</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Method</th><th>Use</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td><code>sum()</code></td><td>Sum of numbers</td><td><code>numbers.iter().sum::&lt;i32&gt;()</code></td></tr>
+<tr><td><code>fold(init, |acc, x| ...)</code></td><td>General accumulator</td><td><code>fold(0, |acc, x| acc + x)</code></td></tr>
+<tr><td><code>any(|&amp;x| ...)</code></td><td>At least one satisfies the condition</td><td><code>any(|&amp;x| x &gt; 10)</code></td></tr>
+<tr><td><code>all(|&amp;x| ...)</code></td><td>All satisfy the condition</td><td><code>all(|&amp;x| x &gt; 0)</code></td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="1326-exercise-squared-even-numbers"><a class="header" href="#1326-exercise-squared-even-numbers">13.2.6. Exercise: Squared Even Numbers</a></h4>
+<p>Create a vector of numbers from 1 to 10. Using <code>filter</code> and <code>map</code>, select only the even numbers, compute their squares, and collect them into a new vector.</p>
+<p>💡 <strong>Answer:</strong></p>
+<pre class="playground"><code class="language-rust">fn main() {
+    let result: Vec&lt;i32&gt; = (1..=10)
+        .filter(|&amp;x| x % 2 == 0)
+        .map(|x| x * x)
+        .collect();
+    println!("{:?}", result); // [4, 16, 36, 64, 100]
+}</code></pre>
+<p><code>(1..=10)</code> is a Range that already implements Iterator – no need for <code>vec!</code>!</p>
+<p><img src="../assets/images/13.2.png" alt="[Illustration: A cartoon factory conveyor belt with labeled machines: “filter”, “map”, “collect”. Glowing cubes travel through, changing shape and color at each station. Ferris operates a control panel with a big green “Run” button. Style: educational vector, bright, clean, 16:9.]"></p>
+<hr>
+<h3 id="133-the-spy-backpack-closures"><a class="header" href="#133-the-spy-backpack-closures">13.3. The Spy Backpack (Closures)</a></h3>
+<h4 id="1331-story-ferriss-secret-tool"><a class="header" href="#1331-story-ferriss-secret-tool">13.3.1. Story: Ferris’s Secret Tool</a></h4>
+<p>Ferris has a magical backpack that can store a secret operation. For example, he tells it: “Whatever number you get, multiply it by 3.” Later, whenever Ferris wants, the backpack performs that operation. The real magic is that the backpack can <strong>remember things from the surrounding environment</strong>. In Rust, this tool is called a <strong>Closure</strong>. 🎒✨</p>
+<h4 id="1332-defining-a-closure"><a class="header" href="#1332-defining-a-closure">13.3.2. Defining a Closure</a></h4>
+<p>The syntax is very simple: <code>|parameters| { body }</code>. If the body is only one line, you can omit the curly braces <code>{}</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let add_one = |x| x + 1;
+println!("{}", add_one(5)); // 6
+
+let multiply = |a, b| a * b;
+println!("{}", multiply(4, 5)); // 20
+<span class="boring">}</span></code></pre>
+<p>The types of parameters and return value are usually inferred by the compiler.</p>
+<h4 id="1333-capturing-variables-from-the-environment"><a class="header" href="#1333-capturing-variables-from-the-environment">13.3.3. Capturing Variables from the Environment</a></h4>
+<p>A Closure can use variables that are defined outside of it:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let factor = 3;
+let multiply_by_factor = |x| x * factor; // captures `factor` from the environment
+println!("{}", multiply_by_factor(10)); // 30
+<span class="boring">}</span></code></pre>
+<p>But how does the Closure behave with these variables? There are three possibilities, chosen automatically by the compiler:</p>
+<h4 id="1334-capture-types-fn-fnmut-fnonce"><a class="header" href="#1334-capture-types-fn-fnmut-fnonce">13.3.4. Capture Types (<code>Fn</code>, <code>FnMut</code>, <code>FnOnce</code>)</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Type</th><th>Behavior</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Fn</code></td><td>Only <strong>reads</strong> (immutable borrow <code>&amp;</code>). Can be called many times.</td><td>`</td></tr>
+<tr><td><code>FnMut</code></td><td>Can <strong>modify</strong> (mutable borrow <code>&amp;mut</code>). Called multiple times.</td><td>`</td></tr>
+<tr><td><code>FnOnce</code></td><td>Takes <strong>ownership</strong> and consumes it. Can be called only <strong>once</strong>.</td><td>`</td></tr>
+</tbody>
+</table>
+</div>
+<p><code>FnMut</code> example:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut count = 0;
+let mut increment = || {
+    count += 1;
+    count
+};
+println!("{}", increment()); // 1
+println!("{}", increment()); // 2
+<span class="boring">}</span></code></pre>
+<h4 id="1335-moving-ownership-with-move"><a class="header" href="#1335-moving-ownership-with-move">13.3.5. Moving Ownership with <code>move</code></a></h4>
+<p>If you put the keyword <code>move</code> before the Closure, you tell it: “Please transfer ownership of the captured variables into the Closure.” This is useful when you want to send the Closure to another thread:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = String::from("Hello space!");
+let consume = move || {
+    println!("{}", s);
+};
+consume();
+// println!("{}", s); // ❌ Error! ownership moved to `consume`
+<span class="boring">}</span></code></pre>
+<h4 id="1336-exercise-multiplier-closure"><a class="header" href="#1336-exercise-multiplier-closure">13.3.6. Exercise: Multiplier Closure</a></h4>
+<p>Write a function called <code>make_multiplier</code> that takes a number <code>factor</code> and returns a Closure. The Closure should multiply any number given to it by <code>factor</code>. Use <code>move</code>.</p>
+<p>💡 <strong>Answer:</strong></p>
+<pre class="playground"><code class="language-rust">fn make_multiplier(factor: i32) -&gt; impl Fn(i32) -&gt; i32 {
+    move |x| x * factor
+}
+
+fn main() {
+    let double = make_multiplier(2);
+    let triple = make_multiplier(3);
+    println!("{}", double(5));  // 10
+    println!("{}", triple(5));  // 15
+}</code></pre>
+<p><img src="../assets/images/13.3.png" alt="[Illustration: A cartoon crab wearing a futuristic backpack with glowing memory chips. Around the crab float variables like “factor = 3” and “x” being pulled into the backpack. A “move” tag is stamped on the backpack. Style: playful sci-fi educational, bright colors, 16:9.]"></p>
+<hr>
+<h3 id="134-combining-iterator-and-closure"><a class="header" href="#134-combining-iterator-and-closure">13.4. Combining Iterator and Closure</a></h3>
+<h4 id="1341-map-with-a-closure"><a class="header" href="#1341-map-with-a-closure">13.4.1. <code>map</code> with a Closure</a></h4>
+<p>Adapters like <code>map</code> and <code>filter</code> take Closures as input:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let names = vec!["Ferris", "Bill"];
+let greetings: Vec&lt;_&gt; = names.iter()
+    .map(|name| format!("Hello {}!", name))
+    .collect();
+println!("{:?}", greetings); // ["Hello Ferris!", "Hello Bill!"]
+<span class="boring">}</span></code></pre>
+<h4 id="1342-filter-with-a-closure"><a class="header" href="#1342-filter-with-a-closure">13.4.2. <code>filter</code> with a Closure</a></h4>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let numbers = vec![5, 15, 25, 8];
+let big_numbers: Vec&lt;_&gt; = numbers.iter()
+    .copied()
+    .filter(|&amp;x| x &gt; 10)
+    .collect();
+println!("{:?}", big_numbers); // [15, 25]
+<span class="boring">}</span></code></pre>
+<h4 id="1343-example-reading-lines-from-stdin-and-converting-to-numbers"><a class="header" href="#1343-example-reading-lines-from-stdin-and-converting-to-numbers">13.4.3. Example: Reading Lines from stdin and Converting to Numbers</a></h4>
+<p>Suppose the user enters several numbers, one per line, and we want to compute their sum:</p>
+<pre class="playground"><code class="language-rust">use std::io::{self, BufRead};
+
+fn main() {
+    let stdin = io::stdin();
+    let sum: i32 = stdin.lock().lines()
+        .map(|line| line.unwrap().trim().parse::&lt;i32&gt;().unwrap())
+        .sum();
+    println!("Sum: {}", sum);
+}</code></pre>
+<p>Here <code>stdin.lock().lines()</code> gives an Iterator over lines. <code>map</code> takes each line, trims it, and parses it into a number. Finally <code>sum()</code> adds them all up.</p>
+<h4 id="1344-filter_map-for-combining-two-jobs"><a class="header" href="#1344-filter_map-for-combining-two-jobs">13.4.4. <code>filter_map</code> for Combining Two Jobs</a></h4>
+<p>Sometimes you want to <strong>transform</strong> and <strong>filter</strong> at the same time. <code>filter_map</code> takes a Closure that returns an <code>Option&lt;T&gt;</code>. If it returns <code>Some</code>, keep it; if <code>None</code>, discard it:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let strings = vec!["3", "seven", "8", "10"];
+let numbers: Vec&lt;i32&gt; = strings.iter()
+    .filter_map(|s| s.parse().ok()) // if parsing fails, returns None and it’s dropped
+    .collect();
+println!("{:?}", numbers); // [3, 8, 10]
+<span class="boring">}</span></code></pre>
+<p><code>.ok()</code> is a helper method that turns a <code>Result</code> into an <code>Option</code>. Very handy for cleaning up data! 🧼</p>
+<p><img src="../assets/images/13.4.png" alt="[Illustration: A cartoon sorting machine with a “filter_map” label. As items pass through, some are converted and drop into a “Collected” box while invalid items slide into a “Rejected” bin. Ferris watches the process. Style: educational, playful, bright colors, 16:9.]"></p>
+<hr>
+<h3 id="135-project-processing-a-log-file"><a class="header" href="#135-project-processing-a-log-file">13.5. Project: Processing a Log File</a></h3>
+<p>Now it’s time to put it all together in a real project. Suppose you have a file <code>log.txt</code> that records system status:</p>
+<pre><code class="language-text">INFO: System initialized
+ERROR: Disk is full
+WARNING: Memory running low
+ERROR: Network connection lost
+INFO: Task finished
+</code></pre>
+<p>We want to find the lines that contain <code>ERROR</code> and see how many times each error occurs.</p>
+<h4 id="1351-structure-of-log-lines"><a class="header" href="#1351-structure-of-log-lines">13.5.1. Structure of Log Lines</a></h4>
+<p>Each line starts with a label like <code>ERROR:</code>. We only care about real errors.</p>
+<h4 id="1352-reading-a-file-with-iterator"><a class="header" href="#1352-reading-a-file-with-iterator">13.5.2. Reading a File with Iterator</a></h4>
+<pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io::{BufRead, BufReader};
+
+fn main() {
+    let file = File::open("log.txt").expect("log.txt not found");
+    let reader = BufReader::new(file);
+    // ... more code
+}</code></pre>
+<h4 id="1353-filtering-error-lines"><a class="header" href="#1353-filtering-error-lines">13.5.3. Filtering ERROR Lines</a></h4>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let error_lines: Vec&lt;String&gt; = reader.lines()
+    .filter_map(|line| line.ok()) // if a line read fails, ignore it
+    .filter(|line| line.starts_with("ERROR"))
+    .collect();
+
+println!("Found errors:");
+for line in &amp;error_lines {
+    println!("  {}", line);
+}
+<span class="boring">}</span></code></pre>
+<h4 id="1354-counting-errors-with-a-hashmap"><a class="header" href="#1354-counting-errors-with-a-hashmap">13.5.4. Counting Errors with a HashMap</a></h4>
+<p>Now let’s see how many times each error message appears:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::collections::HashMap;
+
+let mut counts = HashMap::new();
+for line in reader.lines().filter_map(|l| l.ok()) {
+    if let Some(msg) = line.strip_prefix("ERROR: ") {
+        *counts.entry(msg.to_string()).or_insert(0) += 1;
+    }
+}
+
+println!("\n📊 Error statistics:");
+for (msg, count) in &amp;counts {
+    println!("  - {} : {} times", msg, count);
+}
+<span class="boring">}</span></code></pre>
+<p><code>strip_prefix</code> returns the rest of the line only if it starts with <code>"ERROR: "</code>. Then we use <code>entry</code> and <code>or_insert</code> to count occurrences. The code is clean, fast, and nice! ⚡</p>
+<p><img src="../assets/images/13.5.png" alt="[Illustration: A cartoon control desk with a scrolling screen of log lines. A glowing filter machine catches only “ERROR” tags and drops them into a counting jar. Ferris adjusts a dial labeled “filter_map”. Style: cozy tech workspace, educational vector, warm lighting, 16:9.]"></p>
+<hr>
+<h3 id="136-summary-and-challenge"><a class="header" href="#136-summary-and-challenge">13.6. Summary and Challenge</a></h3>
+<h4 id="1361-concept-review"><a class="header" href="#1361-concept-review">13.6.1. Concept Review</a></h4>
+<p>In this chapter you learned:<br>✅ <strong>Iterator</strong>: an object for step‑by‑step traversal of collections. Core method: <code>next</code>.<br>✅ <strong><code>.iter()</code> / <code>.iter_mut()</code> / <code>.into_iter()</code></strong>: ways to get an Iterator with different access levels.<br>✅ <strong>Adapters</strong>: <code>map</code> (transform), <code>filter</code> (select), <code>collect</code> (gather), <code>fold</code>/<code>sum</code>/<code>any</code>/<code>all</code>. All of them are <strong>lazy</strong>.<br>✅ <strong>Closure</strong>: an anonymous function that captures environment variables. Syntax: <code>|x| x * 2</code>.<br>✅ <strong>Closure types</strong>: <code>Fn</code> (read‑only), <code>FnMut</code> (modify), <code>FnOnce</code> (consume).<br>✅ <strong><code>move</code></strong>: transfer ownership of captured variables into the Closure.<br>✅ <strong><code>filter_map</code></strong>: clever combination of filtering and transformation.<br>✅ <strong>These tools allow you to write short, fast, human‑readable code – like a real wizard!</strong> 🧙</p>
+<blockquote>
+<p>🧠 <strong>Sometimes things are hard, and that’s okay!</strong><br>Closures and chained Iterators might feel confusing at first. Even professional programmers sometimes try several times to build a complex chain. Don’t worry – with practice, these tools will become natural and writing beautiful code will become a joy.</p>
+</blockquote>
+<h4 id="1362-challenge-implementing-iterator-for-fibonacci"><a class="header" href="#1362-challenge-implementing-iterator-for-fibonacci">13.6.2. Challenge: Implementing Iterator for Fibonacci</a></h4>
+<p>Create a <code>struct</code> called <code>Fibonacci</code> that implements the <code>Iterator</code> trait. Each time <code>next</code> is called, it should return the next number in the Fibonacci sequence (0, 1, 1, 2, 3, 5, 8, …). Then use <code>.take(10)</code> to print the first ten numbers.</p>
+<p>💡 <strong>Sample answer:</strong></p>
+<pre class="playground"><code class="language-rust">struct Fibonacci {
+    current: u64,
+    next: u64,
+}
+
+impl Fibonacci {
+    fn new() -&gt; Self {
+        Fibonacci { current: 0, next: 1 }
+    }
+}
+
+impl Iterator for Fibonacci {
+    type Item = u64;
+
+    fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt; {
+        let new_next = self.current + self.next;
+        let result = self.current;
+        self.current = self.next;
+        self.next = new_next;
+        Some(result)
+    }
+}
+
+fn main() {
+    let fib = Fibonacci::new();
+    for num in fib.take(10) {
+        println!("{}", num);
+    }
+}</code></pre>
+<p><code>take(10)</code> is another Adapter that returns only the first 10 elements of an Iterator. The combination of <code>struct + Trait + Adapter</code> is where Rust truly shines! 🌟</p>
+<p>Now you know how to write cleaner, shorter, and more professional code using Iterators and Closures. In the next chapter we’ll visit the <strong>big Rust supermarket (Crates.io)</strong> and learn how to use ready‑made libraries to build even more powerful programs. 📦🚀</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-12.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter-14.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-12.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter-14.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 20: FerrisNet: The Secret Friend Network - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="land-of-rust-ferris-the-space-crabs-adventures"><a class="header" href="#land-of-rust-ferris-the-space-crabs-adventures">Land of Rust: Ferris the Space Crab’s Adventures</a></h1>
+<h2 id="chapter-20-ferrisnet--the-friends-secret-network-final-network-project"><a class="header" href="#chapter-20-ferrisnet--the-friends-secret-network-final-network-project">Chapter 20: FerrisNet – The Friends’ Secret Network (Final Network Project)</a></h2>
+<h3 id="-chapter-index"><a class="header" href="#-chapter-index">📑 Chapter Index</a></h3>
+<p><a href="#201-how-can-ferris-talk-to-his-friend-on-another-computer-sockets">20.1. How Can Ferris Talk to His Friend on Another Computer? (Sockets)</a><br><a href="#2011-story-space-telephones">20.1.1. Story: Space Telephones</a><br><a href="#2012-basic-concepts-ip-port-client-and-server">20.1.2. Basic Concepts: IP, Port, Client and Server</a><br><a href="#2013-the-networking-toolbox-stdnet">20.1.3. The Networking Toolbox: <code>std::net</code></a><br><a href="#202-building-a-simple-messenger-ferris-messenger">20.2. Building a Simple Messenger (Ferris Messenger)</a><br><a href="#2021-server-listening-on-a-port">20.2.1. Server: Listening on a Port</a><br><a href="#2022-client-connecting-and-sending-a-message">20.2.2. Client: Connecting and Sending a Message</a><br><a href="#2023-exercise-sending-a-reply-from-the-server">20.2.3. Exercise: Sending a Reply from the Server</a><br><a href="#203-improving-the-messenger-two-way-chat">20.3. Improving the Messenger: Two‑Way Chat</a><br><a href="#2031-the-problem-taking-turns-is-boring">20.3.1. The Problem: Taking Turns Is Boring</a><br><a href="#2032-using-two-threads-to-read-and-write">20.3.2. Using Two Threads to Read and Write</a><br><a href="#204-final-project-ferrisnet-group-chat">20.4. Final Project: FerrisNet Group Chat</a><br><a href="#2041-idea-broadcasting-messages-to-everyone">20.4.1. Idea: Broadcasting Messages to Everyone</a><br><a href="#2042-a-shared-list-of-guests">20.4.2. A Shared List of Guests</a><br><a href="#2043-full-group-chat-server-code">20.4.3. Full Group Chat Server Code</a><br><a href="#2044-group-chat-client">20.4.4. Group Chat Client</a><br><a href="#2045-challenge-adding-a-username">20.4.5. Challenge: Adding a Username</a><br><a href="#205-farewell-and-the-road-ahead">20.5. Farewell and the Road Ahead</a><br><a href="#2051-congratulations-you-are-a-true-rustacean">20.5.1. Congratulations! You Are a True Rustacean</a><br><a href="#2052-next-steps">20.5.2. Next Steps</a><br><a href="#2053-ferriss-final-words">20.5.3. Ferris’s Final Words</a></p>
+<hr>
+<h3 id="201-how-can-ferris-talk-to-his-friend-on-another-computer-sockets"><a class="header" href="#201-how-can-ferris-talk-to-his-friend-on-another-computer-sockets">20.1. How Can Ferris Talk to His Friend on Another Computer? (Sockets)</a></h3>
+<h4 id="2011-story-space-telephones"><a class="header" href="#2011-story-space-telephones">20.1.1. Story: Space Telephones</a></h4>
+<p>Ferris misses his friend Bill, who lives in the spaceship next door. But the metal walls of the ships are too thick – sound cannot pass through them. Ferris has a great idea: “Why not use computers to talk?”<br>Computers can send data to each other through wires or wireless waves. But how do they know which program the message is for? A web browser? A game? A chat program? That’s where addresses and ports come in! 📡✨<br><strong>This is your final step toward becoming a computer wizard – building a connection between two computers!</strong> 🧙‍♂️</p>
+<blockquote>
+<p>👨‍👩‍👧 <strong>Note for parents and teachers</strong><br>This project combines networking, concurrency, and error handling, making it a great achievement for the end of the book. If the child struggles with the group chat project, you can start with the simple (single client) version first and then move on to the multi‑client version. The official Rust book does not have a dedicated chapter on networking, but the <code>std::net</code> documentation is a good resource:<br><a href="https://doc.rust-lang.org/std/net/index.html">doc.rust-lang.org/std/net/index.html</a></p>
+</blockquote>
+<h4 id="2012-basic-concepts-ip-port-client-and-server"><a class="header" href="#2012-basic-concepts-ip-port-client-and-server">20.1.2. Basic Concepts: IP, Port, Client and Server</a></h4>
+<p>To understand networking, you only need to know three things:
+🔹 <strong>IP address:</strong> like a house address. Every computer on a network has a unique number. <code>127.0.0.1</code> is a special address that always points to “your own computer” (it’s called <code>localhost</code>).
+🔹 <strong>Port:</strong> like an apartment number. A single computer can run several network programs at the same time. Each program listens on a specific port. We will use port <code>7878</code>.
+🔹 <strong>Server and Client:</strong> The server is like a hotel receptionist – it waits for someone to come. The client is like a guest – it knocks and connects.</p>
+<p><img src="../assets/images/20.1.png" alt="[Illustration: Cartoon illustration of two friendly space crabs in separate spaceship cabins, talking via glowing walkie-talkies. Between them, a floating holographic map shows an IP address “127.0.0.1” and a port number “7878” connected by a dotted light beam. Style: vibrant children’s book, playful tech metaphor, soft lighting, 16:9.]"></p>
+<h4 id="2013-the-networking-toolbox-stdnet"><a class="header" href="#2013-the-networking-toolbox-stdnet">20.1.3. The Networking Toolbox: <code>std::net</code></a></h4>
+<p>The good news is that Rust has a ready‑made module called <code>std::net</code> that contains all the necessary networking tools. In this chapter we will use the <strong>TCP</strong> protocol. TCP is like a reliable phone call: first a connection is established, then messages are sent and received in order, without getting lost. 📞</p>
+<hr>
+<h3 id="202-building-a-simple-messenger-ferris-messenger"><a class="header" href="#202-building-a-simple-messenger-ferris-messenger">20.2. Building a Simple Messenger (Ferris Messenger)</a></h3>
+<h4 id="2021-server-listening-on-a-port"><a class="header" href="#2021-server-listening-on-a-port">20.2.1. Server: Listening on a Port</a></h4>
+<p>First, let’s create a new project. Our server will act like a guard standing at the door, waiting for someone to arrive:</p>
+<pre class="playground"><code class="language-rust">use std::io::{Read, Write};
+use std::net::TcpListener;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    // 1. Create a listener on localhost, port 7878
+    let listener = TcpListener::bind("127.0.0.1:7878")?;
+    println!("🦀 Ferris server is listening on port 7878...");
+
+    // 2. Wait for someone to connect
+    for stream in listener.incoming() {
+        let mut stream = stream?;
+        println!("✅ A client connected!");
+
+        // 3. Create an empty buffer (1024 bytes) to read the message
+        let mut buffer = [0; 1024];
+        let n = stream.read(&amp;mut buffer)?;
+
+        // 4. Convert the bytes to text
+        let message = String::from_utf8_lossy(&amp;buffer[..n]);
+        println!("📩 Message received: {}", message);
+
+        // 5. Send back a reply
+        let response = "Got your message! 👋";
+        stream.write_all(response.as_bytes())?;
+    }
+    Ok(())
+}</code></pre>
+<p>🔹 <code>TcpListener::bind</code> creates a listening port.<br>🔹 <code>listener.incoming()</code> returns an iterator of incoming connections.<br>🔹 <code>stream.read</code> reads data and <code>write_all</code> sends a reply.</p>
+<h4 id="2022-client-connecting-and-sending-a-message"><a class="header" href="#2022-client-connecting-and-sending-a-message">20.2.2. Client: Connecting and Sending a Message</a></h4>
+<p>Now let’s create another file called <code>client.rs</code> that acts like the guest knocking on the door:</p>
+<pre class="playground"><code class="language-rust">use std::io::{Read, Write};
+use std::net::TcpStream;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    // 1. Connect to the server
+    let mut stream = TcpStream::connect("127.0.0.1:7878")?;
+    println!("🔗 Connected to the server!");
+
+    // 2. Send a message
+    let msg = "Hello Ferris! This is a message from Bill.";
+    stream.write_all(msg.as_bytes())?;
+    println!("📤 Message sent: {}", msg);
+
+    // 3. Wait for a reply
+    let mut buffer = [0; 1024];
+    let n = stream.read(&amp;mut buffer)?;
+    let response = String::from_utf8_lossy(&amp;buffer[..n]);
+    println!("📩 Server reply: {}", response);
+
+    Ok(())
+}</code></pre>
+<p>If you run the server in one terminal and the client in another terminal, you will see that the messages are successfully exchanged! 🎉</p>
+<h4 id="2023-exercise-sending-a-reply-from-the-server"><a class="header" href="#2023-exercise-sending-a-reply-from-the-server">20.2.3. Exercise: Sending a Reply from the Server</a></h4>
+<p>Modify the server so that instead of sending a fixed text, it sends back the same client message in uppercase (<code>to_uppercase()</code>).<br>💡 <strong>Hint:</strong> Simply change the <code>response</code> line to <code>let response = message.to_uppercase();</code>.</p>
+<p><img src="../assets/images/20.2.png" alt="[Illustration: Split-screen educational graphic. Left: a cartoon server rack with a glowing “Listening…” sign. Right: a friendly laptop with a “Connecting…” progress bar. A glowing message bubble travels between them. Ferris watches with a checklist, smiling. Style: clean vector illustration, bright, educational metaphor, 16:9.]"></p>
+<hr>
+<h3 id="203-improving-the-messenger-twoway-chat"><a class="header" href="#203-improving-the-messenger-twoway-chat">20.3. Improving the Messenger: Two‑Way Chat</a></h3>
+<h4 id="2031-the-problem-taking-turns-is-boring"><a class="header" href="#2031-the-problem-taking-turns-is-boring">20.3.1. The Problem: Taking Turns Is Boring</a></h4>
+<p>So far our communication is like a one‑way SMS. Real chat must be two‑way! Both sides must be able to type and see the other person’s messages at the same time.</p>
+<h4 id="2032-using-two-threads-to-read-and-write"><a class="header" href="#2032-using-two-threads-to-read-and-write">20.3.2. Using Two Threads to Read and Write</a></h4>
+<p>We solve this problem by using two <strong>Threads</strong> (remember Chapter 16?):
+🔸 <strong>Thread 1:</strong> constantly reads from the user’s keyboard and sends messages to the server.<br>🔸 <strong>Thread 2:</strong> constantly reads from the server and prints messages on the screen.</p>
+<p>This way nobody has to wait for their turn! ⚡</p>
+<pre class="playground"><code class="language-rust">use std::io::{self, BufRead, BufReader, Write};
+use std::net::TcpStream;
+use std::thread;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let mut stream = TcpStream::connect("127.0.0.1:7878")?;
+    println!("🔗 Connected to Ferris’s chat room! (type ‘quit’ to exit)");
+
+    // Make a clone of the socket for the receiving thread
+    let mut stream_clone = stream.try_clone()?;
+
+    // Receiver thread: listens to the server
+    let receiver = thread::spawn(move || {
+        let reader = BufReader::new(&amp;mut stream_clone);
+        for line in reader.lines() {
+            match line {
+                Ok(msg) =&gt; println!("📩 {}", msg),
+                Err(_) =&gt; {
+                    println!("❌ Connection to the server was lost.");
+                    break;
+                }
+            }
+        }
+    });
+
+    // Main thread (sender): listens to the keyboard
+    let stdin = io::stdin();
+    for line in stdin.lock().lines() {
+        let line = line?;
+        if line.trim() == "quit" { break; }
+        stream.write_all(line.as_bytes())?;
+        stream.write_all(b"\n")?;
+    }
+
+    receiver.join().unwrap();
+    println!("👋 Goodbye!");
+    Ok(())
+}</code></pre>
+<p>📌 <code>stream.try_clone()</code> is very important! Sockets are like keys. Two threads cannot use the same socket at the same time unless you make a copy of it.</p>
+<p><img src="../assets/images/20.3.png" alt="[Illustration: Cartoon scene showing a split pathway. Left side: a user typing on a keyboard, messages flowing UP to a server. Right side: messages flowing DOWN from the server to a screen. Two glowing threads labeled “Thread 1” and “Thread 2” weave together smoothly. Ferris stands in the middle conducting traffic like an orchestra leader. Style: dynamic, educational children’s book, bright colors, 16:9.]"></p>
+<hr>
+<h3 id="204-final-project-ferrisnet-group-chat"><a class="header" href="#204-final-project-ferrisnet-group-chat">20.4. Final Project: FerrisNet Group Chat</a></h3>
+<h4 id="2041-idea-broadcasting-messages-to-everyone"><a class="header" href="#2041-idea-broadcasting-messages-to-everyone">20.4.1. Idea: Broadcasting Messages to Everyone</a></h4>
+<p>Now we want to build a real chat room where whenever someone connects, their message is sent to <strong>everyone</strong> else. It’s just like a classroom – when one person speaks, everyone hears them! 🗣️🌍</p>
+<h4 id="2042-a-shared-list-of-guests"><a class="header" href="#2042-a-shared-list-of-guests">20.4.2. A Shared List of Guests</a></h4>
+<p>The server must keep a list of all connected clients. When a message arrives, the server copies it and sends it to every client on the list.<br>Because several threads will access this list at the same time, we must use <code>Arc</code> (for sharing ownership) and <code>Mutex</code> (to prevent write conflicts):</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>type Clients = Arc&lt;Mutex&lt;Vec&lt;TcpStream&gt;&gt;&gt;;
+<span class="boring">}</span></code></pre>
+<p>This means: “a safe, shared list of sockets”.</p>
+<h4 id="2043-full-group-chat-server-code"><a class="header" href="#2043-full-group-chat-server-code">20.4.3. Full Group Chat Server Code</a></h4>
+<pre class="playground"><code class="language-rust">use std::io::{BufRead, BufReader, Write};
+use std::net::{TcpListener, TcpStream};
+use std::sync::{Arc, Mutex};
+use std::thread;
+
+type Clients = Arc&lt;Mutex&lt;Vec&lt;TcpStream&gt;&gt;&gt;;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let listener = TcpListener::bind("127.0.0.1:7878")?;
+    println!("🦀 Group chat server is running on port 7878!");
+
+    let clients: Clients = Arc::new(Mutex::new(Vec::new()));
+
+    for stream in listener.incoming() {
+        let mut stream = stream?;
+        println!("✅ A new user connected!");
+
+        // Add the client to the list
+        clients.lock().unwrap().push(stream.try_clone()?);
+        let clients_clone = Arc::clone(&amp;clients);
+
+        // Spawn a new thread for each user
+        thread::spawn(move || {
+            handle_client(stream, clients_clone);
+        });
+    }
+    Ok(())
+}
+
+fn handle_client(mut stream: TcpStream, clients: Clients) {
+    let reader = BufReader::new(&amp;mut stream);
+    
+    for line in reader.lines() {
+        match line {
+            Ok(msg) =&gt; {
+                let formatted = format!("[User]: {}\n", msg);
+                println!("📨 {}", formatted.trim());
+                
+                // Broadcast the message to everyone
+                let mut clients_guard = clients.lock().unwrap();
+                for client in clients_guard.iter_mut() {
+                    // If writing fails, ignore it so the server doesn’t crash
+                    let _ = client.write_all(formatted.as_bytes());
+                }
+            }
+            Err(_) =&gt; break, // user disconnected
+        }
+    }
+    println!("❌ A user left the chat.");
+}</code></pre>
+<p>💡 <strong>Professional tip:</strong> <code>let _ = client.write_all(...)</code> means “if writing fails (for example, that client left), ignore the error and continue”. This is very important for real‑world servers!</p>
+<h4 id="2044-group-chat-client"><a class="header" href="#2044-group-chat-client">20.4.4. Group Chat Client</a></h4>
+<p>The client is the same two‑way code from the previous section. To run it, create two separate binary files in a single project or two separate projects. You can define two binaries in <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">[[bin]]
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
+</code></pre>
+<p>Then run <code>cargo run --bin server</code> and <code>cargo run --bin client</code>. Open several terminals, start the server, and run <code>cargo run --bin client</code> multiple times. Now anything you type in one terminal will appear in all the others! 🎊</p>
+<h4 id="2045-challenge-adding-a-username"><a class="header" href="#2045-challenge-adding-a-username">20.4.5. Challenge: Adding a Username</a></h4>
+<p>Right now every message starts with <code>[User]</code>. Can you change the program so that it first asks for a username, and the server shows that username instead?<br>💡 <strong>Hint:</strong> The first message the client sends could be its name. The server could read it and use it for all later messages. Or, even simpler, the client could add <code>[username]: </code> to every message before sending it.</p>
+<p><img src="../assets/images/20.4.png" alt="[Illustration: A cozy cartoon chat room with floating speech bubbles connecting three different laptops. Each screen shows a friendly avatar and messages flowing in real-time. In the center, a glowing server hub labeled “Arc&lt;Mutex&lt;Vec&gt;&gt;” safely routes messages. Ferris sits at a control desk giving a thumbs up. Style: warm, inviting children’s book illustration, clear network metaphor, 16:9.]"></p>
+<hr>
+<h3 id="205-farewell-and-the-road-ahead"><a class="header" href="#205-farewell-and-the-road-ahead">20.5. Farewell and the Road Ahead</a></h3>
+<h4 id="2051-congratulations-you-are-a-true-rustacean"><a class="header" href="#2051-congratulations-you-are-a-true-rustacean">20.5.1. Congratulations! You Are a True Rustacean</a></h4>
+<p>Twenty chapters ago, you didn’t know what <code>fn main()</code> meant. Today, you have built a simple social network, understood concurrency, worked with smart pointers, and applied advanced concepts like Traits and Generics. You are now officially a <strong>Rustacean</strong>! 🦀🎉<br><strong>You have gone from a beginner who wrote “Hello World” to a wizard who can connect computers together. That is real power!</strong> 🧙✨</p>
+<blockquote>
+<p>🧠 <strong>Sometimes things are hard, and that’s okay!</strong><br>If you run into trouble while running the group chat project (for example, messages don’t reach everyone), don’t worry. Debugging network programs can be a little tricky. Go step by step: first make sure the server and client work on <code>127.0.0.1</code> alone, then move on to multiple clients. Every problem you solve is a big step forward.</p>
+</blockquote>
+<h4 id="2052-next-steps"><a class="header" href="#2052-next-steps">20.5.2. Next Steps</a></h4>
+<p>Learning Rust does not end here. This is only the beginning! Try these things after the book:
+📖 <strong>The official Rust book:</strong> read “The Rust Programming Language” online (it’s free!).<br>🧩 <strong>Daily exercises:</strong> websites like <code>rustlings</code> and <code>exercism</code> are full of small, fun challenges.<br>🌐 <strong>The Rust community:</strong> join the official Rust forums or Discord. They are full of kind people who love to help.<br>🛠️ <strong>A personal project:</strong> the best way to learn is to build something new! Make a simple game, a command‑line tool, or a small website using a framework like <code>Axum</code>.<br>⚡ <strong>Async programming:</strong> learn about <code>async/await</code> and the <code>tokio</code> library to write super‑fast network programs.</p>
+<h4 id="2053-ferriss-final-words"><a class="header" href="#2053-ferriss-final-words">20.5.3. Ferris’s Final Words</a></h4>
+<blockquote>
+<p><em>“My friend, you are amazing! You have mastered the hardest concepts and shown that with a little patience and practice, anything is possible. I, Ferris, am proud of you. Now your spaceship is ready to fly into the far galaxies of programming. 🚀</em><br><em>Remember: the compiler is your friend, not your enemy. Making mistakes means you are learning. The simplest code that works is better than the most complicated code that doesn’t.</em><br><em>Go ahead, code, build, break, and build again. The world of software needs people like you. Goodbye, dear Rustacean. Until the next adventure… 🦀💙”</em></p>
+</blockquote>
+<p><img src="../assets/images/20.5.png" alt="[Illustration: Ferris the crab standing proudly on a small wooden crate labeled “Chapter 20 Complete”. He holds a glowing Rust gear in one claw and waves with the other. Behind him, a starry galaxy forms the shape of a heart. Floating text: “Thank You for Coding!”. Style: emotional, celebratory children’s book illustration, warm sunset lighting, 16:9.]"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-19.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="appendix-a-lifetimes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-19.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="appendix-a-lifetimes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

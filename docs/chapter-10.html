@@ -1,0 +1,641 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 10: Toy Factory - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="-the-land-of-rust-ferris-the-crabs-space-adventures"><a class="header" href="#-the-land-of-rust-ferris-the-crabs-space-adventures">🦀 The Land of Rust: Ferris the Crab’s Space Adventures</a></h1>
+<h2 id="chapter-10-the-toy-factory-generics--traits"><a class="header" href="#chapter-10-the-toy-factory-generics--traits">Chapter 10: The Toy Factory (Generics &amp; Traits)</a></h2>
+<blockquote>
+<p>📋 <em>Chapter Outline:</em></p>
+<ul>
+<li><a href="#101-play-doh-molds-generics">10.1. Play-Doh Molds (Generics)</a></li>
+<li><a href="#102-toy-certificates-traits">10.2. Toy Certificates (Traits)</a></li>
+<li><a href="#103-expiration-date-stickers-lifetimes">10.3. Expiration Date Stickers (Lifetimes)</a></li>
+<li><a href="#104-project-shape-library">10.4. Project: Shape Library</a></li>
+<li><a href="#105-summary--challenge">10.5. Summary &amp; Challenge</a></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="101-play-doh-molds-generics"><a class="header" href="#101-play-doh-molds-generics">10.1. Play-Doh Molds (Generics)</a></h2>
+<h3 id="1011-the-story-star--heart-molds"><a class="header" href="#1011-the-story-star--heart-molds">10.1.1. The Story: Star &amp; Heart Molds</a></h3>
+<p>In Ferris’s toy factory, he has a special plastic mold shaped like a star. 🌟 This mold only makes one shape, but Ferris can pour red clay, blue clay, green clay, or even glittery clay into it. The result is always a star, but the material and color change.</p>
+<p>In programming, we do the exact same thing! We call it <strong>Generics</strong>. It means writing one piece of code that works with many different types of data, so we don’t have to copy-paste the same code for numbers, text, or other things.</p>
+<h3 id="1012-the-problem-duplicate-code-for-different-types"><a class="header" href="#1012-the-problem-duplicate-code-for-different-types">10.1.2. The Problem: Duplicate Code for Different Types</a></h3>
+<p>Imagine we want to write a function that finds the largest number in a list. If we write it only for <code>i32</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn largest_i32(list: &amp;[i32]) -&gt; i32 {
+    let mut largest = list[0];
+    for &amp;item in list {
+        if item &gt; largest { largest = item; }
+    }
+    largest
+}
+<span class="boring">}</span></code></pre>
+<p>But what if we want the same thing for <code>f64</code> (decimals) or <code>char</code> (letters)? We’d have to copy the whole function and just change the type! That’s slow, messy, and full of bugs. 🥲</p>
+<h3 id="1013-introducing-generics-with-t"><a class="header" href="#1013-introducing-generics-with-t">10.1.3. Introducing Generics with <code>&lt;T&gt;</code></a></h3>
+<p>Instead of copying code, we use a placeholder letter (usually <code>T</code> for <em>Type</em>). <code>T</code> acts like a blank space on a form that the compiler fills in later with the exact type we use:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn largest&lt;T&gt;(list: &amp;[T]) -&gt; T {
+    let mut largest = list[0];
+    for &amp;item in list {
+        if item &gt; largest { largest = item; } // ❌ This gives an error! Why?
+    }
+    largest
+}
+<span class="boring">}</span></code></pre>
+<p>⚠️ <strong>Important Note</strong>: The compiler complains here because it doesn’t know if <code>T</code> even supports comparison (<code>&gt;</code>)! To fix this, we need <strong>Traits</strong> (which we’ll learn next). For now, let’s look at simpler generic examples that don’t need comparisons.</p>
+<h3 id="1014-generics-in-functions"><a class="header" href="#1014-generics-in-functions">10.1.4. Generics in Functions</a></h3>
+<p>A simple function that takes anything and gives it right back:</p>
+<pre class="playground"><code class="language-rust">fn identity&lt;T&gt;(value: T) -&gt; T {
+    value
+}
+
+fn main() {
+    let x = identity(42);       // T becomes i32 here
+    let y = identity("Hello!"); // T becomes &amp;str here
+    println!("{} and {}", x, y);
+}</code></pre>
+<p>Rust automatically guesses what <code>T</code> should be. We call this <strong>Type Inference</strong>. 🧠</p>
+<h3 id="1015-generics-in-structs"><a class="header" href="#1015-generics-in-structs">10.1.5. Generics in Structs</a></h3>
+<p>We can build structures where the fields aren’t fixed to one type:</p>
+<pre class="playground"><code class="language-rust">struct Point&lt;T&gt; {
+    x: T,
+    y: T,
+}
+
+fn main() {
+    let int_point = Point { x: 5, y: 10 };       // Point&lt;i32&gt;
+    let float_point = Point { x: 1.5, y: 3.2 };  // Point&lt;f64&gt;
+}</code></pre>
+<p>Notice that <code>x</code> and <code>y</code> must be the <em>same</em> type. If we want mixed types, we use multiple generics.</p>
+<h3 id="1016-multiple-generic-types"><a class="header" href="#1016-multiple-generic-types">10.1.6. Multiple Generic Types</a></h3>
+<pre class="playground"><code class="language-rust">struct Pair&lt;T, U&gt; {
+    first: T,
+    second: U,
+}
+
+fn main() {
+    let pair = Pair { first: 42, second: "hello" }; // Pair&lt;i32, &amp;str&gt;
+}</code></pre>
+<h3 id="1017-generics-in-methods"><a class="header" href="#1017-generics-in-methods">10.1.7. Generics in Methods</a></h3>
+<p>When writing methods for a generic struct, we must declare <code>&lt;T&gt;</code> before <code>impl</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl&lt;T&gt; Point&lt;T&gt; {
+    fn x(&amp;self) -&gt; &amp;T {
+        &amp;self.x
+    }
+}
+<span class="boring">}</span></code></pre>
+<p>We can even write a method that <em>only</em> works for a specific type of <code>T</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Point&lt;f64&gt; {
+    fn distance_from_origin(&amp;self) -&gt; f64 {
+        (self.x * self.x + self.y * self.y).sqrt()
+    }
+}
+<span class="boring">}</span></code></pre>
+<p>Now <code>distance_from_origin</code> only works on decimal <code>Point</code>s, not integer ones! How smart is that? 📐</p>
+<h3 id="1018-exercise-containert"><a class="header" href="#1018-exercise-containert">10.1.8. Exercise: <code>Container&lt;T&gt;</code></a></h3>
+<p>Create a generic box that holds anything, and give it a <code>get()</code> method to show what’s inside.
+💡 <em>Sample Answer</em>:</p>
+<pre class="playground"><code class="language-rust">struct Container&lt;T&gt; {
+    item: T,
+}
+
+impl&lt;T&gt; Container&lt;T&gt; {
+    fn new(item: T) -&gt; Self {
+        Container { item }
+    }
+    fn get(&amp;self) -&gt; &amp;T {
+        &amp;self.item
+    }
+}
+
+fn main() {
+    let c1 = Container::new(42);
+    let c2 = Container::new(String::from("Ferris"));
+    println!("{} and {}", c1.get(), c2.get());
+}</code></pre>
+<p><img src="../assets/images/10.1.png" alt="[Illustration: A cartoon workbench with a flexible clay mold labeled &lt;T&gt;. Around it are colorful play-doh shapes (numbers, letters, emojis) being pressed into the mold, each emerging as a perfectly formed generic toy. Ferris the crab stands beside it holding a blueprint. Style: playful, educational children’s book illustration, bright colors, clear metaphor.]"></p>
+<hr>
+<h2 id="102-toy-certificates-traits"><a class="header" href="#102-toy-certificates-traits">10.2. Toy Certificates (Traits)</a></h2>
+<h3 id="1021-the-story-makes-sound--flies-certificates"><a class="header" href="#1021-the-story-makes-sound--flies-certificates">10.2.1. The Story: “Makes Sound” &amp; “Flies” Certificates</a></h3>
+<p>In Ferris’s factory, every toy comes with a set of certificates. Some have a “Makes Sound” (<code>MakeSound</code>) certificate. Others have a “Flies” (<code>Fly</code>) certificate. These certificates don’t tell us what the toy <em>looks like</em>; they tell us what it <em>can do</em>. In Rust, we call these certificates <strong>Traits</strong>. 🏅</p>
+<h3 id="1022-defining-a-trait"><a class="header" href="#1022-defining-a-trait">10.2.2. Defining a Trait</a></h3>
+<p>A trait is just a list of behaviors a type must support:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait MakeSound {
+    fn make_sound(&amp;self);
+}
+<span class="boring">}</span></code></pre>
+<p>We don’t write the function body here. We just say: <em>“Whoever claims this certificate must have this method.”</em></p>
+<h3 id="1023-implementing-a-trait-for-a-type"><a class="header" href="#1023-implementing-a-trait-for-a-type">10.2.3. Implementing a Trait for a Type</a></h3>
+<p>With <code>impl Trait for Type</code>, we give a struct or enum its certificate:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Dog { name: String }
+
+impl MakeSound for Dog {
+    fn make_sound(&amp;self) {
+        println!("{} says: Woof! Woof!", self.name);
+    }
+}
+
+struct Car;
+impl MakeSound for Car {
+    fn make_sound(&amp;self) {
+        println!("Honk! Honk!");
+    }
+}
+<span class="boring">}</span></code></pre>
+<p>Now <code>Dog</code> and <code>Car</code> both have the <code>MakeSound</code> trait, but they each make their own unique sound!</p>
+<h3 id="1024-using-trait-as-a-parameter-trait-bound"><a class="header" href="#1024-using-trait-as-a-parameter-trait-bound">10.2.4. Using Trait as a Parameter (Trait Bound)</a></h3>
+<p>We can write a function that says: <em>“I don’t care what exact type it is, as long as it has this trait!”</em></p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn notify(item: &amp;impl MakeSound) {
+    item.make_sound();
+}
+<span class="boring">}</span></code></pre>
+<p>Or the classic syntax:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn notify&lt;T: MakeSound&gt;(item: &amp;T) {
+    item.make_sound();
+}
+<span class="boring">}</span></code></pre>
+<p>Both do the same thing. The second is better when you have multiple generic types and want to list their rules separately.</p>
+<h3 id="1025-multiple-traits-with-"><a class="header" href="#1025-multiple-traits-with-">10.2.5. Multiple Traits with <code>+</code></a></h3>
+<p>If a type must have <em>two</em> certificates at once, we use <code>+</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn fly_and_sound(item: &amp;(impl MakeSound + Fly)) {
+    item.make_sound();
+    item.fly();
+}
+<span class="boring">}</span></code></pre>
+<h3 id="1026-returning-with-impl-trait"><a class="header" href="#1026-returning-with-impl-trait">10.2.6. Returning with <code>impl Trait</code></a></h3>
+<p>We can write a function that returns an unknown type, but promises it has a specific trait:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn get_sound_maker() -&gt; impl MakeSound {
+    Dog { name: String::from("Bella") }
+}
+<span class="boring">}</span></code></pre>
+<p>This is super useful when the real return type is complicated, but the user only needs to know it “makes a sound”. 🔊</p>
+<h3 id="1027-built-in-traits-debug-clone-partialeq"><a class="header" href="#1027-built-in-traits-debug-clone-partialeq">10.2.7. Built-in Traits (<code>Debug</code>, <code>Clone</code>, <code>PartialEq</code>)</a></h3>
+<p>Rust comes with ready-made traits you can add with a single <code>#[derive(...)]</code> line:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Trait</th><th>Purpose</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Debug</code></td><td>Pretty printing with <code>{:?}</code></td><td><code>println!("{:?}", obj);</code></td></tr>
+<tr><td><code>Clone</code></td><td>Explicit copying with <code>.clone()</code></td><td><code>let copy = original.clone();</code></td></tr>
+<tr><td><code>Copy</code></td><td>Automatic copying (for simple types)</td><td><code>let x = 5; let y = x;</code></td></tr>
+<tr><td><code>PartialEq</code></td><td>Comparison with <code>==</code> and <code>!=</code></td><td><code>if a == b { ... }</code></td></tr>
+</tbody>
+</table>
+</div>
+<p>Example:</p>
+<pre class="playground"><code class="language-rust">#[derive(Debug, Clone, PartialEq)]
+struct Monster { name: String, power: u32 }
+
+fn main() {
+    let m1 = Monster { name: String::from("Dodo"), power: 100 };
+    let m2 = m1.clone();
+    println!("{:?}", m1);               // Pretty print!
+    println!("Are they equal? {}", m1 == m2); // true
+}</code></pre>
+<h3 id="1028-exercise-area-trait"><a class="header" href="#1028-exercise-area-trait">10.2.8. Exercise: <code>Area</code> Trait</a></h3>
+<p>Create an <code>Area</code> trait that calculates surface area. Implement it for two different shapes and print their areas.
+💡 <em>Sample Answer</em>:</p>
+<pre class="playground"><code class="language-rust">trait Area {
+    fn area(&amp;self) -&gt; f64;
+}
+
+struct Circle { radius: f64 }
+impl Area for Circle {
+    fn area(&amp;self) -&gt; f64 {
+        std::f64::consts::PI * self.radius * self.radius
+    }
+}
+
+struct Rectangle { width: f64, height: f64 }
+impl Area for Rectangle {
+    fn area(&amp;self) -&gt; f64 { self.width * self.height }
+}
+
+fn main() {
+    let c = Circle { radius: 5.0 };
+    let r = Rectangle { width: 4.0, height: 6.0 };
+    println!("Circle area: {:.2}", c.area());
+    println!("Rectangle area: {:.2}", r.area());
+}</code></pre>
+<p><img src="../assets/images/10.2.png" alt="[Illustration: A cartoon quality-control desk. A friendly robot inspector stamps “CERTIFIED” badges labeled “MakeSound”, “Fly”, and “Debug” onto different toys (a dog, a car, a robot). Ferris watches proudly holding a checklist. Style: clean vector illustration, educational metaphor, bright colors.]"></p>
+<hr>
+<h2 id="103-expiration-date-stickers-lifetimes--brief-intro"><a class="header" href="#103-expiration-date-stickers-lifetimes--brief-intro">10.3. Expiration Date Stickers (Lifetimes – Brief Intro)</a></h2>
+<h3 id="1031-the-story-yogurt-expiration-dates"><a class="header" href="#1031-the-story-yogurt-expiration-dates">10.3.1. The Story: Yogurt Expiration Dates</a></h3>
+<p>When you buy yogurt, it has an expiration date. It’s safe to eat until that date, but afterward, it goes bad. In Rust, when we create a reference, it also has an “expiration date” called a <strong>Lifetime</strong> (<code>'a</code>). It tells the compiler how long that reference stays valid. ⏳</p>
+<h3 id="1032-the-problem-reference-to-dead-data"><a class="header" href="#1032-the-problem-reference-to-dead-data">10.3.2. The Problem: Reference to Dead Data</a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let r;
+{
+    let x = 5;
+    r = &amp;x;
+} // x dies here and is cleaned up!
+println!("{}", r); // ❌ Error! r points to empty space.
+<span class="boring">}</span></code></pre>
+<p>Rust sees this and refuses to compile. This is exactly why Rust is one of the safest languages in the world! 🛡️</p>
+<h3 id="1033-writing-lifetime-with-a"><a class="header" href="#1033-writing-lifetime-with-a">10.3.3. Writing Lifetime with <code>'a</code></a></h3>
+<p>Sometimes the compiler gets confused about which input a function’s output belongs to. We help it with <code>'a</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn longest&lt;'a&gt;(x: &amp;'a str, y: &amp;'a str) -&gt; &amp;'a str {
+    if x.len() &gt; y.len() { x } else { y }
+}
+<span class="boring">}</span></code></pre>
+<p>This means: <em>“The returned reference will live exactly as long as the shorter-lived input.”</em> Now the compiler knows it won’t point to dead data.</p>
+<h3 id="1034-lifetime-elision-rusts-smart-guessing"><a class="header" href="#1034-lifetime-elision-rusts-smart-guessing">10.3.4. Lifetime Elision (Rust’s Smart Guessing)</a></h3>
+<p>🎉 <strong>Great news</strong>: In 95% of cases, you don’t need to write <code>'a</code>! Rust has simple rules to guess it automatically:</p>
+<ol>
+<li>Every input reference gets its own hidden lifetime.</li>
+<li>If there’s only <strong>one</strong> input reference, the output gets that same lifetime.</li>
+<li>If there are multiple inputs and one is <code>&amp;self</code> or <code>&amp;mut self</code>, the output gets <code>self</code>’s lifetime.</li>
+</ol>
+<p>So functions like <code>fn first_word(s: &amp;str) -&gt; &amp;str</code> work perfectly without explicit <code>'a</code>! ✨</p>
+<h3 id="1035-lifetimes-in-structs"><a class="header" href="#1035-lifetimes-in-structs">10.3.5. Lifetimes in Structs</a></h3>
+<p>If a struct wants to hold a reference, it must declare a lifetime:</p>
+<pre class="playground"><code class="language-rust">struct Excerpt&lt;'a&gt; {
+    part: &amp;'a str,
+}
+
+fn main() {
+    let novel = String::from("Once upon a time...");
+    let first_sentence = novel.split('.').next().unwrap();
+    let excerpt = Excerpt { part: first_sentence };
+    println!("{}", excerpt.part);
+}</code></pre>
+<p>This tells the compiler: <em>“As long as <code>excerpt</code> exists, <code>novel</code> must also exist so <code>part</code> doesn’t break.”</em></p>
+<h3 id="1036-dont-worry-rust-has-your-back"><a class="header" href="#1036-dont-worry-rust-has-your-back">10.3.6. Don’t Worry, Rust Has Your Back!</a></h3>
+<p>For now, just remember: Lifetimes are safety stickers that prevent dangling references. In most of this book, Rust figures them out for you. If you’re curious, check Appendix A for a deeper dive! 📖</p>
+<p><img src="../assets/images/10.3.png" alt="[Illustration: A cartoon yogurt cup labeled “&amp;’a str” with a glowing expiration date sticker. A friendly compiler robot checks the sticker with a magnifying glass, giving a green checkmark. Ferris stands nearby pointing at the safety seal. Style: educational, playful, soft lighting.]"></p>
+<hr>
+<h2 id="104-project-shape-library-with-generics--traits"><a class="header" href="#104-project-shape-library-with-generics--traits">10.4. Project: Shape Library with Generics &amp; Traits</a></h2>
+<p>Let’s build a small but professional shape library that calculates area and perimeter for any shape! 📐🔺🟦</p>
+<h3 id="1041-define-the-shape-trait"><a class="header" href="#1041-define-the-shape-trait">10.4.1. Define the <code>Shape</code> Trait</a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Shape {
+    fn area(&amp;self) -&gt; f64;
+    fn perimeter(&amp;self) -&gt; f64;
+}
+<span class="boring">}</span></code></pre>
+<h3 id="1042-define-struct-circlet"><a class="header" href="#1042-define-struct-circlet">10.4.2. Define <code>struct Circle&lt;T&gt;</code></a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Circle&lt;T&gt; {
+    radius: T,
+}
+<span class="boring">}</span></code></pre>
+<h3 id="1043-implement-shape-for-circlet"><a class="header" href="#1043-implement-shape-for-circlet">10.4.3. Implement <code>Shape</code> for <code>Circle&lt;T&gt;</code></a></h3>
+<p>Since formulas need <code>f64</code>, we must ensure <code>T</code> can convert to it. We use <code>where</code> for clean conditions:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::f64::consts::PI;
+
+impl&lt;T&gt; Shape for Circle&lt;T&gt;
+where
+    T: Into&lt;f64&gt; + Copy,
+{
+    fn area(&amp;self) -&gt; f64 {
+        let r: f64 = self.radius.into();
+        PI * r * r
+    }
+    fn perimeter(&amp;self) -&gt; f64 {
+        let r: f64 = self.radius.into();
+        2.0 * PI * r
+    }
+}
+<span class="boring">}</span></code></pre>
+<p><code>where</code> means: <em>“T must be able to convert to f64 AND be copyable.”</em></p>
+<h3 id="1044-define-struct-rectanglet-u"><a class="header" href="#1044-define-struct-rectanglet-u">10.4.4. Define <code>struct Rectangle&lt;T, U&gt;</code></a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Rectangle&lt;T, U&gt; { width: T, height: U }
+
+impl&lt;T, U&gt; Shape for Rectangle&lt;T, U&gt;
+where
+    T: Into&lt;f64&gt; + Copy,
+    U: Into&lt;f64&gt; + Copy,
+{
+    fn area(&amp;self) -&gt; f64 {
+        let w: f64 = self.width.into();
+        let h: f64 = self.height.into();
+        w * h
+    }
+    fn perimeter(&amp;self) -&gt; f64 {
+        2.0 * (self.width.into() + self.height.into())
+    }
+}
+<span class="boring">}</span></code></pre>
+<h3 id="1045-using-trait-objects-boxdyn-shape"><a class="header" href="#1045-using-trait-objects-boxdyn-shape">10.4.5. Using Trait Objects (<code>Box&lt;dyn Shape&gt;</code>)</a></h3>
+<p>Now we want a list containing <em>both</em> circles and rectangles. Since they’re different sizes, we can’t put them directly in an array. The solution? <strong>Trait Objects!</strong></p>
+<pre class="playground"><code class="language-rust">fn main() {
+    let circle = Circle { radius: 3.0 };
+    let rect = Rectangle { width: 4.0, height: 5.0 };
+
+    let shapes: Vec&lt;Box&lt;dyn Shape&gt;&gt; = vec![
+        Box::new(circle),
+        Box::new(rect),
+    ];
+
+    for shape in shapes {
+        println!("Area: {:.2}, Perimeter: {:.2}", shape.area(), shape.perimeter());
+    }
+}</code></pre>
+<p><code>dyn Shape</code> means: <em>“This box can hold anything that has the Shape trait.”</em> <code>Box</code> puts it in flexible memory so size doesn’t matter. Now we can loop through completely different shapes in one list! 🎉</p>
+<p><img src="../assets/images/10.4.png" alt="[Illustration: A cartoon universal shipping box labeled “Box&lt;dyn Shape&gt;”. Inside, different 3D shapes (circle, rectangle, triangle) with glowing trait badges are neatly stacked. Ferris operates a conveyor belt placing them into the box. Style: dynamic, educational vector, bright colors.]"></p>
+<hr>
+<h2 id="105-summary--challenge"><a class="header" href="#105-summary--challenge">10.5. Summary &amp; Challenge</a></h2>
+<h3 id="1051-what-you-learned"><a class="header" href="#1051-what-you-learned">10.5.1. What You Learned</a></h3>
+<p>In this chapter, you discovered:
+✅ <strong>Generics (<code>&lt;T&gt;</code>)</strong>: Writing reusable code for any type without duplication.
+✅ <strong>Traits</strong>: Defining shared behaviors (like <code>MakeSound</code> or <code>Shape</code>).
+✅ <strong>Trait Bounds (<code>T: Trait</code>)</strong>: Restricting generics to types that implement a trait.
+✅ <strong><code>impl Trait</code></strong>: Simplifying parameters and return types.
+✅ <strong>Lifetimes (<code>'a</code>)</strong>: Ensuring reference safety by defining valid time ranges (brief intro).
+✅ <strong>Trait Objects (<code>Box&lt;dyn Trait&gt;</code>)</strong>: Storing different types with shared behavior in one collection.</p>
+<h3 id="1052-challenge-fix-the-largest-function"><a class="header" href="#1052-challenge-fix-the-largest-function">10.5.2. Challenge: Fix the <code>largest</code> Function</a></h3>
+<p>Remember the <code>largest</code> function that errored at the start? Now, using the <code>PartialOrd</code> trait (which adds <code>&gt;</code> comparison) and <code>Copy</code>, complete it so it works for any slice of comparable types.</p>
+<p>💡 <em>Sample Answer</em>:</p>
+<pre class="playground"><code class="language-rust">fn largest&lt;T: PartialOrd + Copy&gt;(list: &amp;[T]) -&gt; T {
+    let mut largest = list[0];
+    for &amp;item in list {
+        if item &gt; largest { largest = item; }
+    }
+    largest
+}
+
+fn main() {
+    let numbers = vec![34, 50, 25, 100, 65];
+    println!("Largest number: {}", largest(&amp;numbers));
+
+    let chars = vec!['y', 'm', 'a', 'q'];
+    println!("Largest character: {}", largest(&amp;chars));
+}</code></pre>
+<p>Now you know how to write all-purpose code with Generics and define shared behaviors with Traits. You also took your first look at Lifetimes and saw how Rust guarantees memory safety! 🛡️
+In the next chapter, we’ll learn how to use <strong>Tests</strong> to make sure our programs always work correctly, just like testing a spaceship before launch! 🚀🧪</p>
+<p><img src="../assets/images/10.5.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 10 Master” badge. Floating around him are generic molds &lt;T&gt;, trait certificates, lifetime stickers &#39;a, and a universal box. Encouraging, bright lighting, children’s book style.]"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-9.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter-11.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-9.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter-11.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

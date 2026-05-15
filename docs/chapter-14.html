@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 14: The Right Toy Supermarket - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="land-of-rust-ferris-the-space-crabs-adventures"><a class="header" href="#land-of-rust-ferris-the-space-crabs-adventures">Land of Rust: Ferris the Space Crab’s Adventures</a></h1>
+<h2 id="chapter-14-the-rust-toy-supermarket-cratesio"><a class="header" href="#chapter-14-the-rust-toy-supermarket-cratesio">Chapter 14: The Rust Toy Supermarket (Crates.io)</a></h2>
+<h3 id="-chapter-index"><a class="header" href="#-chapter-index">📑 Chapter Index</a></h3>
+<p><a href="#141-borrowing-other-peoples-toys">14.1. Borrowing Other People’s Toys</a><br><a href="#1411-story-the-big-toy-store">14.1.1. Story: The Big Toy Store</a><br><a href="#1412-what-is-cratesio">14.1.2. What is crates.io?</a><br><a href="#1413-adding-a-dependency-to-cargotoml">14.1.3. Adding a Dependency to Cargo.toml</a><br><a href="#1414-using-a-crate-in-code">14.1.4. Using a Crate in Code</a><br><a href="#142-searching-and-choosing-a-crate">14.2. Searching and Choosing a Crate</a><br><a href="#1421-going-to-cratesio">14.2.1. Going to crates.io</a><br><a href="#1422-reading-documentation-on-docsrs">14.2.2. Reading Documentation on docs.rs</a><br><a href="#1423-criteria-for-choosing-a-good-crate">14.2.3. Criteria for Choosing a Good Crate</a><br><a href="#1424-example-using-rand">14.2.4. Example: Using <code>rand</code></a><br><a href="#143-version-management-semver">14.3. Version Management (SemVer)</a><br><a href="#1431-semantic-versioning">14.3.1. Semantic Versioning</a><br><a href="#1432-version-operators-in-cargotoml">14.3.2. Version Operators in Cargo.toml</a><br><a href="#1433-locking-versions-with-cargolock">14.3.3. Locking Versions with Cargo.lock</a><br><a href="#144-updating-dependencies">14.4. Updating Dependencies</a><br><a href="#1441-cargo-update">14.4.1. <code>cargo update</code></a><br><a href="#1442-cargo-outdated-external-tool">14.4.2. <code>cargo outdated</code> (External Tool)</a><br><a href="#145-creating-our-own-crate">14.5. Creating Our Own Crate</a><br><a href="#1451-creating-a-library-project">14.5.1. Creating a Library Project</a><br><a href="#1452-writing-code-in-librs">14.5.2. Writing Code in lib.rs</a><br><a href="#1453-documentation-with--and-">14.5.3. Documentation with <code>///</code> and <code>//!</code></a><br><a href="#1454-building-local-documentation-with-cargo-doc">14.5.4. Building Local Documentation with <code>cargo doc</code></a><br><a href="#1455-preparing-for-publishing-optional">14.5.5. Preparing for Publishing (Optional)</a><br><a href="#146-project-using-ferris-says">14.6. Project: Using <code>ferris-says</code></a><br><a href="#1461-adding-ferris-says">14.6.1. Adding <code>ferris-says</code></a><br><a href="#1462-writing-a-program-with-a-crab-frame">14.6.2. Writing a Program with a Crab Frame</a><br><a href="#147-summary-and-challenge">14.7. Summary and Challenge</a><br><a href="#1471-concept-review">14.7.1. Concept Review</a><br><a href="#1472-challenge-building-a-small-crate-called-pig_latin">14.7.2. Challenge: Building a Small Crate Called <code>pig_latin</code></a></p>
+<hr>
+<h3 id="141-borrowing-other-peoples-toys"><a class="header" href="#141-borrowing-other-peoples-toys">14.1. Borrowing Other People’s Toys</a></h3>
+<h4 id="1411-story-the-big-toy-store"><a class="header" href="#1411-story-the-big-toy-store">14.1.1. Story: The Big Toy Store</a></h4>
+<p>One day Ferris got tired of having to write everything from scratch for every little task (like generating a random number or drawing a simple shape). His friend Bill said: “Why don’t you go to the big toy store for programming? It’s full of ready‑made tools that other people built and shared for free. You can borrow them and get your work done much faster!” 🛍️✨<br>In the Rust world that store is called <strong>crates.io</strong>. Each of those ready‑made tools is called a <strong>Crate</strong>.</p>
+<p><strong>Learning to use other people’s libraries means you can stand on the shoulders of giants and build bigger software – that’s the power of a computer wizard!</strong> 🧙‍♂️</p>
+<blockquote>
+<p>👨‍👩‍👧 <strong>Note for parents and teachers</strong><br>crates.io is the official repository of Rust libraries. This chapter shows how to use dependencies and manage versions – an essential real‑world skill. The official Rust book has a full chapter on crates.io:<br><a href="https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html">doc.rust-lang.org/book/ch14-00-more-about-cargo.html</a></p>
+</blockquote>
+<h4 id="1412-what-is-cratesio"><a class="header" href="#1412-what-is-cratesio">14.1.2. What is crates.io?</a></h4>
+<p><a href="https://crates.io">crates.io</a> is a big website where programmers from all over the world put their code so others can use it. Cargo is like a smart assistant: when you tell it which tool you want, it goes there, downloads it, and attaches it to your project. You don’t have to copy‑paste files yourself! 📦🤖</p>
+<h4 id="1413-adding-a-dependency-to-cargotoml"><a class="header" href="#1413-adding-a-dependency-to-cargotoml">14.1.3. Adding a Dependency to Cargo.toml</a></h4>
+<p>To borrow a Crate, you need to write its name in <code>Cargo.toml</code>. For example, if we want to use <code>rand</code> (which we already learned), open <code>Cargo.toml</code> and under the <code>[dependencies]</code> section write:</p>
+<pre><code class="language-toml">[dependencies]
+rand = "0.9.0"
+</code></pre>
+<p>Now when you run <code>cargo build</code>, Cargo will go to crates.io, download version <code>0.9.0</code>, and get it ready for use.</p>
+<h4 id="1414-using-a-crate-in-code"><a class="header" href="#1414-using-a-crate-in-code">14.1.4. Using a Crate in Code</a></h4>
+<p>Now in <code>main.rs</code> we can use it:</p>
+<pre class="playground"><code class="language-rust">use rand::Rng;
+
+fn main() {
+    let mut rng = rand::thread_rng();
+    let secret_number = rng.gen_range(1..=100);
+    println!("Secret number: {}", secret_number);
+}</code></pre>
+<p>💡 The line <code>use rand::Rng;</code> is very important! It tells Rust: “Please bring the instructions for generating random numbers as well.” If you don’t write this line, the compiler won’t recognise <code>gen_range</code>.</p>
+<p><img src="../assets/images/14.1.png" alt="[Illustration: Cartoon illustration of a friendly crab (Ferris) pushing a shopping cart in a giant digital supermarket. The shelves are filled with glowing boxes labeled with crate names like “rand”, “serde”, “tokio”. A friendly cargo robot scans a box and adds it to the cart. Style: vibrant children’s book, playful tech metaphor, soft lighting, 16:9.]"></p>
+<hr>
+<h3 id="142-searching-and-choosing-a-crate"><a class="header" href="#142-searching-and-choosing-a-crate">14.2. Searching and Choosing a Crate</a></h3>
+<h4 id="1421-going-to-cratesio"><a class="header" href="#1421-going-to-cratesio">14.2.1. Going to crates.io</a></h4>
+<p>Open your browser and go to <a href="https://crates.io">crates.io</a>. In the search bar type anything you want (e.g., <code>json</code> or <code>image</code>). You will see a list of Crates.</p>
+<h4 id="1422-reading-documentation-on-docsrs"><a class="header" href="#1422-reading-documentation-on-docsrs">14.2.2. Reading Documentation on docs.rs</a></h4>
+<p>Every Crate has a link to its <strong>Documentation (Docs)</strong>, which usually goes to <code>https://docs.rs/crate-name</code>. That is like the instruction manual for a toy: it explains how to install it, what functions it has, and includes ready‑made examples. Always take a look at docs.rs before using a crate! 📖</p>
+<h4 id="1423-criteria-for-choosing-a-good-crate"><a class="header" href="#1423-criteria-for-choosing-a-good-crate">14.2.3. Criteria for Choosing a Good Crate</a></h4>
+<p>Anyone can publish a Crate, so some are better than others. Pay attention to these things:
+🔹 <strong>Number of downloads:</strong> the more downloads, the more people are happy with it.<br>🔹 <strong>Last update:</strong> if it hasn’t been updated for years, it might not work with new Rust versions.<br>🔹 <strong>Complete documentation:</strong> does it have a simple example? Are functions explained?<br>🔹 <strong>License:</strong> make sure the license is open (e.g., <code>MIT</code> or <code>Apache-2.0</code>).</p>
+<h4 id="1424-example-using-rand"><a class="header" href="#1424-example-using-rand">14.2.4. Example: Using <code>rand</code></a></h4>
+<p>Let’s try another example: generating a random RGB colour:</p>
+<pre class="playground"><code class="language-rust">use rand::Rng;
+
+fn main() {
+    let mut rng = rand::thread_rng();
+    let red = rng.gen_range(0..=255);
+    let green = rng.gen_range(0..=255);
+    let blue = rng.gen_range(0..=255);
+    println!("Random colour: rgb({}, {}, {})", red, green, blue);
+}</code></pre>
+<p>Every time you run it, you’ll see a new colour! 🎨</p>
+<p><img src="../assets/images/14.2.png" alt="[Illustration: A cartoon computer screen showing the docs.rs website for the “rand” crate. A magnifying glass hovers over a “Examples” section. Ferris stands beside taking notes with a pencil. Style: clean educational vector, bright colors, clear UI focus, 16:9.]"></p>
+<hr>
+<h3 id="143-version-management-semver"><a class="header" href="#143-version-management-semver">14.3. Version Management (SemVer)</a></h3>
+<h4 id="1431-semantic-versioning"><a class="header" href="#1431-semantic-versioning">14.3.1. Semantic Versioning</a></h4>
+<p>Version numbers in Rust have three parts: <code>MAJOR.MINOR.PATCH</code> (e.g., <code>1.2.3</code>). This is a worldwide convention:
+🔸 <strong>MAJOR:</strong> when the first number changes, it means big, incompatible changes have been made (like a game v1 where the rules are completely different from v2).<br>🔸 <strong>MINOR:</strong> when the middle number changes, it means new features have been added but old code still works.<br>🔸 <strong>PATCH:</strong> when the last number changes, it means only bugs have been fixed – nothing breaks. 🐛➡️✅</p>
+<h4 id="1432-version-operators-in-cargotoml"><a class="header" href="#1432-version-operators-in-cargotoml">14.3.2. Version Operators in Cargo.toml</a></h4>
+<p>In <code>Cargo.toml</code> you can be more precise about which versions you accept:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Writing in TOML</th><th>Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td><code>"0.9.0"</code></td><td>exactly version 0.9.0 (same as <code>^0.9.0</code>)</td></tr>
+<tr><td><code>"^0.9.0"</code></td><td>any <strong>compatible</strong> version (i.e., <code>0.9.x</code> with <code>x &gt;= 0</code>). This is Cargo’s default.</td></tr>
+<tr><td><code>"~0.9.0"</code></td><td>only <code>0.9.x</code> (doesn’t allow MINOR bumps).</td></tr>
+<tr><td><code>"*"</code></td><td>any version! (not recommended – it might suddenly break your program).</td></tr>
+</tbody>
+</table>
+</div>
+<p>💡 To start, just using <code>"0.9.0"</code> or <code>"0.9"</code> is enough and safe.</p>
+<h4 id="1433-locking-versions-with-cargolock"><a class="header" href="#1433-locking-versions-with-cargolock">14.3.3. Locking Versions with Cargo.lock</a></h4>
+<p>The first time you run <code>cargo build</code>, Cargo creates a file called <code>Cargo.lock</code>. This file writes down exactly which version of each Crate was installed today.<br>If you give your project to a friend, and they also have the <code>Cargo.lock</code> file, they will install exactly the same versions you installed. That way nobody’s program breaks for no reason! 🔒📝</p>
+<p><img src="../assets/images/14.3.png" alt="[Illustration: A cartoon receipt labeled “Cargo.lock” with exact version numbers listed (rand = 0.9.0, ferris-says = 0.3.0). A friendly robot stamps it “LOCKED”. Ferris holds the receipt next to a shopping bag. Style: playful metaphor, educational, soft lighting, 16:9.]"></p>
+<hr>
+<h3 id="144-updating-dependencies"><a class="header" href="#144-updating-dependencies">14.4. Updating Dependencies</a></h3>
+<h4 id="1441-cargo-update"><a class="header" href="#1441-cargo-update">14.4.1. <code>cargo update</code></a></h4>
+<p>After a while, the Crates you use might get updated. To make Cargo check for and install newer <strong>compatible</strong> versions, run:</p>
+<pre><code class="language-bash">cargo update
+</code></pre>
+<p>This command updates <code>Cargo.lock</code> but does not change <code>Cargo.toml</code>.</p>
+<h4 id="1442-cargo-outdated-external-tool"><a class="header" href="#1442-cargo-outdated-external-tool">14.4.2. <code>cargo outdated</code> (External Tool)</a></h4>
+<p>If you’re curious which Crates have new major versions available, you can install a helper tool:</p>
+<pre><code class="language-bash">cargo install cargo-outdated
+cargo outdated
+</code></pre>
+<p>It will show you a nice table of which dependencies are out‑of‑date. 📊</p>
+<p><img src="../assets/images/14.4.png" alt="[Illustration: A cartoon terminal window showing a colorful table with crate names, current versions, and newer available versions. Ferris points to a row with an upward arrow indicating an update. Style: modern tech illustration, clear and bright, 16:9.]"></p>
+<hr>
+<h3 id="145-creating-our-own-crate"><a class="header" href="#145-creating-our-own-crate">14.5. Creating Our Own Crate</a></h3>
+<h4 id="1451-creating-a-library-project"><a class="header" href="#1451-creating-a-library-project">14.5.1. Creating a Library Project</a></h4>
+<p>Now that we’ve learned how to borrow, why don’t we build our own tool? Let’s make a <strong>library</strong> project (not an executable):</p>
+<pre><code class="language-bash">cargo new my_math --lib
+cd my_math
+</code></pre>
+<p>This time Cargo creates a <code>src/lib.rs</code> file instead of <code>main.rs</code>. That is the starting point of your library! 📚</p>
+<h4 id="1452-writing-code-in-librs"><a class="header" href="#1452-writing-code-in-librs">14.5.2. Writing Code in lib.rs</a></h4>
+<p>In <code>lib.rs</code> we write a few simple functions:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//! This is a simple library for math operations.
+
+/// Adds two integers together.
+///
+/// # Example
+///
+/// ```
+/// let result = my_math::add(2, 3);
+/// assert_eq!(result, 5);
+/// ```
+pub fn add(a: i32, b: i32) -&gt; i32 {
+    a + b
+}
+
+/// Subtracts one integer from another.
+pub fn subtract(a: i32, b: i32) -&gt; i32 {
+    a - b
+}
+<span class="boring">}</span></code></pre>
+<h4 id="1453-documentation-with--and-"><a class="header" href="#1453-documentation-with--and-">14.5.3. Documentation with <code>///</code> and <code>//!</code></a></h4>
+<p>🔹 <code>//!</code> at the beginning of the file: used to describe the whole library.<br>🔹 <code>///</code> before a function/struct: used to describe that specific item.<br>💡 The text inside <code>///</code> can be Markdown. Even code inside ````rust<code>blocks is tested by</code>cargo test`, so we can be sure our examples always work!</p>
+<h4 id="1454-building-local-documentation-with-cargo-doc"><a class="header" href="#1454-building-local-documentation-with-cargo-doc">14.5.4. Building Local Documentation with <code>cargo doc</code></a></h4>
+<p>To see your documentation in a browser, just type:</p>
+<pre><code class="language-bash">cargo doc --open
+</code></pre>
+<p>A professional‑looking page similar to docs.rs will open, containing your own explanations! Look how nice it is? 🌟</p>
+<h4 id="1455-preparing-for-publishing-optional"><a class="header" href="#1455-preparing-for-publishing-optional">14.5.5. Preparing for Publishing (Optional)</a></h4>
+<p>If one day you want to put your library on crates.io so everyone can use it:</p>
+<ol>
+<li>Create an account on <a href="https://crates.io">crates.io</a> and get an API token.</li>
+<li>In the terminal run <code>cargo login</code> and paste the token.</li>
+<li>Make sure your <code>Cargo.toml</code> has the necessary information (<code>description</code>, <code>license</code>, <code>authors</code>).</li>
+<li>Run the magic command: <code>cargo publish</code> 🚀<br>(You don’t have to actually publish for practice!)</li>
+</ol>
+<p><img src="../assets/images/14.5.png" alt="[Illustration: A cozy desk setup with a laptop showing a beautiful documentation page generated by cargo doc. Floating around are markdown symbols, function signatures, and a glowing “cargo doc –open” badge. Ferris proudly holds a printed manual. Style: warm, educational children’s book illustration, inviting atmosphere, 16:9.]"></p>
+<hr>
+<h3 id="146-project-using-ferris-says"><a class="header" href="#146-project-using-ferris-says">14.6. Project: Using <code>ferris-says</code></a></h3>
+<h4 id="1461-adding-ferris-says"><a class="header" href="#1461-adding-ferris-says">14.6.1. Adding <code>ferris-says</code></a></h4>
+<p>Let’s try a fun crate that prints a picture of Ferris with a custom message. In a new project’s <code>Cargo.toml</code> write:</p>
+<pre><code class="language-toml">[dependencies]
+ferris-says = "0.3"
+</code></pre>
+<h4 id="1462-writing-a-program-with-a-crab-frame"><a class="header" href="#1462-writing-a-program-with-a-crab-frame">14.6.2. Writing a Program with a Crab Frame</a></h4>
+<p>Write the following code in <code>main.rs</code>:</p>
+<pre class="playground"><code class="language-rust">use ferris_says::say;
+use std::io::{stdout, BufWriter};
+
+fn main() {
+    let message = String::from("Hello friends! I am Ferris 🦀");
+    let width = message.chars().count();
+
+    let mut writer = BufWriter::new(stdout());
+    say(&amp;message, width, &amp;mut writer).unwrap();
+}</code></pre>
+<p>When you run <code>cargo run</code>, the output will look something like this:</p>
+<pre><code> ____________________________
+&lt; Hello friends! I am Ferris 🦀 &gt;
+ ----------------------------
+        \
+         \
+            _~^~^~_
+        \) /  o o  \ (/
+          '_   -   _'
+          / '-----' \
+</code></pre>
+<p>Isn’t that cute? Now you can replace the message with anything you like! 🎤</p>
+<p><img src="../assets/images/14.6.png" alt="[Illustration: A cartoon terminal window displaying the exact ASCII art output of the ferris-says crate. Ferris the crab sits next to the screen waving, with speech bubbles containing the same message. Style: playful, tech-meets-art, bright and cheerful, 16:9.]"></p>
+<hr>
+<h3 id="147-summary-and-challenge"><a class="header" href="#147-summary-and-challenge">14.7. Summary and Challenge</a></h3>
+<h4 id="1471-concept-review"><a class="header" href="#1471-concept-review">14.7.1. Concept Review</a></h4>
+<p>In this chapter you learned:<br>✅ <strong>crates.io</strong>: the big store of Rust libraries.<br>✅ <strong>Cargo.toml</strong>: where you write your dependencies (<code>[dependencies]</code>).<br>✅ <strong>SemVer</strong>: the <code>MAJOR.MINOR.PATCH</code> versioning rule.<br>✅ <strong>Cargo.lock</strong>: locking versions to ensure consistent builds.<br>✅ <code>cargo update</code> and <code>cargo outdated</code>: managing updates.<br>✅ Building a library: using <code>cargo new --lib</code> and the <code>lib.rs</code> file.<br>✅ Documentation: using <code>///</code> and <code>cargo doc</code>.<br>✅ <strong>Sharing your code with others means you become part of the big Rust family – a huge step toward becoming a computer wizard!</strong> 🧙</p>
+<blockquote>
+<p>🧠 <strong>Sometimes things are hard, and that’s okay!</strong><br>Managing dependencies and choosing the right version might feel a bit confusing at first. Don’t worry – Cargo does most of the work for you. With a little practice, adding a new crate will become as easy as drinking water.</p>
+</blockquote>
+<h4 id="1472-challenge-building-a-small-crate-called-pig_latin"><a class="header" href="#1472-challenge-building-a-small-crate-called-pig_latin">14.7.2. Challenge: Building a Small Crate Called <code>pig_latin</code></a></h4>
+<p>Create a library named <code>pig_latin</code> that has a public function <code>to_pig_latin(word: &amp;str) -&gt; String</code>. This function should convert an English word to Pig Latin:
+🔸 If the word starts with a consonant, move the first letter to the end and add <code>"ay"</code>. (<code>"hello"</code> → <code>"ellohay"</code>)<br>🔸 If it starts with a vowel (<code>a, e, i, o, u</code>), just add <code>"hay"</code> to the end. (<code>"apple"</code> → <code>"applehay"</code>)</p>
+<p>Then create a separate executable project and add your library as a local dependency, then test it with a few words.</p>
+<p>💡 <strong>Local dependency hint:</strong> In the executable’s <code>Cargo.toml</code> write:</p>
+<pre><code class="language-toml">[dependencies]
+pig_latin = { path = "../pig_latin" }
+</code></pre>
+<p>💡 <strong>Sample function answer:</strong></p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn to_pig_latin(word: &amp;str) -&gt; String {
+    let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    let mut chars = word.chars();
+    
+    if let Some(first_char) = chars.next() {
+        if vowels.contains(&amp;first_char) {
+            format!("{}-hay", word)
+        } else {
+            format!("{}-{}ay", chars.as_str(), first_char)
+        }
+    } else {
+        String::new()
+    }
+}
+<span class="boring">}</span></code></pre>
+<p>Now you both know how to use ready‑made libraries and how to create your own library to share with others. In the next chapter we’ll meet <strong>Smart Pointers</strong> – tools like <code>Box</code>, <code>Rc</code>, and <code>RefCell</code> that help us manage data more intelligently. 📦🧠✨</p>
+<p><img src="../assets/images/14.7.png" alt="[Illustration: Ferris wearing a graduation cap and holding a glowing “Chapter 14 Master” badge. Floating around him are a shopping cart, a Cargo.lock receipt, a lib.rs file, and a documentation book. Encouraging, vibrant children’s book illustration, celebratory mood, 16:9.]"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-13.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter-15.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-13.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter-15.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

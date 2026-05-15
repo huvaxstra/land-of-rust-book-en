@@ -1,0 +1,569 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 6: Smart Wardrobe - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="-the-land-of-rust-ferris-the-crabs-space-adventures"><a class="header" href="#-the-land-of-rust-ferris-the-crabs-space-adventures">🦀 The Land of Rust: Ferris the Crab’s Space Adventures</a></h1>
+<h2 id="chapter-6-the-smart-wardrobe-machine-enums-option--match"><a class="header" href="#chapter-6-the-smart-wardrobe-machine-enums-option--match">Chapter 6: The Smart Wardrobe Machine (Enums, Option &amp; Match)</a></h2>
+<blockquote>
+<p>📋 <em>Chapter Outline:</em></p>
+<ul>
+<li><a href="#61-hows-the-weather-today-enum">6.1. How’s the Weather Today? (<code>enum</code>)</a></li>
+<li><a href="#62-a-wardrobe-full-of-clothes-enum-with-data">6.2. A Wardrobe Full of Clothes (Enum with Data)</a></li>
+<li><a href="#63-the-lost-bag-option">6.3. The Lost Bag (<code>Option</code>)</a></li>
+<li><a href="#64-the-smart-remote-control-match">6.4. The Smart Remote Control (<code>match</code>)</a></li>
+<li><a href="#65-project-the-smart-shirt-recommender">6.5. Project: The Smart Shirt Recommender</a></li>
+<li><a href="#66-summary--challenge">6.6. Summary &amp; Challenge</a></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="61-hows-the-weather-today-enum"><a class="header" href="#61-hows-the-weather-today-enum">6.1. How’s the Weather Today? (<code>enum</code>)</a></h2>
+<h3 id="611-the-story-ferriss-smart-wardrobe"><a class="header" href="#611-the-story-ferriss-smart-wardrobe">6.1.1. The Story: Ferris’s Smart Wardrobe</a></h3>
+<p>Ferris has a magical wardrobe that tells him what to wear based on the weather. But weather isn’t just one thing: it can be sunny, rainy, snowy, or cloudy. Ferris wants to store these four states in his program. Instead of using plain numbers or text (which are easy to mistype or mess up), Rust has a fantastic tool called an <code>enum</code> (short for <em>enumeration</em>).</p>
+<h3 id="612-the-problem-numbers-or-text"><a class="header" href="#612-the-problem-numbers-or-text">6.1.2. The Problem: Numbers or Text?</a></h3>
+<p>Imagine we used numbers:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let weather = 1; // 1 = sunny, 2 = rainy, ...
+<span class="boring">}</span></code></pre>
+<p>But what if we accidentally type <code>5</code>? The program won’t know what to do! What about text?</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let weather = "sunny";
+<span class="boring">}</span></code></pre>
+<p>If we mistype <code>"suny"</code> (missing an <code>n</code>), the program gets confused! An <code>enum</code> solves this perfectly. It only lets you pick from a fixed list. Nothing else is allowed. 🛡️</p>
+<h3 id="613-defining-an-enum-with-different-states"><a class="header" href="#613-defining-an-enum-with-different-states">6.1.3. Defining an <code>enum</code> with Different States</a></h3>
+<p>We use the <code>enum</code> keyword to create a new type that can only be one of several specific values:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Weather {
+    Sunny,
+    Rainy,
+    Snowy,
+    Cloudy,
+}
+<span class="boring">}</span></code></pre>
+<p>Now <code>Weather</code> is a brand new data type, just like <code>i32</code> or <code>String</code>. But it only has four valid values.</p>
+<h3 id="614-creating-values-from-an-enum"><a class="header" href="#614-creating-values-from-an-enum">6.1.4. Creating Values from an <code>enum</code></a></h3>
+<p>To create a value from this enum, we write the enum name, then two colons (<code>::</code>), and finally the variant we want:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let today = Weather::Sunny;
+let tomorrow = Weather::Rainy;
+<span class="boring">}</span></code></pre>
+<p>The <code>::</code> means: <em>“From inside this enum, pick this specific option.”</em></p>
+<p><img src="../assets/images/6.1.png" alt="[Illustration: Ferris the crab stands in front of a magical weather map. Four glowing icons float above: a sun, a rain cloud, a snowflake, and a gray cloud. A friendly selector tool connects them to a dropdown menu. Style: vibrant children’s book illustration, clear educational metaphor, soft lighting, 16:9.]"></p>
+<hr>
+<h2 id="62-a-wardrobe-full-of-clothes-enum-with-data"><a class="header" href="#62-a-wardrobe-full-of-clothes-enum-with-data">6.2. A Wardrobe Full of Clothes (Enum with Data)</a></h2>
+<h3 id="621-not-all-sunny-days-are-the-same"><a class="header" href="#621-not-all-sunny-days-are-the-same">6.2.1. Not All Sunny Days Are the Same</a></h3>
+<p>Some sunny days are 20°C, others are 35°C. On rainy days, we might want to know the umbrella color. In Rust, each <code>enum</code> variant can hold its own extra data!</p>
+<h3 id="622-defining-an-enum-with-data"><a class="header" href="#622-defining-an-enum-with-data">6.2.2. Defining an <code>enum</code> with Data</a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum WeatherInfo {
+    Sunny { temperature: u8 },
+    Rainy { umbrella_color: String },
+    Snowy { scarf_material: String },
+    Cloudy,
+}
+<span class="boring">}</span></code></pre>
+<p>🔹 <code>Sunny</code> holds a <code>temperature</code> field (<code>u8</code>).
+🔹 <code>Rainy</code> holds an <code>umbrella_color</code> field (<code>String</code>).
+🔹 <code>Snowy</code> holds a <code>scarf_material</code> field (<code>String</code>).
+🔹 <code>Cloudy</code> needs no extra data.</p>
+<h3 id="623-creating-instances-of-an-enum-with-data"><a class="header" href="#623-creating-instances-of-an-enum-with-data">6.2.3. Creating Instances of an <code>enum</code> with Data</a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let sunny_day = WeatherInfo::Sunny { temperature: 32 };
+let rainy_day = WeatherInfo::Rainy { umbrella_color: String::from("red") };
+let snowy_day = WeatherInfo::Snowy { scarf_material: String::from("wool") };
+let cloudy_day = WeatherInfo::Cloudy;
+<span class="boring">}</span></code></pre>
+<h3 id="624-enum-vs-struct"><a class="header" href="#624-enum-vs-struct">6.2.4. <code>enum</code> vs <code>struct</code></a></h3>
+<p>🔹 <strong><code>struct</code></strong>: All fields are always present. A <code>Monster</code> always has a name, color, legs, and power.
+🔹 <strong><code>enum</code></strong>: Only <em>one</em> variant is active at a time. A <code>WeatherInfo</code> is either Sunny, Rainy, Snowy, or Cloudy. It can’t have a temperature AND an umbrella color simultaneously!</p>
+<p><img src="../assets/images/6.2.png" alt="[Illustration: Split educational graphic. Left: a “struct” box showing all four slots filled at once. Right: an “enum” wardrobe with four drawers, but only ONE drawer is open at a time. Ferris points to the open drawer explaining the difference. Style: clean, cartoon, bright colors, clear visual metaphor, 16:9.]"></p>
+<hr>
+<h2 id="63-the-lost-bag-option"><a class="header" href="#63-the-lost-bag-option">6.3. The Lost Bag (<code>Option</code>)</a></h2>
+<h3 id="631-the-story-searching-for-the-spaceship-key"><a class="header" href="#631-the-story-searching-for-the-spaceship-key">6.3.1. The Story: Searching for the Spaceship Key</a></h3>
+<p>Ferris always keeps his spaceship key in his backpack. But some days, he forgets, and the bag is empty! In programming, we call this <em>“something might exist, or it might not.”</em> Many languages use <code>null</code> for this, but <code>null</code> is dangerous and causes programs to crash. Rust has <strong>no <code>null</code></strong>. Instead, it uses <code>Option</code>.</p>
+<h3 id="632-introducing-optiont"><a class="header" href="#632-introducing-optiont">6.3.2. Introducing <code>Option&lt;T&gt;</code></a></h3>
+<p><code>Option</code> is a super useful <code>enum</code> built right into Rust:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Option&lt;T&gt; {
+    Some(T),
+    None,
+}
+<span class="boring">}</span></code></pre>
+<p><code>&lt;T&gt;</code> means <em>“this can hold any type you want.”</em> <code>Some(T)</code> means <em>“we have a value of type T,”</em> and <code>None</code> means <em>“there’s nothing here.”</em></p>
+<h3 id="633-using-some-and-none"><a class="header" href="#633-using-some-and-none">6.3.3. Using <code>Some</code> and <code>None</code></a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let key = Some(String::from("golden key")); // The key exists
+let no_key: Option&lt;String&gt; = None;          // No key
+<span class="boring">}</span></code></pre>
+<p>If you just write <code>None</code>, you usually need to tell the compiler what type of <code>Option</code> it is (like <code>Option&lt;String&gt;</code>).</p>
+<h3 id="634-why-option-is-safer-than-null"><a class="header" href="#634-why-option-is-safer-than-null">6.3.4. Why <code>Option</code> is Safer Than <code>null</code></a></h3>
+<p>In languages with <code>null</code>, if you forget to check whether a value is <code>null</code> before using it, your program might suddenly crash. In Rust, the <strong>compiler forces you</strong> to handle both <code>Some</code> and <code>None</code>. This makes your programs incredibly safe! 🛡️</p>
+<h3 id="635-useful-methods-on-option"><a class="header" href="#635-useful-methods-on-option">6.3.5. Useful Methods on <code>Option</code></a></h3>
+<p>🔹 <code>.unwrap()</code> → Gives you the value if it’s <code>Some</code>. Crashes if it’s <code>None</code>. (Only use when you’re 100% sure it’s there!)
+🔹 <code>.unwrap_or(default)</code> → Returns a fallback value if it’s <code>None</code>.
+🔹 <code>.is_some()</code> / <code>.is_none()</code> → Checks which state it’s in.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let key = Some(String::from("abc"));
+let value = key.unwrap_or(String::from("Key not found"));
+println!("{}", value); // Prints: abc
+<span class="boring">}</span></code></pre>
+<h3 id="636-exercise-safe_divide-function"><a class="header" href="#636-exercise-safe_divide-function">6.3.6. Exercise: <code>safe_divide</code> Function</a></h3>
+<p>Write a function called <code>safe_divide</code> that takes two <code>f64</code> numbers. If the second number isn’t zero, return the result inside <code>Some</code>. Otherwise, return <code>None</code>.</p>
+<p>💡 <strong>Sample Answer</strong>:</p>
+<pre class="playground"><code class="language-rust">fn safe_divide(a: f64, b: f64) -&gt; Option&lt;f64&gt; {
+    if b == 0.0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    let result = safe_divide(10.0, 2.0);
+    match result {
+        Some(r) =&gt; println!("Result: {}", r),
+        None =&gt; println!("Error: Cannot divide by zero!"),
+    }
+}</code></pre>
+<p><img src="../assets/images/6.3.png" alt="[Illustration: Ferris opening two floating treasure chests. One chest contains a glowing key labeled “Some(key)”. The other chest is empty with a gentle “None” tag. A friendly compiler robot holds a checklist saying “Always check both!”. Style: playful, educational, warm lighting, children’s book, 16:9.]"></p>
+<hr>
+<h2 id="64-the-smart-remote-control-match"><a class="header" href="#64-the-smart-remote-control-match">6.4. The Smart Remote Control (<code>match</code>)</a></h2>
+<h3 id="641-the-problem-how-to-decide-based-on-an-enum"><a class="header" href="#641-the-problem-how-to-decide-based-on-an-enum">6.4.1. The Problem: How to Decide Based on an <code>enum</code>?</a></h3>
+<p>Now that we know the weather is <code>Sunny</code> or <code>Rainy</code>, how do we tell the user what to wear? We could use many <code>if</code> statements, but Rust has a much cleaner tool: <code>match</code>.</p>
+<h3 id="642-introducing-match"><a class="header" href="#642-introducing-match">6.4.2. Introducing <code>match</code></a></h3>
+<p><code>match</code> is like a smart sorting machine: it takes a value, compares it against several patterns, and runs the code for the first pattern that fits.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let weather = Weather::Sunny;
+
+match weather {
+    Weather::Sunny =&gt; println!("Wear a sun hat!"),
+    Weather::Rainy =&gt; println!("Take an umbrella!"),
+    Weather::Snowy =&gt; println!("Wrap up in a scarf!"),
+    Weather::Cloudy =&gt; println!("Perfect weather, wear what you like!"),
+}
+<span class="boring">}</span></code></pre>
+<h3 id="643-the-exhaustive-rule"><a class="header" href="#643-the-exhaustive-rule">6.4.3. The Exhaustive Rule</a></h3>
+<p>With <code>match</code>, you <strong>must</strong> cover every possible variant. If you forget even one, the compiler will complain: <em>“You didn’t handle the <code>Snowy</code> case!”</em> This is a great feature because forgotten cases never turn into hidden bugs! ✅</p>
+<h3 id="644-extracting-data-from-an-enum-with-match"><a class="header" href="#644-extracting-data-from-an-enum-with-match">6.4.4. Extracting Data from an <code>enum</code> with <code>match</code></a></h3>
+<p>If our enum holds extra data, we can pull it out right inside <code>match</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let info = WeatherInfo::Sunny { temperature: 35 };
+
+match info {
+    WeatherInfo::Sunny { temperature } =&gt; {
+        println!("Sunny at {} degrees. Don't forget sunscreen!", temperature);
+    }
+    WeatherInfo::Rainy { umbrella_color } =&gt; {
+        println!("It's raining. Grab the {} umbrella!", umbrella_color);
+    }
+    // ... other variants
+}
+<span class="boring">}</span></code></pre>
+<h3 id="645-the-catch-all-pattern-with-_"><a class="header" href="#645-the-catch-all-pattern-with-_">6.4.5. The Catch-All Pattern with <code>_</code></a></h3>
+<p>Sometimes we only care about one or two variants and want to group everything else. We use <code>_</code> (underscore) to mean <em>“anything else”</em>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>match weather {
+    Weather::Sunny =&gt; println!("Let's go to the park!"),
+    _ =&gt; println!("Better stay indoors today."),
+}
+<span class="boring">}</span></code></pre>
+<h3 id="646-match-with-option"><a class="header" href="#646-match-with-option">6.4.6. <code>match</code> with <code>Option</code></a></h3>
+<p><code>match</code> works beautifully with <code>Option</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let key = Some(String::from("golden key"));
+
+match key {
+    Some(k) =&gt; println!("Found the key: {}", k),
+    None =&gt; println!("Key is missing. Let's search!"),
+}
+<span class="boring">}</span></code></pre>
+<h3 id="647-if-let-for-simpler-cases"><a class="header" href="#647-if-let-for-simpler-cases">6.4.7. <code>if let</code> for Simpler Cases</a></h3>
+<p>If we only care about <strong>one</strong> specific variant and want to ignore the rest, <code>if let</code> is a shorter alternative:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let weather = Weather::Sunny;
+
+if let Weather::Sunny = weather {
+    println!("What a beautiful sunny day!");
+} else {
+    println!("Not sunny today.");
+}
+<span class="boring">}</span></code></pre>
+<h3 id="648-exercise-coin-values"><a class="header" href="#648-exercise-coin-values">6.4.8. Exercise: Coin Values</a></h3>
+<p>Create a <code>Coin</code> enum with <code>Penny</code>, <code>Nickel</code>, <code>Dime</code>, and <code>Quarter</code>. Write a function that takes a coin and returns its value in cents (1, 5, 10, 25).</p>
+<p>💡 <strong>Sample Answer</strong>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Coin { Penny, Nickel, Dime, Quarter }
+
+fn value_in_cents(coin: Coin) -&gt; u8 {
+    match coin {
+        Coin::Penny =&gt; 1,
+        Coin::Nickel =&gt; 5,
+        Coin::Dime =&gt; 10,
+        Coin::Quarter =&gt; 25,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p><img src="../assets/images/6.4.png" alt="[Illustration: A cartoon remote control with four glowing buttons labeled with enum variants (Sunny, Rainy, Snowy, Cloudy). A hand presses “Rainy” and a speech bubble pops up saying “Take an umbrella!”. Ferris watches from the side holding a checklist. Style: dynamic, educational vector illustration, bright colors, 16:9.]"></p>
+<hr>
+<h2 id="65-project-the-smart-shirt-recommender"><a class="header" href="#65-project-the-smart-shirt-recommender">6.5. Project: The Smart Shirt Recommender</a></h2>
+<p>Let’s build a small program that asks the user for the weather and suggests a shirt color!</p>
+<h3 id="651-define-the-weather-enum"><a class="header" href="#651-define-the-weather-enum">6.5.1. Define the Weather <code>enum</code></a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Weather {
+    Sunny,
+    Rainy,
+    Snowy,
+    Cloudy,
+}
+<span class="boring">}</span></code></pre>
+<h3 id="652-the-shirt-recommendation-function"><a class="header" href="#652-the-shirt-recommendation-function">6.5.2. The Shirt Recommendation Function</a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn recommend_shirt(weather: Weather) -&gt; &amp;'static str {
+    match weather {
+        Weather::Sunny =&gt; "white (cool and bright)",
+        Weather::Rainy =&gt; "blue (matches the rainy sky)",
+        Weather::Snowy =&gt; "red (warm and cheerful)",
+        Weather::Cloudy =&gt; "gray (perfect for cloudy days)",
+    }
+}
+<span class="boring">}</span></code></pre>
+<p>💡 <em>Note on <code>&amp;'static str</code></em>: This is a special type of text that lives for the entire lifetime of the program. It’s perfect for fixed, unchanging messages like these!</p>
+<h3 id="653-getting-user-input"><a class="header" href="#653-getting-user-input">6.5.3. Getting User Input</a></h3>
+<pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Choose the weather:");
+    println!("1: Sunny | 2: Rainy | 3: Snowy | 4: Cloudy");
+
+    let mut input = String::new();
+    io::stdin().read_line(&amp;mut input).expect("Failed to read input");
+
+    let choice: u32 = input.trim().parse().expect("Please enter a valid number!");
+
+    let weather = match choice {
+        1 =&gt; Weather::Sunny,
+        2 =&gt; Weather::Rainy,
+        3 =&gt; Weather::Snowy,
+        4 =&gt; Weather::Cloudy,
+        _ =&gt; {
+            println!("Invalid number. Defaulting to Sunny.");
+            Weather::Sunny
+        }
+    };
+
+    let shirt = recommend_shirt(weather);
+    println!("My recommendation: wear a {} shirt!", shirt);
+}</code></pre>
+<h3 id="654-adding-a-preferred-color-with-option"><a class="header" href="#654-adding-a-preferred-color-with-option">6.5.4. Adding a Preferred Color with <code>Option</code></a></h3>
+<p>What if the user has a favorite color? If they provide one, use it. Otherwise, stick with our recommendation:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let preferred_color: Option&lt;String&gt; = None; // We could ask the user later
+
+let final_color = match preferred_color {
+    Some(color) =&gt; color,
+    None =&gt; recommend_shirt(weather).to_string(),
+};
+
+println!("Final color choice: {}", final_color);
+<span class="boring">}</span></code></pre>
+<p><img src="../assets/images/6.5.png" alt="[Illustration: A friendly cartoon robot display panel showing a weather input screen. A dropdown enum selector points to a suggested shirt popping out of a slot. Ferris stands beside holding a rainbow-colored shirt. Style: cozy tech, children’s book illustration, bright and inviting, 16:9.]"></p>
+<hr>
+<h2 id="66-summary--challenge"><a class="header" href="#66-summary--challenge">6.6. Summary &amp; Challenge</a></h2>
+<h3 id="661-what-you-learned"><a class="header" href="#661-what-you-learned">6.6.1. What You Learned</a></h3>
+<p>In this chapter, you discovered:
+✅ <code>enum</code> is a type that can only be one of several predefined variants.
+✅ Each variant can hold its own unique data.
+✅ <code>Option&lt;T&gt;</code> is Rust’s safe way to say <em>“we have something (<code>Some</code>) or nothing (<code>None</code>).”</em>
+✅ <code>match</code> is a powerful tool to make decisions based on enum values and extract inner data.
+✅ <code>if let</code> is a handy shortcut when you only care about one case.</p>
+<h3 id="662-challenge-calculator-with-result"><a class="header" href="#662-challenge-calculator-with-result">6.6.2. Challenge: Calculator with <code>Result</code></a></h3>
+<p>Instead of <code>Option</code>, let’s peek at another famous enum: <code>Result</code>. It’s perfect for error handling:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Result&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+<span class="boring">}</span></code></pre>
+<p>Write a <code>divide</code> function that takes two <code>f64</code> numbers. If the second isn’t zero, return <code>Ok(result)</code>. Otherwise, return <code>Err("Cannot divide by zero")</code>. Handle it in <code>main</code> using <code>match</code>.</p>
+<p>💡 <strong>Sample Answer</strong>:</p>
+<pre class="playground"><code class="language-rust">fn divide(a: f64, b: f64) -&gt; Result&lt;f64, &amp;'static str&gt; {
+    if b == 0.0 {
+        Err("Division by zero is impossible!")
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(10.0, 2.0);
+    match result {
+        Ok(r) =&gt; println!("Result: {}", r),
+        Err(e) =&gt; println!("Error: {}", e),
+    }
+}</code></pre>
+<p>Now you know how to manage different states beautifully with <code>enum</code> and <code>match</code>. In the next chapter, we’ll learn how to organize our code into files and modules, turning our program into a tidy, professional library! 📚✨</p>
+<p><img src="../assets/images/6.6.png" alt="[Illustration: Ferris wearing a graduation cap, holding a glowing “Chapter 6 Complete” badge. Floating around him are colorful enum tags, match arms, Option/Result boxes, and a small weather remote. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-5.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter-7.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-5.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter-7.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

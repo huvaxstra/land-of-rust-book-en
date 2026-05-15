@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 15: Secret of Nested Boxes - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="land-of-rust-ferris-the-space-crabs-adventures"><a class="header" href="#land-of-rust-ferris-the-space-crabs-adventures">Land of Rust: Ferris the Space Crab’s Adventures</a></h1>
+<h2 id="chapter-15-the-secret-of-nested-boxes-smart-pointers"><a class="header" href="#chapter-15-the-secret-of-nested-boxes-smart-pointers">Chapter 15: The Secret of Nested Boxes (Smart Pointers)</a></h2>
+<h3 id="-chapter-index"><a class="header" href="#-chapter-index">📑 Chapter Index</a></h3>
+<p><a href="#151-the-gift-box-boxt">15.1. The Gift Box (Box<t>)</t></a><br><a href="#1511-story-a-big-present-in-a-small-box">15.1.1. Story: A Big Present in a Small Box</a><br><a href="#1512-what-is-boxt">15.1.2. What is Box<t>?</t></a><br><a href="#1513-simple-use-of-box">15.1.3. Simple Use of Box</a><br><a href="#1514-use-case-recursive-structures-linked-list">15.1.4. Use Case: Recursive Structures (Linked List)</a><br><a href="#1515-exercise-box-for-a-trait-object">15.1.5. Exercise: Box for a Trait Object</a><br><a href="#152-the-librarys-shared-book-rct">15.2. The Library’s Shared Book (Rc<t>)</t></a><br><a href="#1521-story-a-book-several-people-read-at-the-same-time">15.2.1. Story: A Book Several People Read at the Same Time</a><br><a href="#1522-what-is-rct">15.2.2. What is Rc<t>?</t></a><br><a href="#1523-creating-rc-and-cloning">15.2.3. Creating Rc and Cloning</a><br><a href="#1524-counting-references">15.2.4. Counting References</a><br><a href="#1525-limitations-read-only-and-single-threaded">15.2.5. Limitations: Read‑Only and Single‑Threaded</a><br><a href="#1526-exercise-rc-with-multiple-owners">15.2.6. Exercise: Rc with Multiple Owners</a><br><a href="#1527-the-memory-leak-problem-and-the-weak-solution">15.2.7. The Memory Leak Problem and the Weak Solution</a><br><a href="#153-the-group-notebook-refcellt">15.3. The Group Notebook (RefCell<t>)</t></a><br><a href="#1531-story-a-notebook-everyone-can-write-in">15.3.1. Story: A Notebook Everyone Can Write In</a><br><a href="#1532-what-is-refcellt">15.3.2. What is RefCell<t>?</t></a><br><a href="#1533-borrow-and-borrow_mut">15.3.3. borrow and borrow_mut</a><br><a href="#1534-breaking-the-rules-at-runtime">15.3.4. Breaking the Rules at Runtime</a><br><a href="#1535-combining-rc-and-refcell">15.3.5. Combining Rc and RefCell</a><br><a href="#1536-exercise-rcrefcelli32">15.3.6. Exercise: Rc&lt;RefCell<i32>&gt;</i32></a><br><a href="#154-project-a-simple-graph-system">15.4. Project: A Simple Graph System</a><br><a href="#1541-defining-a-node">15.4.1. Defining a Node</a><br><a href="#1542-building-a-graph-with-rcrefcellnode">15.4.2. Building a Graph with Rc&lt;RefCell<node>&gt;</node></a><br><a href="#1543-adding-an-edge">15.4.3. Adding an Edge</a><br><a href="#1544-simple-traversal-and-cycle-warning">15.4.4. Simple Traversal and Cycle Warning</a><br><a href="#155-summary-and-challenge">15.5. Summary and Challenge</a><br><a href="#1551-concept-review">15.5.1. Concept Review</a><br><a href="#1552-challenge-doubly-linked-list-with-rcrefcellnode-and-an-introduction-to-weak">15.5.2. Challenge: Doubly‑Linked List with Rc&lt;RefCell<node>&gt; and an Introduction to Weak</node></a></p>
+<hr>
+<h3 id="151-the-gift-box-box"><a class="header" href="#151-the-gift-box-box">15.1. The Gift Box (Box<t>)</t></a></h3>
+<h4 id="1511-story-a-big-present-in-a-small-box"><a class="header" href="#1511-story-a-big-present-in-a-small-box">15.1.1. Story: A Big Present in a Small Box</a></h4>
+<p>Ferris has a very large, heavy gift that is hard to carry around. 🎁 But he finds a small, light cardboard box. He puts the gift inside the box, and now he only needs to carry that light box!<br>Inside a computer there are also two storage places:<br>🔹 <strong>Stack (the workbench):</strong> very fast, but has limited space. It only holds small things.<br>🔹 <strong>Heap (the big warehouse):</strong> plenty of space, but getting in and out is a little slower.<br>When our data is large, we send it to the Heap and keep only a small address (like a barcode) on the Stack. <code>Box&lt;T&gt;</code> is exactly that cardboard box that does this for us! 📦✨</p>
+<h4 id="1512-what-is-box"><a class="header" href="#1512-what-is-box">15.1.2. What is Box<t>?</t></a></h4>
+<p><code>Box&lt;T&gt;</code> is a smart pointer that takes data of type <code>T</code> and stores it in the Heap. When the <code>Box</code> goes out of scope (for example, when we leave a function), the data inside the Heap is automatically cleaned up.<br>It has three main uses:</p>
+<ol>
+<li>Storing large data without cluttering the Stack.</li>
+<li>Building recursive structures (like linked lists).</li>
+<li>Holding Trait Objects (which we’ll see later).</li>
+</ol>
+<h4 id="1513-simple-use-of-box"><a class="header" href="#1513-simple-use-of-box">15.1.3. Simple Use of Box</a></h4>
+<pre class="playground"><code class="language-rust">fn main() {
+    let b = Box::new(5); // the number 5 goes to the Heap, its address stays on the Stack
+    println!("Value inside the box: {}", b); // we use it like a normal number
+}</code></pre>
+<h4 id="1514-use-case-recursive-structures-linked-list"><a class="header" href="#1514-use-case-recursive-structures-linked-list">15.1.4. Use Case: Recursive Structures (Linked List)</a></h4>
+<p>Suppose we want to build a train where each wagon connects to the next. In Rust we cannot write a <code>struct</code> that directly contains itself (because its size would be infinite!). But with <code>Box</code> (which has a fixed size) there is no problem:</p>
+<pre class="playground"><code class="language-rust">enum List {
+    Cons(i32, Box&lt;List&gt;), // a number + a pointer to the rest of the train
+    Nil,                  // last wagon (empty)
+}
+
+use List::{Cons, Nil};
+
+fn main() {
+    let train = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
+}</code></pre>
+<h4 id="1515-exercise-box-for-a-trait-object"><a class="header" href="#1515-exercise-box-for-a-trait-object">15.1.5. Exercise: Box for a Trait Object</a></h4>
+<p>Create a trait called <code>Draw</code> with a method <code>draw(&amp;self)</code>. Write two structs <code>Circle</code> and <code>Square</code> that implement it. Then create a <code>Vec&lt;Box&lt;dyn Draw&gt;&gt;</code>, put the shapes in it, and call <code>draw</code> on each one.</p>
+<p>💡 <strong>Answer:</strong></p>
+<pre class="playground"><code class="language-rust">trait Draw { fn draw(&amp;self); }
+
+struct Circle;
+impl Draw for Circle { fn draw(&amp;self) { println!("○ Circle drawn!"); } }
+
+struct Square;
+impl Draw for Square { fn draw(&amp;self) { println!("□ Square drawn!"); } }
+
+fn main() {
+    let shapes: Vec&lt;Box&lt;dyn Draw&gt;&gt; = vec![Box::new(Circle), Box::new(Square)];
+    for shape in shapes { shape.draw(); }
+}</code></pre>
+<p><img src="../assets/images/15.1.png" alt="[Illustration: A friendly cartoon crab (Ferris) holding a small glowing gift box labeled “Box&lt;T&gt;”. Inside the box, a larger, heavy golden item sits safely. A conveyor belt moves the box to a large warehouse labeled “Heap”, while a small barcode tag stays on a desk labeled “Stack”. Style: vibrant children’s book illustration, educational metaphor, soft lighting, 16:9.]"></p>
+<hr>
+<h3 id="152-the-librarys-shared-book-rc"><a class="header" href="#152-the-librarys-shared-book-rc">15.2. The Library’s Shared Book (Rc<t>)</t></a></h3>
+<h4 id="1521-story-a-book-several-people-read-at-the-same-time"><a class="header" href="#1521-story-a-book-several-people-read-at-the-same-time">15.2.1. Story: A Book Several People Read at the Same Time</a></h4>
+<p>In Ferris’s library there is a very famous book. Several people want to borrow it at the same time. In normal Rust each value has only one owner, but with <code>Rc&lt;T&gt;</code> (short for Reference Counted) we can have multiple owners at the same time. <code>Rc</code> counts how many people are holding the book. When the last person returns the book, it automatically goes back to the shelf (the memory is freed). 📚🔢</p>
+<h4 id="1522-what-is-rc"><a class="header" href="#1522-what-is-rc">15.2.2. What is Rc<t>?</t></a></h4>
+<p><code>Rc&lt;T&gt;</code> is a smart pointer with reference counting. Every time you create a new <code>Rc</code> from it, a hidden counter increases by one. When an <code>Rc</code> goes out of scope, the counter decreases. When it reaches zero, the data is freed.<br>To use it we must bring it into scope: <code>use std::rc::Rc;</code></p>
+<h4 id="1523-creating-rc-and-cloning"><a class="header" href="#1523-creating-rc-and-cloning">15.2.3. Creating Rc and Cloning</a></h4>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = Rc::new(5);      // counter = 1
+let b = Rc::clone(&amp;a);   // counter = 2 (notice: the data is not copied, only the counter increases)
+let c = Rc::clone(&amp;a);   // counter = 3
+<span class="boring">}</span></code></pre>
+<h4 id="1524-counting-references"><a class="header" href="#1524-counting-references">15.2.4. Counting References</a></h4>
+<p>We can see how many borrows exist:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let book = Rc::new(String::from("Magic Book"));
+println!("Number of borrowers: {}", Rc::strong_count(&amp;book)); // 1
+let reader = Rc::clone(&amp;book);
+println!("Number of borrowers: {}", Rc::strong_count(&amp;book)); // 2
+<span class="boring">}</span></code></pre>
+<h4 id="1525-limitations-readonly-and-singlethreaded"><a class="header" href="#1525-limitations-readonly-and-singlethreaded">15.2.5. Limitations: Read‑Only and Single‑Threaded</a></h4>
+<p>⚠️ <code>Rc</code> only allows you to <strong>read</strong> the data (immutable borrow). If you want to change it, you must combine it with <code>RefCell</code>.<br>⚠️ Also, <code>Rc</code> is only safe for single‑threaded programs. For multi‑threaded programs we use its cousin <code>Arc</code>.</p>
+<h4 id="1526-exercise-rc-with-multiple-owners"><a class="header" href="#1526-exercise-rc-with-multiple-owners">15.2.6. Exercise: Rc with Multiple Owners</a></h4>
+<p>Create a <code>struct</code> called <code>Book</code> with a <code>title</code> field. Create three <code>Rc&lt;Book&gt;</code> that all point to the same book. Print the title and show the reference count.</p>
+<p>💡 <strong>Answer:</strong></p>
+<pre class="playground"><code class="language-rust">use std::rc::Rc;
+struct Book { title: String }
+
+fn main() {
+    let book = Rc::new(Book { title: String::from("Ferris’s Adventures") });
+    let r1 = Rc::clone(&amp;book);
+    let r2 = Rc::clone(&amp;book);
+    println!("Title: {}", book.title);
+    println!("Readers: {}", Rc::strong_count(&amp;book)); // 3
+}</code></pre>
+<h4 id="1527-the-memory-leak-problem-and-the-weak-solution"><a class="header" href="#1527-the-memory-leak-problem-and-the-weak-solution">15.2.7. The Memory Leak Problem and the Weak Solution</a></h4>
+<p>Up to here everything is fine, but there is a trap! If we create a <strong>cycle</strong> with <code>Rc</code> (for example, node A points to B and B points back to A), the counters will never drop to zero. That means the memory of those nodes <strong>leaks</strong> until the program ends. 😟<br>To solve this problem, Rust has another smart pointer called <code>Weak&lt;T&gt;</code>. <code>Weak</code> is like <code>Rc</code> but it does not increase the strong count (it has its own weak count). To turn an <code>Rc</code> into a <code>Weak</code> we use <code>Rc::downgrade</code>.<br>In projects like bidirectional graphs or doubly‑linked lists, we use <code>Weak</code> for one of the directions to break the cycle. Don’t worry – we’ll mention it in the challenge at the end of the chapter and see more of it in later advanced chapters.</p>
+<p><img src="../assets/images/15.2.png" alt="[Illustration: A cartoon library desk with a single glowing book. Three children hold transparent “Rc” cards connected by dotted lines to the book. A small digital counter on the book shows “3”. Ferris stands nearby holding a clipboard, smiling. Style: clean educational vector, bright colors, clear metaphor, 16:9.]"></p>
+<hr>
+<h3 id="153-the-group-notebook-refcell"><a class="header" href="#153-the-group-notebook-refcell">15.3. The Group Notebook (RefCell<t>)</t></a></h3>
+<h4 id="1531-story-a-notebook-everyone-can-write-in"><a class="header" href="#1531-story-a-notebook-everyone-can-write-in">15.3.1. Story: A Notebook Everyone Can Write In</a></h4>
+<p>The children in the library have a shared notebook. Everyone can read it, but when someone wants to write in it, they must ensure nobody else is reading or writing at that same moment. In Rust this rule is usually checked at compile time, but <code>RefCell&lt;T&gt;</code> moves that check to <strong>runtime</strong>. If someone breaks the rule, the program politely stops with a <code>panic!</code>. 📓✍️</p>
+<h4 id="1532-what-is-refcell"><a class="header" href="#1532-what-is-refcell">15.3.2. What is RefCell<t>?</t></a></h4>
+<p><code>RefCell&lt;T&gt;</code> is a smart pointer that allows you to mutably borrow what appears to be an immutable piece of data, as long as at runtime there is only one writer at a time.<br>To use it: <code>use std::cell::RefCell;</code></p>
+<h4 id="1533-borrow-and-borrow_mut"><a class="header" href="#1533-borrow-and-borrow_mut">15.3.3. borrow and borrow_mut</a></h4>
+<p>🔹 <code>.borrow()</code> → returns a normal reference (<code>&amp;T</code>) (read‑only).<br>🔹 <code>.borrow_mut()</code> → returns a mutable reference (<code>&amp;mut T</code>) (read+write).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = RefCell::new(5);
+{
+    let mut y = x.borrow_mut(); // write lock opened
+    *y += 10;
+} // lock closed
+println!("Value: {}", x.borrow()); // 15
+<span class="boring">}</span></code></pre>
+<h4 id="1534-breaking-the-rules-at-runtime"><a class="header" href="#1534-breaking-the-rules-at-runtime">15.3.4. Breaking the Rules at Runtime</a></h4>
+<p>If you try to have two <code>borrow_mut</code> at the same time, the program stops:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = RefCell::new(5);
+let a = x.borrow_mut();
+let b = x.borrow_mut(); // ❌ panic! two writers at the same time
+<span class="boring">}</span></code></pre>
+<p>The compiler won’t give an error here, so you have to be careful yourself!</p>
+<h4 id="1535-combining-rc-and-refcell"><a class="header" href="#1535-combining-rc-and-refcell">15.3.5. Combining Rc and RefCell</a></h4>
+<p>Real magic happens when we combine the two: <code>Rc&lt;RefCell&lt;T&gt;&gt;</code>. Now multiple owners can see the same data and each of them (one at a time) can change it:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::rc::Rc;
+use std::cell::RefCell;
+use std::ops::AddAssign;
+
+let shared = Rc::new(RefCell::new(0));
+Rc::clone(&amp;shared).borrow_mut().add_assign(5); // +5
+Rc::clone(&amp;shared).borrow_mut().add_assign(3); // +3
+println!("Final: {}", shared.borrow()); // 8
+<span class="boring">}</span></code></pre>
+<h4 id="1536-exercise-rcrefcell"><a class="header" href="#1536-exercise-rcrefcell">15.3.6. Exercise: Rc&lt;RefCell<i32>&gt;</i32></a></h4>
+<p>Create a number <code>10</code> of type <code>Rc&lt;RefCell&lt;i32&gt;&gt;</code>. Write two functions <code>add_two</code> and <code>multiply_by_three</code> that each work on that same number. Finally print the value.</p>
+<p>💡 <strong>Answer:</strong></p>
+<pre class="playground"><code class="language-rust">fn add_two(num: &amp;Rc&lt;RefCell&lt;i32&gt;&gt;) { *num.borrow_mut() += 2; }
+fn multiply_by_three(num: &amp;Rc&lt;RefCell&lt;i32&gt;&gt;) { *num.borrow_mut() *= 3; }
+
+fn main() {
+    let n = Rc::new(RefCell::new(10));
+    add_two(&amp;n);
+    multiply_by_three(&amp;n);
+    println!("Result: {}", n.borrow()); // 36
+}</code></pre>
+<p><img src="../assets/images/15.3.png" alt="[Illustration: A cartoon notebook on a table with a glowing lock icon. One hand holds a blue key labeled “borrow”, another hand waits with a golden key labeled “borrow_mut”. A traffic light shows green for reading, red for simultaneous writing. Ferris explains with a pointer. Style: playful educational illustration, clear visual rules, bright, 16:9.]"></p>
+<hr>
+<h3 id="154-project-a-simple-graph-system"><a class="header" href="#154-project-a-simple-graph-system">15.4. Project: A Simple Graph System</a></h3>
+<p>Now let’s put all these boxes together and build a space map! A graph is a set of nodes that can be connected to each other. 🌌🔗</p>
+<h4 id="1541-defining-a-node"><a class="header" href="#1541-defining-a-node">15.4.1. Defining a Node</a></h4>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::rc::Rc;
+use std::cell::RefCell;
+
+#[derive(Debug)]
+struct Node {
+    name: String,
+    neighbors: Vec&lt;Rc&lt;RefCell&lt;Node&gt;&gt;&gt;,
+}
+<span class="boring">}</span></code></pre>
+<h4 id="1542-building-a-graph-with-rcrefcell"><a class="header" href="#1542-building-a-graph-with-rcrefcell">15.4.2. Building a Graph with Rc&lt;RefCell<node>&gt;</node></a></h4>
+<pre class="playground"><code class="language-rust">fn main() {
+    let a = Rc::new(RefCell::new(Node { name: "Planet A".into(), neighbors: vec![] }));
+    let b = Rc::new(RefCell::new(Node { name: "Planet B".into(), neighbors: vec![] }));
+    let c = Rc::new(RefCell::new(Node { name: "Planet C".into(), neighbors: vec![] }));
+
+    // A connects to B and C
+    a.borrow_mut().neighbors.push(Rc::clone(&amp;b));
+    a.borrow_mut().neighbors.push(Rc::clone(&amp;c));
+
+    // B also connects back to A (two‑way)
+    b.borrow_mut().neighbors.push(Rc::clone(&amp;a));
+
+    println!("A’s neighbors: {:?}", a.borrow().neighbors.iter().map(|n| &amp;n.borrow().name).collect::&lt;Vec&lt;_&gt;&gt;());
+}</code></pre>
+<h4 id="1543-adding-an-edge"><a class="header" href="#1543-adding-an-edge">15.4.3. Adding an Edge</a></h4>
+<p>We can write a helper function to make connecting nodes easier:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn add_edge(from: &amp;Rc&lt;RefCell&lt;Node&gt;&gt;, to: &amp;Rc&lt;RefCell&lt;Node&gt;&gt;) {
+    from.borrow_mut().neighbors.push(Rc::clone(to));
+}
+<span class="boring">}</span></code></pre>
+<h4 id="1544-simple-traversal-and-cycle-warning"><a class="header" href="#1544-simple-traversal-and-cycle-warning">15.4.4. Simple Traversal and Cycle Warning</a></h4>
+<p>⚠️ <strong>Important warning:</strong> If the graph contains a cycle, a simple traversal might run forever! For safe traversal we must keep a <code>HashSet</code> of already‑visited nodes.<br>⚠️ <strong>Memory leak:</strong> If the graph has a cycle and all connections use <code>Rc</code>, the memory of those nodes will never be freed (the same problem as in section 15.2.7). To build professional graphs we should use <code>Weak</code> for some of the edges. Don’t worry – this chapter is only an introduction to these ideas.</p>
+<p><img src="../assets/images/15.4.png" alt="[Illustration: A star map with glowing planet nodes labeled A, B, C. Glowing lines connect them bidirectionally. Small floating boxes labeled “Rc” and “RefCell” hover near each node, showing data flow. Ferris points to a connection with a space pen. Style: cozy sci-fi workspace, educational vector, soft glow, 16:9.]"></p>
+<hr>
+<h3 id="155-summary-and-challenge"><a class="header" href="#155-summary-and-challenge">15.5. Summary and Challenge</a></h3>
+<h4 id="1551-concept-review"><a class="header" href="#1551-concept-review">15.5.1. Concept Review</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Tool</th><th>Main Use</th><th>Important Limitation</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Box&lt;T&gt;</code></td><td>Sending data to the Heap, recursive structures</td><td>Has only one owner</td></tr>
+<tr><td><code>Rc&lt;T&gt;</code></td><td>Multiple owners (single‑threaded)</td><td>Read‑only; risk of leaks if cycles exist</td></tr>
+<tr><td><code>Weak&lt;T&gt;</code></td><td>Breaking <code>Rc</code> cycles</td><td>Must be upgraded with <code>upgrade</code> to access</td></tr>
+<tr><td><code>RefCell&lt;T&gt;</code></td><td>Changing data through an immutable reference</td><td>Borrow rules checked at runtime</td></tr>
+<tr><td><code>Rc&lt;RefCell&lt;T&gt;&gt;</code></td><td>Multiple owners + (turn‑based) mutability</td><td>Panic on rule violation + risk of cyclic leaks</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="1552-challenge-doublylinked-list-with-rcrefcell-and-an-introduction-to-weak"><a class="header" href="#1552-challenge-doublylinked-list-with-rcrefcell-and-an-introduction-to-weak">15.5.2. Challenge: Doubly‑Linked List with Rc&lt;RefCell<node>&gt; and an Introduction to Weak</node></a></h4>
+<p>Build a doubly‑linked list. Each node should have <code>prev</code> and <code>next</code> fields. Use <code>Option&lt;Rc&lt;RefCell&lt;Node&gt;&gt;&gt;</code>.</p>
+<p>💡 <strong>Professional tip:</strong> In the real world, if you use <code>Rc</code> for both <code>prev</code> and <code>next</code>, you will create a memory leak. The standard solution is to use <code>Weak&lt;RefCell&lt;Node&gt;&gt;</code> for the <code>prev</code> field. The final shape would be:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::rc::{Rc, Weak};
+use std::cell::RefCell;
+
+struct Node {
+    value: i32,
+    next: Option&lt;Rc&lt;RefCell&lt;Node&gt;&gt;&gt;,
+    prev: Option&lt;Weak&lt;RefCell&lt;Node&gt;&gt;&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p>For now, it’s okay to practice with only <code>Rc</code> – but know that for real‑world code you should use <code>Weak</code>. If you feel adventurous, you can replace it right now and access the data with <code>upgrade</code>. 🧠</p>
+<p><img src="../assets/images/15.5.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 15 Master” badge. Floating around him are a gift box (Box), a shared book (Rc), a notebook with a lock (RefCell), and a small star map graph. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-14.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter-16.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-14.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter-16.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

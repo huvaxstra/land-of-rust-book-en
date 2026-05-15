@@ -1,0 +1,475 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 19: Let&#x27;s Open the Spaceship Engine! - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="land-of-rust-ferris-the-space-crabs-adventures"><a class="header" href="#land-of-rust-ferris-the-space-crabs-adventures">Land of Rust: Ferris the Space Crab’s Adventures</a></h1>
+<h2 id="chapter-19-opening-the-spaceship-engine-unsafe-rust-and-macros"><a class="header" href="#chapter-19-opening-the-spaceship-engine-unsafe-rust-and-macros">Chapter 19: Opening the Spaceship Engine (Unsafe Rust and Macros)</a></h2>
+<h3 id="-chapter-index"><a class="header" href="#-chapter-index">📑 Chapter Index</a></h3>
+<p><a href="#191-serious-warning-this-is-the-engine-room-unsafe">19.1. Serious Warning: This Is the Engine Room (unsafe)</a><br><a href="#1911-story-the-hot-spaceship-engine">19.1.1. Story: The Hot Spaceship Engine</a><br><a href="#1912-what-is-unsafe">19.1.2. What Is unsafe?</a><br><a href="#1913-what-can-you-do-in-unsafe">19.1.3. What Can You Do in unsafe?</a><br><a href="#1914-example-raw-pointers">19.1.4. Example: Raw Pointers</a><br><a href="#1915-calling-an-unsafe-function">19.1.5. Calling an unsafe Function</a><br><a href="#1916-exercise-modifying-a-raw-pointer">19.1.6. Exercise: Modifying a Raw Pointer</a><br><a href="#192-making-your-own-magic-macros">19.2. Making Your Own Magic (Macros)</a><br><a href="#1921-story-ferriss-magic-word">19.2.1. Story: Ferris’s Magic Word</a><br><a href="#1922-what-is-a-macro-and-how-is-it-different-from-a-function">19.2.2. What Is a Macro and How Is It Different from a Function?</a><br><a href="#1923-the-simplest-macro-with-macro_rules">19.2.3. The Simplest Macro with <code>macro_rules!</code></a><br><a href="#1924-macros-with-parameters-ident">19.2.4. Macros with Parameters (<code>ident</code>)</a><br><a href="#1925-macros-with-a-variable-number-of-arguments">19.2.5. Macros with a Variable Number of Arguments</a><br><a href="#1926-commonly-used-macros-in-rust">19.2.6. Commonly Used Macros in Rust</a><br><a href="#1927-exercise-the-easy_vec-macro">19.2.7. Exercise: The <code>easy_vec!</code> Macro</a><br><a href="#193-project-building-the-repeat-macro">19.3. Project: Building the <code>repeat!</code> Macro</a><br><a href="#1931-goal">19.3.1. Goal</a><br><a href="#1932-implementing-repeat">19.3.2. Implementing <code>repeat!</code></a><br><a href="#1933-testing-the-macro">19.3.3. Testing the Macro</a><br><a href="#194-summary-and-challenge">19.4. Summary and Challenge</a><br><a href="#1941-concept-review">19.4.1. Concept Review</a><br><a href="#1942-challenge-the-create_function-macro">19.4.2. Challenge: The <code>create_function!</code> Macro</a></p>
+<hr>
+<h3 id="191-serious-warning-this-is-the-engine-room-unsafe"><a class="header" href="#191-serious-warning-this-is-the-engine-room-unsafe">19.1. Serious Warning: This Is the Engine Room (unsafe)</a></h3>
+<h4 id="1911-story-the-hot-spaceship-engine"><a class="header" href="#1911-story-the-hot-spaceship-engine">19.1.1. Story: The Hot Spaceship Engine</a></h4>
+<p>Deep inside Ferris’s spaceship there is a heavy metal door with red writing: <code>⛔ Danger! Senior engineers only</code>. Behind this door works the main engine. The temperature is extremely high, and if someone enters without training, everything might explode! 💥<br>In the Rust world, most of the time we work in the safe parts (<strong>Safe Rust</strong>), where the compiler acts like a kind guard and checks all the rules so we don’t make mistakes. But sometimes, for very special tasks (like talking directly to hardware or using old C libraries), we have to enter the <code>unsafe</code> room.<br><strong>Learning <code>unsafe</code> means you understand where Rust’s real power lies – but like a wise wizard, you only use it when absolutely necessary.</strong> 🧙‍♂️</p>
+<blockquote>
+<p>👨‍👩‍👧 <strong>Note for parents and teachers</strong><br><code>unsafe</code> is one of the most advanced topics in Rust and is rarely used in ordinary programs. The goal of this chapter is to introduce its existence, not to encourage its use. The official Rust book has a full chapter on <code>unsafe</code>:<br><a href="https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html">doc.rust-lang.org/book/ch19-01-unsafe-rust.html</a></p>
+</blockquote>
+<h4 id="1912-what-is-unsafe"><a class="header" href="#1912-what-is-unsafe">19.1.2. What Is unsafe?</a></h4>
+<p><code>unsafe</code> is a keyword that tells the compiler: “Friend, I’ll take care of memory safety here myself. Please turn off your checks so I can do my job.”<br>⚠️ <strong>Golden tip:</strong> <code>unsafe</code> does <strong>not</strong> mean “unsafe”! It means the compiler won’t enforce its usual rules, but you must act like a professional engineer and make sure you don’t corrupt the data. Only use it when you really have no other choice!</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>unsafe {
+    // here we can do low‑level things
+}
+<span class="boring">}</span></code></pre>
+<h4 id="1913-what-can-you-do-in-unsafe"><a class="header" href="#1913-what-can-you-do-in-unsafe">19.1.3. What Can You Do in unsafe?</a></h4>
+<p>Inside an <code>unsafe</code> block, five things become allowed that are forbidden in normal code:
+🔹 Dereferencing <strong>raw pointers</strong> (<code>*const T</code> and <code>*mut T</code>)<br>🔹 Calling <strong>unsafe functions</strong> (usually C functions)<br>🔹 Modifying mutable static variables (<code>static mut</code>)<br>🔹 Implementing <strong>unsafe traits</strong><br>🔹 Accessing fields of a <code>union</code></p>
+<h4 id="1914-example-raw-pointers"><a class="header" href="#1914-example-raw-pointers">19.1.4. Example: Raw Pointers</a></h4>
+<p>In normal Rust we use <code>&amp;</code> and <code>&amp;mut</code>, which are always safe and valid. But raw pointers (<code>*const T</code> and <code>*mut T</code>) can point to any address (even zero or <code>null</code>). The compiler cannot check whether that address is valid, so we are only allowed to read or write through them inside <code>unsafe</code>:</p>
+<pre class="playground"><code class="language-rust">fn main() {
+    let mut num = 5;
+
+    // creating raw pointers (this is not unsafe, we are just taking addresses)
+    let r1 = &amp;num as *const i32;
+    let r2 = &amp;mut num as *mut i32;
+
+    // reading or writing through a raw pointer must be inside unsafe
+    unsafe {
+        println!("Value of r1: {}", *r1); // 5
+        *r2 = 10; // change the value through the pointer
+        println!("New value of r2: {}", *r2); // 10
+    }
+}</code></pre>
+<h4 id="1915-calling-an-unsafe-function"><a class="header" href="#1915-calling-an-unsafe-function">19.1.5. Calling an unsafe Function</a></h4>
+<p>Some functions in Rust are marked <code>unsafe</code>. To call them you must be inside an <code>unsafe</code> block. A common use is communicating with C code (called FFI):</p>
+<pre class="playground"><code class="language-rust">extern "C" {
+    fn abs(input: i32) -&gt; i32; // absolute value function from the C library
+}
+
+fn main() {
+    let x = -5;
+    unsafe {
+        println!("The absolute value of {} is {}", x, abs(x)); // 5
+    }
+}</code></pre>
+<h4 id="1916-exercise-modifying-a-raw-pointer"><a class="header" href="#1916-exercise-modifying-a-raw-pointer">19.1.6. Exercise: Modifying a Raw Pointer</a></h4>
+<p>Create a mutable <code>i32</code> variable with the value <code>42</code>. Create a raw pointer <code>*mut i32</code> to it. Inside an <code>unsafe</code> block, change its value to <code>100</code> and print it.</p>
+<p>💡 <strong>Sample answer:</strong></p>
+<pre class="playground"><code class="language-rust">fn main() {
+    let mut value = 42;
+    let raw_ptr = &amp;mut value as *mut i32;
+
+    unsafe {
+        *raw_ptr = 100;
+        println!("New value: {}", *raw_ptr);
+    }
+}</code></pre>
+<p><img src="../assets/images/19.1.png" alt="[Illustration: Cartoon spaceship engine room with glowing warning signs labeled “unsafe”. Ferris wears a protective engineer suit and helmet, carefully turning a glowing valve labeled “*mut T”. Steam and soft blue energy fill the room. Style: dramatic but child-friendly, high contrast, vibrant children’s book illustration, 16:9.]"></p>
+<hr>
+<h3 id="192-making-your-own-magic-macros"><a class="header" href="#192-making-your-own-magic-macros">19.2. Making Your Own Magic (Macros)</a></h3>
+<h4 id="1921-story-ferriss-magic-word"><a class="header" href="#1921-story-ferriss-magic-word">19.2.1. Story: Ferris’s Magic Word</a></h4>
+<p>Ferris got tired of having to write long repetitive commands every day. For example, every time he wants to build a vector with a few numbers, he has to write <code>Vec::new()</code> and call <code>push</code> several times. One day he found a magic spellbook that taught him how to create his <strong>own spells</strong>. In Rust these spells are called <strong>Macros</strong>! ✨📖</p>
+<h4 id="1922-what-is-a-macro-and-how-is-it-different-from-a-function"><a class="header" href="#1922-what-is-a-macro-and-how-is-it-different-from-a-function">19.2.2. What Is a Macro and How Is It Different from a Function?</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Feature</th><th>Function</th><th>Macro</th></tr>
+</thead>
+<tbody>
+<tr><td>When it runs</td><td>at runtime</td><td>at compile‑time</td></tr>
+<tr><td>Main job</td><td>perform operations and calculations</td><td>automatically generate Rust code</td></tr>
+<tr><td>Number of inputs</td><td>fixed and known</td><td>can be variable and arbitrary</td></tr>
+<tr><td>Mark</td><td>plain name</td><td>ends with <code>!</code> (<code>println!</code>)</td></tr>
+</tbody>
+</table>
+</div>
+<p>Macros are like a <strong>smart copy‑paste factory</strong> that write code for you before your program is built!</p>
+<h4 id="1923-the-simplest-macro-with-macro_rules"><a class="header" href="#1923-the-simplest-macro-with-macro_rules">19.2.3. The Simplest Macro with <code>macro_rules!</code></a></h4>
+<p>To create a macro we use <code>macro_rules!</code>:</p>
+<pre class="playground"><code class="language-rust">macro_rules! say_hello {
+    () =&gt; {
+        println!("Hello from the magic macro! 🦀");
+    };
+}
+
+fn main() {
+    say_hello!(); // at compile time this becomes println!
+}</code></pre>
+<p><code>()</code> means “if you call the macro with no arguments, replace it with the code on the right”.</p>
+<h4 id="1924-macros-with-parameters-ident"><a class="header" href="#1924-macros-with-parameters-ident">19.2.4. Macros with Parameters (<code>ident</code>)</a></h4>
+<p>We can give input to a macro. For example, take a function name and let the macro build that function:</p>
+<pre class="playground"><code class="language-rust">macro_rules! create_function {
+    ($name:ident) =&gt; {
+        fn $name() {
+            println!("Function {} was called! ✨", stringify!($name));
+        }
+    };
+}
+
+create_function!(foo);
+create_function!(bar);
+
+fn main() {
+    foo(); // prints: Function foo was called!
+    bar(); // prints: Function bar was called!
+}</code></pre>
+<p><code>$name:ident</code> means “take a valid identifier (like a variable or function name)”. <code>stringify!</code> turns the name into a string.</p>
+<h4 id="1925-macros-with-a-variable-number-of-arguments"><a class="header" href="#1925-macros-with-a-variable-number-of-arguments">19.2.5. Macros with a Variable Number of Arguments</a></h4>
+<p>This is where the real magic of macros lies: they can take <strong>any number</strong> of inputs! With <code>$($x:expr),*</code> we say “zero or more expressions separated by commas”:</p>
+<pre class="playground"><code class="language-rust">macro_rules! sum {
+    ($($x:expr),*) =&gt; {
+        {
+            let mut total = 0;
+            $(total += $x;)* // this line repeats for each input
+            total
+        }
+    };
+}
+
+fn main() {
+    let s = sum!(1, 2, 3, 4);
+    println!("Sum: {}", s); // 10
+}</code></pre>
+<p><code>$(...)*</code> means “repeat the pattern inside the parentheses as many times as there are inputs”.</p>
+<h4 id="1926-commonly-used-macros-in-rust"><a class="header" href="#1926-commonly-used-macros-in-rust">19.2.6. Commonly Used Macros in Rust</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Macro</th><th>Use</th></tr>
+</thead>
+<tbody>
+<tr><td><code>println!(...)</code></td><td>print to the terminal</td></tr>
+<tr><td><code>vec![...]</code></td><td>quickly build a vector</td></tr>
+<tr><td><code>format!(...)</code></td><td>build a formatted string</td></tr>
+<tr><td><code>assert!(...)</code></td><td>check a condition in tests</td></tr>
+<tr><td><code>dbg!(...)</code></td><td>quickly print a value for debugging</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="1927-exercise-the-easy_vec-macro"><a class="header" href="#1927-exercise-the-easy_vec-macro">19.2.7. Exercise: The <code>easy_vec!</code> Macro</a></h4>
+<p>Create a macro that works exactly like <code>vec!</code>: it takes a list of values and returns a <code>Vec</code>.</p>
+<p>💡 <strong>Answer:</strong></p>
+<pre class="playground"><code class="language-rust">macro_rules! easy_vec {
+    ($($x:expr),* $(,)?) =&gt; {
+        {
+            let mut v = Vec::new();
+            $(v.push($x);)*
+            v
+        }
+    };
+}
+
+fn main() {
+    let v = easy_vec![10, 20, 30];
+    println!("{:?}", v); // [10, 20, 30]
+}</code></pre>
+<p>💡 <code>$(,)?</code> means “it’s okay if you leave an extra comma at the end of the list”.</p>
+<p><img src="../assets/images/19.2.png" alt="[Illustration: A cartoon wizard crab (Ferris) holding a glowing spellbook labeled “macro_rules!”. Floating magical symbols like “$x:expr” and “=&gt;” transform into actual Rust code blocks. Background: cozy library with starry windows. Style: whimsical, educational children’s book illustration, soft lighting, 16:9.]"></p>
+<hr>
+<h3 id="193-project-building-the-repeat-macro"><a class="header" href="#193-project-building-the-repeat-macro">19.3. Project: Building the <code>repeat!</code> Macro</a></h3>
+<h4 id="1931-goal"><a class="header" href="#1931-goal">19.3.1. Goal</a></h4>
+<p>We will build a macro that repeats a command several times. For example:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>repeat!(println!("Hello! 🦀"), 3);
+<span class="boring">}</span></code></pre>
+<p>and get the output:</p>
+<pre><code>Hello! 🦀
+Hello! 🦀
+Hello! 🦀
+</code></pre>
+<h4 id="1932-implementing-repeat"><a class="header" href="#1932-implementing-repeat">19.3.2. Implementing <code>repeat!</code></a></h4>
+<p>To allow the macro to repeat <strong>full statements</strong> (like <code>let x = 5;</code>), we use <code>stmt</code> instead of <code>expr</code>:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>macro_rules! repeat {
+    ($cmd:stmt, $count:expr) =&gt; {
+        for _ in 0..$count {
+            $cmd;
+        }
+    };
+}
+<span class="boring">}</span></code></pre>
+<p>Very simple! <code>$cmd</code> is the statement and <code>$count</code> is the number of repetitions. The macro turns it into a <code>for</code> loop.</p>
+<h4 id="1933-testing-the-macro"><a class="header" href="#1933-testing-the-macro">19.3.3. Testing the Macro</a></h4>
+<pre class="playground"><code class="language-rust">fn main() {
+    repeat!(println!("Ferris is cool!"), 3);
+    repeat!(let x = 5; println!("x = {}", x), 2);
+}</code></pre>
+<p>The output is exactly what we wanted. See how with a few lines of code we built a custom tool? 🛠️✨</p>
+<hr>
+<h3 id="194-summary-and-challenge"><a class="header" href="#194-summary-and-challenge">19.4. Summary and Challenge</a></h3>
+<h4 id="1941-concept-review"><a class="header" href="#1941-concept-review">19.4.1. Concept Review</a></h4>
+<p>✅ <code>unsafe</code>: the part of Rust where memory safety becomes the programmer’s responsibility. Only for low‑level, essential work.<br>✅ Raw pointers (<code>*const T</code>, <code>*mut T</code>): unchecked by the compiler; must be used inside <code>unsafe</code>.<br>✅ Macro (<code>macro_rules!</code>): code generator at compile time. Ends with <code>!</code>.<br>✅ Macro patterns: <code>$name:ident</code> (identifier), <code>$($x:expr),*</code> (list of expressions).<br>✅ <code>$(...)*</code>: repeat code for each input.<br>✅ <strong>You have travelled to the deepest layers of Rust – from the <code>unsafe</code> engine to the magic of macros. A true computer wizard now knows what tools are available!</strong> 🧙</p>
+<blockquote>
+<p>🧠 <strong>Sometimes things are hard, and that’s okay!</strong><br><code>unsafe</code> and macros are among the most advanced topics in Rust. Even professional programmers rarely use <code>unsafe</code> and write complicated macros with caution. If you still feel you don’t understand everything, don’t worry – this chapter is about awareness, not mastery. The important thing is that you know how and where you can use these tools.</p>
+</blockquote>
+<h4 id="1942-challenge-the-create_function-macro"><a class="header" href="#1942-challenge-the-create_function-macro">19.4.2. Challenge: The <code>create_function!</code> Macro</a></h4>
+<p>Create a macro that takes a function name, a start number, and an end number. It should generate a function that prints all numbers from start to end. Use <code>stringify!</code> to show the function name.</p>
+<p>💡 <strong>Sample answer:</strong></p>
+<pre class="playground"><code class="language-rust">macro_rules! create_function {
+    ($name:ident, $start:expr, $end:expr) =&gt; {
+        fn $name() {
+            println!("Function {} is running: 👇", stringify!($name));
+            for i in $start..=$end {
+                println!("  number: {}", i);
+            }
+        }
+    };
+}
+
+create_function!(count_to_five, 1, 5);
+
+fn main() {
+    count_to_five();
+}</code></pre>
+<hr>
+<p>🔚 <strong>End of Chapter 19</strong></p>
+<p>Now you know how to visit the engine room when necessary and how to create your own custom spells with macros. In Chapter 20, our final adventure, we will build a small network among Ferris’s friends to send secret messages and create a space chat room! Ready for the end of this space journey? 🌌📡🦀</p>
+<p><img src="../assets/images/19.3.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 19 Master” badge. Floating around him are an unsafe engine core, macro spell symbols, and a repeating loop arrow. Encouraging, vibrant children’s book illustration, celebratory mood, 16:9.]"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-18.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter-20.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-18.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter-20.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

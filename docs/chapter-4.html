@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 4: Ferris&#x27;s Borrowing Club - The Land of Rust – Ferris the Crab&#x27;s Space Adventures</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A gentle, story-driven introduction to Rust programming for children (ages 9+) and absolute beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3848ec2a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ef711573.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Land of Rust – Ferris the Crab&#x27;s Space Adventures</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="-the-land-of-rust-ferris-the-crabs-space-adventures"><a class="header" href="#-the-land-of-rust-ferris-the-crabs-space-adventures">🦀 The Land of Rust: Ferris the Crab’s Space Adventures</a></h1>
+<h2 id="chapter-4-ferriss-borrowing-club-learning-ownership-with-toys"><a class="header" href="#chapter-4-ferriss-borrowing-club-learning-ownership-with-toys">Chapter 4: Ferris’s Borrowing Club (Learning Ownership with Toys)</a></h2>
+<blockquote>
+<p>📋 <em>Chapter Outline:</em></p>
+<ul>
+<li><a href="#41-the-fight-over-the-red-tractor-the-move-concept">4.1. The Fight Over the Red Tractor (The Move Concept)</a></li>
+<li><a href="#42-borrowing-cards-borrowing--references">4.2. Borrowing Cards (Borrowing &amp; References)</a></li>
+<li><a href="#43-the-club-guard-borrow-checker">4.3. The Club Guard: Borrow Checker</a></li>
+<li><a href="#44-puzzle-pieces-slices">4.4. Puzzle Pieces (Slices)</a></li>
+<li><a href="#45-summary--challenge">4.5. Summary &amp; Challenge</a></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="41-the-fight-over-the-red-tractor-the-move-concept"><a class="header" href="#41-the-fight-over-the-red-tractor-the-move-concept">4.1. The Fight Over the Red Tractor (The Move Concept)</a></h2>
+<h3 id="411-the-story-the-tractor-with-only-one-owner"><a class="header" href="#411-the-story-the-tractor-with-only-one-owner">4.1.1. The Story: The Tractor with Only One Owner</a></h3>
+<p>Ferris has a beautiful red toy tractor. 🚜💨 One day, his friend Bill visits and says: “What a cool tractor! Can I play with it?” Ferris, being a kind crab, says: “Sure, take it! It’s yours now!” and hands it over.</p>
+<p>Later, when Ferris misses his tractor and wants to play with it again, he suddenly remembers he doesn’t have it anymore! Because he gave it away.</p>
+<p>In Rust, this exact thing happens, and we call it <strong>Ownership Transfer (Move)</strong>.</p>
+<h3 id="412-rule-1-every-value-has-exactly-one-owner"><a class="header" href="#412-rule-1-every-value-has-exactly-one-owner">4.1.2. Rule #1: Every Value Has Exactly One Owner</a></h3>
+<p>In Rust, everything you create (a text, a list, a number, or a toy) has only one owner. We call that owner the <strong>Owner</strong>. As long as you own it, you can use it. But when the owner leaves the room (for example, when a function finishes or reaches a closing brace <code>{}</code>), the toy automatically gets cleaned up from the computer’s memory. This keeps the memory tidy and prevents it from filling up with digital junk! 🧹✨</p>
+<h3 id="413-moving-ownership-in-code"><a class="header" href="#413-moving-ownership-in-code">4.1.3. Moving Ownership in Code</a></h3>
+<p>Let’s see this happen in Rust code:</p>
+<pre class="playground"><code class="language-rust">fn main() {
+    let s1 = String::from("tractor"); // s1 is the owner
+    let s2 = s1;                      // Ownership moved from s1 to s2
+
+    // println!("{}", s1);            // ❌ If you uncomment this, you'll get an error!
+    println!("{}", s2);               // ✅ This works perfectly
+}</code></pre>
+<p>The compiler quickly says: <code>value moved</code>. It means: <em>“Hey friend, this doesn’t belong to you anymore! Ownership went to <code>s2</code>.”</em></p>
+<h3 id="414-why-do-some-things-just-copy-the-copy-trait"><a class="header" href="#414-why-do-some-things-just-copy-the-copy-trait">4.1.4. Why Do Some Things Just Copy? (The <code>Copy</code> Trait)</a></h3>
+<p>You might ask: <em>“But I used to swap numbers like that before, and I didn’t get any errors!”</em></p>
+<p>You guessed exactly right. Some things, like simple numbers (<code>i32</code>, <code>f64</code>) or single characters (<code>char</code>), are so tiny and lightweight that Rust just makes a <strong>copy</strong> instead of moving ownership:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;
+let y = x; // x is copied here, not moved
+println!("x = {}, y = {}", x, y); // Both work fine!
+<span class="boring">}</span></code></pre>
+<p>Why? Because copying a number is like remembering a fact in your head: instant and free! But a <code>String</code> can be huge (like a thousand-page book). Copying it would waste time and memory. So Rust prefers to just move the ownership. We call types that copy automatically <strong>Copy types</strong>.</p>
+<p><img src="../assets/images/4.1.png" alt="[Illustration: Two labeled boxes side-by-side. Box “s1” is empty with a faded cross mark. Box “s2” holds a shiny red toy tractor. A curved arrow shows ownership moving from s1 to s2. Ferris stands beside them, pointing at the boxes with a surprised but happy expression. Style: bright children’s book illustration, clean lines, educational metaphor, 16:9 aspect ratio.]"></p>
+<hr>
+<h2 id="42-borrowing-cards-borrowing--references"><a class="header" href="#42-borrowing-cards-borrowing--references">4.2. Borrowing Cards (Borrowing &amp; References)</a></h2>
+<h3 id="421-solving-the-fight-a-borrowing-card-instead-of-giving-away-the-toy"><a class="header" href="#421-solving-the-fight-a-borrowing-card-instead-of-giving-away-the-toy">4.2.1. Solving the Fight: A Borrowing Card Instead of Giving Away the Toy</a></h3>
+<p>Ferris shouldn’t have given the tractor away permanently. He could have just handed Bill a <strong>borrowing card</strong>. With that card, Bill can look at the tractor, or even ride it, but the tractor stays in Ferris’s storage.</p>
+<p>In Rust, we call this borrowing card a <strong>Reference</strong>. The act of lending is called <strong>Borrowing</strong>.</p>
+<h3 id="422-creating-a-reference-with-"><a class="header" href="#422-creating-a-reference-with-">4.2.2. Creating a Reference with <code>&amp;</code></a></h3>
+<p>You create a borrowing card by putting an <code>&amp;</code> symbol before a variable’s name:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s1 = String::from("tractor");
+let s2 = &amp;s1; // s2 holds a reference to s1
+
+println!("Owner: {}", s1);    // Ferris still has his tractor
+println!("Borrower: {}", s2); // Bill can also look at it
+<span class="boring">}</span></code></pre>
+<p>No error occurs here! Both can use the value because they’re just “looking at it,” not “taking ownership.”</p>
+<h3 id="423-rule-unlimited-normal-borrowing-cards-allowed"><a class="header" href="#423-rule-unlimited-normal-borrowing-cards-allowed">4.2.3. Rule: Unlimited Normal Borrowing Cards Allowed</a></h3>
+<p>You can issue as many normal borrowing cards (<code>&amp;</code>) as you want:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = String::from("hello");
+let r1 = &amp;s;
+let r2 = &amp;s;
+let r3 = &amp;s;
+println!("{} {} {}", r1, r2, r3); // Everyone can look!
+<span class="boring">}</span></code></pre>
+<p>This is just like several kids gathering around a fish tank to watch the fish. As long as nobody puts their hand in the water to change things, everyone is happy! 🐠</p>
+<h3 id="424-special-borrowing-card-for-changes-mut"><a class="header" href="#424-special-borrowing-card-for-changes-mut">4.2.4. Special Borrowing Card for Changes (<code>&amp;mut</code>)</a></h3>
+<p>But what if Bill wants to paint the tractor red (modify it)? A normal card isn’t enough anymore. He needs a <strong>special golden borrowing card</strong> labeled <code>&amp;mut</code>. But it comes with a strict rule:</p>
+<ul>
+<li>⚠️ At any given moment, only <strong>one person</strong> can hold this special card.</li>
+</ul>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut s = String::from("tractor"); // The original must be mutable too
+let r1 = &amp;mut s; // Bill gets the golden card
+r1.push_str(" red"); // Paints the tractor (adds text to the string)
+println!("{}", r1);
+<span class="boring">}</span></code></pre>
+<p>If two people try to grab the golden card at the same time, the guard shouts:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut s = String::from("tractor");
+let r1 = &amp;mut s;
+let r2 = &amp;mut s; // ❌ Error! Two mutable references at once are forbidden
+<span class="boring">}</span></code></pre>
+<h3 id="425-ferriss-golden-rule-borrowing-rules-summary"><a class="header" href="#425-ferriss-golden-rule-borrowing-rules-summary">4.2.5. Ferris’s Golden Rule (Borrowing Rules Summary)</a></h3>
+<p>This is the most important rule of the Borrowing Club. Write it down somewhere visible:</p>
+<ul>
+<li>🔹 You can have <strong>many</strong> normal cards (<code>&amp;</code>) for looking only.</li>
+<li>🔹 You can have <strong>exactly one</strong> special card (<code>&amp;mut</code>) for looking + changing.</li>
+<li>❌ Mixing them is absolutely forbidden!</li>
+</ul>
+<p>Example of breaking the rule:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut s = String::from("tractor");
+let r1 = &amp;s;        // Normal card (look only)
+let r2 = &amp;mut s;    // ❌ Error! You can't look and change at the same time
+<span class="boring">}</span></code></pre>
+<p><img src="../assets/images/4.2.png" alt="[Illustration: A cartoon scene at a “Borrowing Club” desk. On the left, several kids hold blue cards labeled “&amp;” while looking at a toy. On the right, one kid holds a golden card labeled “&amp;mut” and is carefully painting the toy. Ferris stands behind the desk holding a large rulebook. Style: playful, educational, vibrant colors, clear visual metaphor, 16:9 aspect ratio.]"></p>
+<hr>
+<h2 id="43-the-club-guard-borrow-checker"><a class="header" href="#43-the-club-guard-borrow-checker">4.3. The Club Guard: Borrow Checker</a></h2>
+<h3 id="431-meet-the-guard"><a class="header" href="#431-meet-the-guard">4.3.1. Meet the Guard</a></h3>
+<p>Living inside the Rust compiler is a cute but serious creature called the <strong>Borrow Checker</strong>. He’s exactly like a strict but kind club guard. His job is to check all the rules we just learned. If he sees someone breaking a rule, he stops the program and tells you exactly what went wrong with friendly, colorful messages.</p>
+<p>He’s our friend because he prevents our program from crashing, losing data, or having two people change the same thing at once! 🛡️</p>
+<h3 id="432-expiration-date-of-borrowing-cards-a-peek-into-the-future"><a class="header" href="#432-expiration-date-of-borrowing-cards-a-peek-into-the-future">4.3.2. Expiration Date of Borrowing Cards (A Peek into the Future)</a></h3>
+<p>Every borrowing card has an <strong>expiration date</strong>. This means the card is only valid as long as the original toy exists. If the toy gets thrown away (removed from memory), the borrowing card becomes useless and dangerous. The compiler checks these expiration dates automatically.</p>
+<p>This example causes an error because the borrowing card (<code>r</code>) tries to live longer than the toy (<code>s</code>):</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let r;
+{
+    let s = String::from("hello");
+    r = &amp;s; // Borrowing card created
+} // s is destroyed here (closing brace)
+
+println!("{}", r); // ❌ Error! r points to a destroyed variable
+<span class="boring">}</span></code></pre>
+<p>(Don’t worry about the details yet. You’ll learn more about this in later chapters. Just know that the guard carefully watches the expiration dates of all cards.)</p>
+<h3 id="433-exercise-intentionally-break-the-rules-and-see-friendly-errors"><a class="header" href="#433-exercise-intentionally-break-the-rules-and-see-friendly-errors">4.3.3. Exercise: Intentionally Break the Rules (and See Friendly Errors)</a></h3>
+<p>Now it’s your turn! Write some code that intentionally breaks the golden rule. For example:</p>
+<pre class="playground"><code class="language-rust">fn main() {
+    let mut text = String::from("game");
+    let a = &amp;text;
+    let b = &amp;text;
+    let c = &amp;mut text; // The guard shouts here!
+    println!("{} {} {}", a, b, c);
+}</code></pre>
+<p>Run it and read the compiler’s error message carefully. See how precisely it tells you: <em>“cannot borrow <code>text</code> as mutable because it is also borrowed as immutable.”</em> That means the guard is protecting you! 🤝</p>
+<p><img src="../assets/images/4.3.png" alt="[Illustration: Ferris wearing a friendly security guard uniform, holding a flashlight and checking a rule clipboard. In the background, a cartoon compiler robot shows a red warning light next to broken code and a green checkmark next to safe code. Style: gentle technical metaphor, children’s book illustration, soft lighting, 16:9 aspect ratio.]"></p>
+<hr>
+<h2 id="44-puzzle-pieces-slices"><a class="header" href="#44-puzzle-pieces-slices">4.4. Puzzle Pieces (Slices)</a></h2>
+<h3 id="441-sometimes-we-only-need-part-of-a-text"><a class="header" href="#441-sometimes-we-only-need-part-of-a-text">4.4.1. Sometimes We Only Need Part of a Text</a></h3>
+<p>Imagine Ferris has a sign that says: <code>Welcome to Crab Planet</code>. He only wants to highlight the word <code>Crab</code>. Should he copy the whole sign? No! He can just grab a magnifying glass and point to that exact section. In Rust, we call this magnifying glass a <strong>Slice</strong>.</p>
+<h3 id="442-creating-a-slice-with-ranges"><a class="header" href="#442-creating-a-slice-with-ranges">4.4.2. Creating a Slice with Ranges</a></h3>
+<p>To make a slice of text, we use the <code>[start..end]</code> syntax:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = String::from("Ferris the crab");
+let ferris = &amp;s[0..6];   // "Ferris" (indices 0 to 5)
+let the_crab = &amp;s[7..];  // "the crab" (index 7 to the end)
+let all = &amp;s[..];        // "Ferris the crab" (the whole text)
+<span class="boring">}</span></code></pre>
+<p>📌 <strong>Important Note for Non-English Text</strong>: In Rust, <code>[..]</code> indices work on bytes, not characters. Since characters like Persian letters or emojis take multiple bytes, slicing them might cause errors. For now, practice with English text to keep things simple!</p>
+<h3 id="443-important-slices-are-also-borrowing-cards"><a class="header" href="#443-important-slices-are-also-borrowing-cards">4.4.3. Important: Slices Are Also Borrowing Cards</a></h3>
+<p>A slice is actually a type of reference (<code>&amp;str</code>). So the guard’s rules apply to it too! As long as you hold a slice of a text, you cannot modify the original text:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut s = String::from("hello world");
+let word = &amp;s[0..5]; // Borrowing card pointing to "hello"
+s.clear();           // ❌ Error! Can't clear the text while word is still looking at it
+<span class="boring">}</span></code></pre>
+<h3 id="444-exercise-find-the-first-word"><a class="header" href="#444-exercise-find-the-first-word">4.4.4. Exercise: Find the First Word</a></h3>
+<p>Write a function called <code>first_word</code> that takes a <code>&amp;str</code> (a text reference) and returns the first word (everything before the first space). If there’s no space, return the whole text.</p>
+<p>💡 <strong>Hint</strong>: You can use the <code>.find(' ')</code> method, which returns the position of the space. This method returns an <code>Option</code>: if it finds a space, it gives <code>Some(position)</code>; if not, it gives <code>None</code>. (This is exactly like the <code>Result</code> from Chapter 2, but uses <code>Some/None</code> instead of <code>Ok/Err</code>.)</p>
+<pre class="playground"><code class="language-rust">fn first_word(s: &amp;str) -&gt; &amp;str {
+    match s.find(' ') {
+        Some(pos) =&gt; &amp;s[..pos], // Space found: slice up to that position
+        None =&gt; s,              // No space: return the whole text
+    }
+}
+
+fn main() {
+    let sentence = String::from("Ferris the crab");
+    let word = first_word(&amp;sentence);
+    println!("First word: {}", word); // Output: Ferris
+}</code></pre>
+<p>This code is safe, fast, and exactly what a professional Rustacean would write! 🛠️</p>
+<p><img src="../assets/images/4.4.png" alt="[Illustration: A close-up of a cartoon magnifying glass hovering over a long paper strip labeled “Ferris the crab”. The glass brightly highlights only the word “Ferris”. A pair of scissors (representing slicing) rests nearby. Ferris proudly holds the magnifying glass. Style: clean educational vector, bright colors, clear metaphor, 16:9 aspect ratio.]"></p>
+<hr>
+<h2 id="45-summary--challenge"><a class="header" href="#45-summary--challenge">4.5. Summary &amp; Challenge</a></h2>
+<h3 id="451-the-three-main-rules-of-ownership"><a class="header" href="#451-the-three-main-rules-of-ownership">4.5.1. The Three Main Rules of Ownership</a></h3>
+<p>To keep things clear, write these three rules on a piece of paper and stick it where you can see it:</p>
+<ol>
+<li>Every value in Rust has exactly one owner.</li>
+<li>You can have many immutable references (<code>&amp;</code>) OR exactly one mutable reference (<code>&amp;mut</code>). Mixing them is forbidden.</li>
+<li>When the owner leaves the scope, the value is automatically cleaned up.</li>
+</ol>
+<h3 id="452-challenge-a-function-that-doesnt-take-ownership"><a class="header" href="#452-challenge-a-function-that-doesnt-take-ownership">4.5.2. Challenge: A Function That Doesn’t Take Ownership</a></h3>
+<p>Write a function called <code>calculate_length</code> that takes a <code>&amp;String</code> reference and returns its length (without taking ownership). In <code>main</code>, create a <code>String</code>, calculate its length with your function, and then print the original <code>String</code> again afterward.</p>
+<p>💡 <strong>Sample Answer</strong>:</p>
+<pre class="playground"><code class="language-rust">fn calculate_length(s: &amp;String) -&gt; usize {
+    s.len() // .len() returns the string's length
+}
+
+fn main() {
+    let my_string = String::from("Ferris the crab");
+    let len = calculate_length(&amp;my_string);
+    println!("The length of '{}' is {} characters.", my_string, len);
+    // my_string is still alive because we never gave away its ownership!
+}</code></pre>
+<h3 id="453-final-words-dont-worry-just-practice"><a class="header" href="#453-final-words-dont-worry-just-practice">4.5.3. Final Words: Don’t Worry, Just Practice!</a></h3>
+<p>This chapter might have felt a bit hard or strange at first. That’s completely normal! Ownership is Rust’s most famous and challenging concept. Even experienced programmers sometimes wrestle with the Borrow Checker.</p>
+<p>But the good news is: the more you code, the more naturally these rules will click into place. It’s like riding a bicycle; it feels tricky at first, but soon you won’t even have to think about balancing. 🚴‍♂️💨</p>
+<p>In the next chapter, we’ll explore a super fun tool: <strong>Structs</strong>, which are like “ID cards for space monsters”! 🦑✨</p>
+<p><img src="../assets/images/4.5.png" alt="[Illustration: Ferris sitting at a cozy wooden desk, carefully writing the “3 Ownership Rules” on a glowing parchment. Floating around him are small icons: a locked box (ownership), a blue card (&amp;), a golden card (&amp;mut), and a magnifying glass (slice). Warm, encouraging lighting. Style: children’s book illustration, whimsical, high detail, 16:9 aspect ratio.]"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter-3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter-5.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter-3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter-5.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
