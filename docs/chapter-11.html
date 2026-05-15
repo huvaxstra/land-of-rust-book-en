@@ -191,7 +191,7 @@
 <h3 id="1111-the-story-ferriss-flight-simulator"><a class="header" href="#1111-the-story-ferriss-flight-simulator">11.1.1. The Story: Ferris’s Flight Simulator</a></h3>
 <p>Before Ferris presses the real launch button on his spaceship, he tests every system in a special simulator room. 🚀🕹️ He pushes buttons, starts engines, turns the steering wheel, and checks if everything works correctly. If a red light turns on in the simulator, Ferris is actually happy! Why? Because he found a problem before the real danger and can now fix it.</p>
 <p>In programming, we do exactly the same thing, and we call it <strong>Testing</strong> – <strong>one of the most important skills for a computer wizard</strong> to ensure the program works correctly before sharing it with others. 🧙‍♂️</p>
-<p><img src="../assets/images/11.1.png" alt="[Illustration: A cartoon cockpit labeled “SIMULATION MODE”. Ferris the crab sits in the pilot seat, pressing buttons on a dashboard. Green checkmarks float above working systems, while a red warning light blinks on a “test failed” panel. Style: vibrant children’s book illustration, playful tech metaphor, soft lighting, 16:9.]"></p>
+<p><img src="assets/images/11.1.png" alt="[Illustration: A cartoon cockpit labeled “SIMULATION MODE”. Ferris the crab sits in the pilot seat, pressing buttons on a dashboard. Green checkmarks float above working systems, while a red warning light blinks on a “test failed” panel. Style: vibrant children’s book illustration, playful tech metaphor, soft lighting, 16:9.]"></p>
 <h3 id="1112-what-is-a-test"><a class="header" href="#1112-what-is-a-test">11.1.2. What Is a Test?</a></h3>
 <p>A test is a small piece of code that calls a part of the main program and compares its result with what we expected.</p>
 <p>✅ If the result matches what we wanted → the test turns green (passes) and the trust light turns on.
@@ -227,7 +227,7 @@ thread 'check_addition' panicked at 'assertion failed: `(left == right)`
   right: `4`', src/lib.rs:3:5
 </code></pre>
 <p>The compiler tells you exactly: “I saw <code>5</code> on the left side, but I expected <code>4</code> on the right side!”</p>
-<p><img src="../assets/images/11.2.png" alt="[Illustration: A friendly robot quality inspector holding a rubber stamp. One stamp says “assert_eq! ✅”, the other shows a red warning symbol. Ferris stands beside a conveyor belt of code blocks waiting for inspection. Style: clean educational cartoon, bright colors, clear visual metaphor.]"></p>
+<p><img src="assets/images/11.2.png" alt="[Illustration: A friendly robot quality inspector holding a rubber stamp. One stamp says “assert_eq! ✅”, the other shows a red warning symbol. Ferris stands beside a conveyor belt of code blocks waiting for inspection. Style: clean educational cartoon, bright colors, clear visual metaphor.]"></p>
 <blockquote>
 <p>👨‍👩‍👧 <strong>Note for parents and teachers</strong><br>Test‑writing is one of the most valuable professional habits in programming. This chapter shows how writing tests helps us ensure code works correctly. If a child feels tired of writing tests at first, remind them that tests are like seatbelts – they might take a moment to buckle, but they save lives. The official Rust book has a complete chapter about testing:<br><a href="https://doc.rust-lang.org/book/ch11-00-testing.html">doc.rust-lang.org/book/ch11-00-testing.html</a></p>
 </blockquote>
@@ -304,7 +304,7 @@ mod tests {
     fn test_add_negative() { assert_eq!(add(-2, -3), -5); }
 }
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/11.3.png" alt="[Illustration: A friendly robot quality inspector holding a rubber stamp. One stamp says “assert_eq! ✅”, the other “assert_ne! ❌”. Ferris stands beside a conveyor belt of code blocks waiting for inspection. Style: clean educational cartoon, bright colors, clear visual metaphor.]"></p>
+<p><img src="assets/images/11.3.png" alt="[Illustration: A friendly robot quality inspector holding a rubber stamp. One stamp says “assert_eq! ✅”, the other “assert_ne! ❌”. Ferris stands beside a conveyor belt of code blocks waiting for inspection. Style: clean educational cartoon, bright colors, clear visual metaphor.]"></p>
 <hr>
 <h2 id="113-organizing-your-tests"><a class="header" href="#113-organizing-your-tests">11.3. Organizing Your Tests</a></h2>
 <h3 id="1131-unit-tests"><a class="header" href="#1131-unit-tests">11.3.1. Unit Tests</a></h3>
@@ -361,7 +361,7 @@ fn test_add_integration() {
 fn long_running_test() { /* Code that takes 10 minutes */ }
 <span class="boring">}</span></code></pre>
 <p>To run ignored tests: <code>cargo test -- --ignored</code></p>
-<p><img src="../assets/images/11.4.png" alt="[Illustration: Architectural blueprint of a codebase. Left side: main factory labeled “src”. Right side: a hidden laboratory labeled “#[cfg(test)] mod tests” connected by a secret tunnel. Top side: an external inspection booth labeled “tests/ integration”. Ferris points to the different zones. Style: playful technical diagram, children’s book style, bright, 16:9.]"></p>
+<p><img src="assets/images/11.4.png" alt="[Illustration: Architectural blueprint of a codebase. Left side: main factory labeled “src”. Right side: a hidden laboratory labeled “#[cfg(test)] mod tests” connected by a secret tunnel. Top side: an external inspection booth labeled “tests/ integration”. Ferris points to the different zones. Style: playful technical diagram, children’s book style, bright, 16:9.]"></p>
 <hr>
 <h2 id="114-project-testing-the-guess-the-number-game-from-chapter-2"><a class="header" href="#114-project-testing-the-guess-the-number-game-from-chapter-2">11.4. Project: Testing the Guess-the-Number Game (from Chapter 2)</a></h2>
 <p>Now it’s time to rewrite the guess-the-number game so it can be tested. (Remember? It generated a random number, took user input, and gave hints.)</p>
@@ -461,7 +461,7 @@ mod tests {
     }
 }
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/11.5.png" alt="[Illustration: Cartoon scene showing a “Mock Input” machine. A tape labeled “Cursor: b’42&#92;n’” feeds into a reader slot. The machine outputs a glowing green “Ok(42)” ticket. Ferris operates the controls with a satisfied smile. Style: dynamic, educational, bright colors, technical metaphor for children, 16:9.]"></p>
+<p><img src="assets/images/11.5.png" alt="[Illustration: Cartoon scene showing a “Mock Input” machine. A tape labeled “Cursor: b’42&#92;n’” feeds into a reader slot. The machine outputs a glowing green “Ok(42)” ticket. Ferris operates the controls with a satisfied smile. Style: dynamic, educational, bright colors, technical metaphor for children, 16:9.]"></p>
 <hr>
 <h2 id="115-summary--challenge"><a class="header" href="#115-summary--challenge">11.5. Summary &amp; Challenge</a></h2>
 <h3 id="1151-what-you-learned"><a class="header" href="#1151-what-you-learned">11.5.1. What You Learned</a></h3>
@@ -518,7 +518,7 @@ mod monster_tests {
 <span class="boring">}</span></code></pre>
 <p>Now you know how to write tests to ensure your program works correctly and add new changes with confidence. 🛡️✨</p>
 <p>In the next chapter, we’ll build a complete, professional command-line project (similar to the <code>grep</code> command) and put together everything we’ve learned so far! 🔍📜</p>
-<p><img src="../assets/images/11.6.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 11 Master” badge. Floating around him are testing tools: a green checkmark stamp, a red panic button, a mock tape reader, and a hidden lab door. Style: encouraging, vibrant children’s book illustration, celebratory mood, 16:9.]"></p>
+<p><img src="assets/images/11.6.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 11 Master” badge. Floating around him are testing tools: a green checkmark stamp, a red panic button, a mock tape reader, and a hidden lab door. Style: encouraging, vibrant children’s book illustration, celebratory mood, 16:9.]"></p>
 
                     </main>
 

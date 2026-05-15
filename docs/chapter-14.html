@@ -204,7 +204,7 @@ fn main() {
     println!("Secret number: {}", secret_number);
 }</code></pre>
 <p>💡 The line <code>use rand::Rng;</code> is very important! It tells Rust: “Please bring the instructions for generating random numbers as well.” If you don’t write this line, the compiler won’t recognise <code>gen_range</code>.</p>
-<p><img src="../assets/images/14.1.png" alt="[Illustration: Cartoon illustration of a friendly crab (Ferris) pushing a shopping cart in a giant digital supermarket. The shelves are filled with glowing boxes labeled with crate names like “rand”, “serde”, “tokio”. A friendly cargo robot scans a box and adds it to the cart. Style: vibrant children’s book, playful tech metaphor, soft lighting, 16:9.]"></p>
+<p><img src="assets/images/14.1.png" alt="[Illustration: Cartoon illustration of a friendly crab (Ferris) pushing a shopping cart in a giant digital supermarket. The shelves are filled with glowing boxes labeled with crate names like “rand”, “serde”, “tokio”. A friendly cargo robot scans a box and adds it to the cart. Style: vibrant children’s book, playful tech metaphor, soft lighting, 16:9.]"></p>
 <hr>
 <h3 id="142-searching-and-choosing-a-crate"><a class="header" href="#142-searching-and-choosing-a-crate">14.2. Searching and Choosing a Crate</a></h3>
 <h4 id="1421-going-to-cratesio"><a class="header" href="#1421-going-to-cratesio">14.2.1. Going to crates.io</a></h4>
@@ -226,7 +226,7 @@ fn main() {
     println!("Random colour: rgb({}, {}, {})", red, green, blue);
 }</code></pre>
 <p>Every time you run it, you’ll see a new colour! 🎨</p>
-<p><img src="../assets/images/14.2.png" alt="[Illustration: A cartoon computer screen showing the docs.rs website for the “rand” crate. A magnifying glass hovers over a “Examples” section. Ferris stands beside taking notes with a pencil. Style: clean educational vector, bright colors, clear UI focus, 16:9.]"></p>
+<p><img src="assets/images/14.2.png" alt="[Illustration: A cartoon computer screen showing the docs.rs website for the “rand” crate. A magnifying glass hovers over a “Examples” section. Ferris stands beside taking notes with a pencil. Style: clean educational vector, bright colors, clear UI focus, 16:9.]"></p>
 <hr>
 <h3 id="143-version-management-semver"><a class="header" href="#143-version-management-semver">14.3. Version Management (SemVer)</a></h3>
 <h4 id="1431-semantic-versioning"><a class="header" href="#1431-semantic-versioning">14.3.1. Semantic Versioning</a></h4>
@@ -250,7 +250,7 @@ fn main() {
 <p>💡 To start, just using <code>"0.9.0"</code> or <code>"0.9"</code> is enough and safe.</p>
 <h4 id="1433-locking-versions-with-cargolock"><a class="header" href="#1433-locking-versions-with-cargolock">14.3.3. Locking Versions with Cargo.lock</a></h4>
 <p>The first time you run <code>cargo build</code>, Cargo creates a file called <code>Cargo.lock</code>. This file writes down exactly which version of each Crate was installed today.<br>If you give your project to a friend, and they also have the <code>Cargo.lock</code> file, they will install exactly the same versions you installed. That way nobody’s program breaks for no reason! 🔒📝</p>
-<p><img src="../assets/images/14.3.png" alt="[Illustration: A cartoon receipt labeled “Cargo.lock” with exact version numbers listed (rand = 0.9.0, ferris-says = 0.3.0). A friendly robot stamps it “LOCKED”. Ferris holds the receipt next to a shopping bag. Style: playful metaphor, educational, soft lighting, 16:9.]"></p>
+<p><img src="assets/images/14.3.png" alt="[Illustration: A cartoon receipt labeled “Cargo.lock” with exact version numbers listed (rand = 0.9.0, ferris-says = 0.3.0). A friendly robot stamps it “LOCKED”. Ferris holds the receipt next to a shopping bag. Style: playful metaphor, educational, soft lighting, 16:9.]"></p>
 <hr>
 <h3 id="144-updating-dependencies"><a class="header" href="#144-updating-dependencies">14.4. Updating Dependencies</a></h3>
 <h4 id="1441-cargo-update"><a class="header" href="#1441-cargo-update">14.4.1. <code>cargo update</code></a></h4>
@@ -264,7 +264,7 @@ fn main() {
 cargo outdated
 </code></pre>
 <p>It will show you a nice table of which dependencies are out‑of‑date. 📊</p>
-<p><img src="../assets/images/14.4.png" alt="[Illustration: A cartoon terminal window showing a colorful table with crate names, current versions, and newer available versions. Ferris points to a row with an upward arrow indicating an update. Style: modern tech illustration, clear and bright, 16:9.]"></p>
+<p><img src="assets/images/14.4.png" alt="[Illustration: A cartoon terminal window showing a colorful table with crate names, current versions, and newer available versions. Ferris points to a row with an upward arrow indicating an update. Style: modern tech illustration, clear and bright, 16:9.]"></p>
 <hr>
 <h3 id="145-creating-our-own-crate"><a class="header" href="#145-creating-our-own-crate">14.5. Creating Our Own Crate</a></h3>
 <h4 id="1451-creating-a-library-project"><a class="header" href="#1451-creating-a-library-project">14.5.1. Creating a Library Project</a></h4>
@@ -311,7 +311,7 @@ pub fn subtract(a: i32, b: i32) -&gt; i32 {
 <li>Make sure your <code>Cargo.toml</code> has the necessary information (<code>description</code>, <code>license</code>, <code>authors</code>).</li>
 <li>Run the magic command: <code>cargo publish</code> 🚀<br>(You don’t have to actually publish for practice!)</li>
 </ol>
-<p><img src="../assets/images/14.5.png" alt="[Illustration: A cozy desk setup with a laptop showing a beautiful documentation page generated by cargo doc. Floating around are markdown symbols, function signatures, and a glowing “cargo doc –open” badge. Ferris proudly holds a printed manual. Style: warm, educational children’s book illustration, inviting atmosphere, 16:9.]"></p>
+<p><img src="assets/images/14.5.png" alt="[Illustration: A cozy desk setup with a laptop showing a beautiful documentation page generated by cargo doc. Floating around are markdown symbols, function signatures, and a glowing “cargo doc –open” badge. Ferris proudly holds a printed manual. Style: warm, educational children’s book illustration, inviting atmosphere, 16:9.]"></p>
 <hr>
 <h3 id="146-project-using-ferris-says"><a class="header" href="#146-project-using-ferris-says">14.6. Project: Using <code>ferris-says</code></a></h3>
 <h4 id="1461-adding-ferris-says"><a class="header" href="#1461-adding-ferris-says">14.6.1. Adding <code>ferris-says</code></a></h4>
@@ -343,7 +343,7 @@ fn main() {
           / '-----' \
 </code></pre>
 <p>Isn’t that cute? Now you can replace the message with anything you like! 🎤</p>
-<p><img src="../assets/images/14.6.png" alt="[Illustration: A cartoon terminal window displaying the exact ASCII art output of the ferris-says crate. Ferris the crab sits next to the screen waving, with speech bubbles containing the same message. Style: playful, tech-meets-art, bright and cheerful, 16:9.]"></p>
+<p><img src="assets/images/14.6.png" alt="[Illustration: A cartoon terminal window displaying the exact ASCII art output of the ferris-says crate. Ferris the crab sits next to the screen waving, with speech bubbles containing the same message. Style: playful, tech-meets-art, bright and cheerful, 16:9.]"></p>
 <hr>
 <h3 id="147-summary-and-challenge"><a class="header" href="#147-summary-and-challenge">14.7. Summary and Challenge</a></h3>
 <h4 id="1471-concept-review"><a class="header" href="#1471-concept-review">14.7.1. Concept Review</a></h4>
@@ -378,7 +378,7 @@ pig_latin = { path = "../pig_latin" }
 }
 <span class="boring">}</span></code></pre>
 <p>Now you both know how to use ready‑made libraries and how to create your own library to share with others. In the next chapter we’ll meet <strong>Smart Pointers</strong> – tools like <code>Box</code>, <code>Rc</code>, and <code>RefCell</code> that help us manage data more intelligently. 📦🧠✨</p>
-<p><img src="../assets/images/14.7.png" alt="[Illustration: Ferris wearing a graduation cap and holding a glowing “Chapter 14 Master” badge. Floating around him are a shopping cart, a Cargo.lock receipt, a lib.rs file, and a documentation book. Encouraging, vibrant children’s book illustration, celebratory mood, 16:9.]"></p>
+<p><img src="assets/images/14.7.png" alt="[Illustration: Ferris wearing a graduation cap and holding a glowing “Chapter 14 Master” badge. Floating around him are a shopping cart, a Cargo.lock receipt, a lib.rs file, and a documentation book. Encouraging, vibrant children’s book illustration, celebratory mood, 16:9.]"></p>
 
                     </main>
 

@@ -198,7 +198,7 @@ class FlyingRobot extends Robot {
 <p>Inheritance has several big problems, and Rust deliberately avoids them:
 🔸 <strong>Rigid hierarchy:</strong> If later we want a robot that both flies and swims, we would need to inherit from two parents, which causes confusion (the diamond problem!).<br>🔸 <strong>Unwanted inheritance:</strong> If a “Penguin” inherits from “Bird”, it also gets the <code>fly</code> method, even though penguins cannot fly!<br>🔸 <strong>Fragility:</strong> If the engineer makes a small change to the father robot, the son robot’s code might suddenly break.</p>
 <p>Rust says: “Instead of a rigid hierarchy, let’s work with Lego blocks (Composition) and skill certificates (Traits)!” 🧩✨<br><strong>This approach means that instead of blind copying, you can combine behaviours like pieces from a toolbox – that’s what a computer wizard does.</strong> 🧙‍♂️</p>
-<p><img src="../assets/images/17.1.png" alt="[Illustration: A split cartoon comparison. Left side: a rigid, tangled family tree of robots labeled “Inheritance (Messy)”. Right side: neat Lego blocks labeled “Composition” being snapped together. Ferris the crab points happily at the Lego side. Style: educational vector illustration, bright colors, clear visual metaphor, 16:9.]"></p>
+<p><img src="assets/images/17.1.png" alt="[Illustration: A split cartoon comparison. Left side: a rigid, tangled family tree of robots labeled “Inheritance (Messy)”. Right side: neat Lego blocks labeled “Composition” being snapped together. Ferris the crab points happily at the Lego side. Style: educational vector illustration, bright colors, clear visual metaphor, 16:9.]"></p>
 <hr>
 <h3 id="172-the-rust-way-composition--traits"><a class="header" href="#172-the-rust-way-composition--traits">17.2. The Rust Way (Composition &amp; Traits)</a></h3>
 <h4 id="1721-composition-instead-of-inheritance"><a class="header" href="#1721-composition-instead-of-inheritance">17.2.1. Composition Instead of Inheritance</a></h4>
@@ -254,7 +254,7 @@ fn main() {
     ];
     for thing in things { thing.make_sound(); }
 }</code></pre>
-<p><img src="../assets/images/17.2.png" alt="[Illustration: A cartoon quality control desk. A friendly robot inspector stamps glowing badges labeled “Sound”, “Fly”, “Swim” onto different cute characters (cat, cow, phone). Ferris stands beside holding a checklist, smiling. Style: clean educational cartoon, bright colors, clear visual metaphor, 16:9.]"></p>
+<p><img src="assets/images/17.2.png" alt="[Illustration: A cartoon quality control desk. A friendly robot inspector stamps glowing badges labeled “Sound”, “Fly”, “Swim” onto different cute characters (cat, cow, phone). Ferris stands beside holding a checklist, smiling. Style: clean educational cartoon, bright colors, clear visual metaphor, 16:9.]"></p>
 <hr>
 <h3 id="173-project-simulating-a-simple-game"><a class="header" href="#173-project-simulating-a-simple-game">17.3. Project: Simulating a Simple Game</a></h3>
 <p>Now let’s test all this in a small role‑playing game! 🎮⚔️</p>
@@ -340,7 +340,7 @@ impl Attack for Archer {
     }
 }</code></pre>
 <p>📌 <strong>Important note:</strong> <code>dyn Attack</code> means “in this box you can put anything that implements the <code>Attack</code> trait”. <code>Box</code> moves it to the heap so its size no longer matters. This way we can keep different types in one list and loop over them! 🎉</p>
-<p><img src="../assets/images/17.3.png" alt="[Illustration: Cartoon RPG battle scene. Three heroes (Warrior, Mage, Archer) stand on one side, each holding a glowing “Box&lt;dyn Attack&gt;” badge. On the other side, a cartoon monster has a health bar showing 80 → 55 → 35. Ferris acts as a referee holding a flag. Style: vibrant, dynamic children’s book illustration, 16:9.]"></p>
+<p><img src="assets/images/17.3.png" alt="[Illustration: Cartoon RPG battle scene. Three heroes (Warrior, Mage, Archer) stand on one side, each holding a glowing “Box&lt;dyn Attack&gt;” badge. On the other side, a cartoon monster has a health bar showing 80 → 55 → 35. Ferris acts as a referee holding a flag. Style: vibrant, dynamic children’s book illustration, 16:9.]"></p>
 <hr>
 <h3 id="174-summary-and-challenge"><a class="header" href="#174-summary-and-challenge">17.4. Summary and Challenge</a></h3>
 <h4 id="1741-concept-review"><a class="header" href="#1741-concept-review">17.4.1. Concept Review</a></h4>
@@ -367,7 +367,7 @@ fn main() {
     start_journey(&amp;travelers);
 }</code></pre>
 <p>Now you understand how Rust implements object‑oriented ideas in a safe and flexible way, without traditional inheritance. In the next chapter we will meet <strong>advanced pattern matching</strong> and learn how to extract data from nested structures like a professional. 🕵️‍♂️✨</p>
-<p><img src="../assets/images/17.4.png" alt="[Illustration: Ferris wearing a graduation cap and holding a glowing “Chapter 17 Master” badge. Floating around him are Lego blocks (composition), trait certificates, a Box&lt;dyn Trait&gt;, and a small RPG sword. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
+<p><img src="assets/images/17.4.png" alt="[Illustration: Ferris wearing a graduation cap and holding a glowing “Chapter 17 Master” badge. Floating around him are Lego blocks (composition), trait certificates, a Box&lt;dyn Trait&gt;, and a small RPG sword. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
 
                     </main>
 

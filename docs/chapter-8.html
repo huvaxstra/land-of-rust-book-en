@@ -192,7 +192,7 @@
 <h3 id="811-the-story-ferriss-shopping-trip"><a class="header" href="#811-the-story-ferriss-shopping-trip">8.1.1. The Story: Ferris’s Shopping Trip</a></h3>
 <p>Before going to the space market, Ferris’s mom always grabs a piece of paper and writes down what they need: <code>"Milk, Bread, Eggs, Apple"</code>. 🛒 As they walk through the aisles, she might suddenly remember: <em>“Oh! We need cheese too!”</em> and quickly adds it to the bottom of the list. When they pick something up, she crosses it off.</p>
 <p>In programming, we often need exactly this kind of smart list: one that can grow and shrink as we go. Remember arrays (<code>[]</code>) from Chapter 3? Their size is fixed once created. But a <strong>Vector</strong> is exactly our magical shopping list! 🦀✨</p>
-<p><img src="../assets/images/8.1.png" alt="[Illustration: A cute cartoon crab (Ferris) holding a magical floating shopping list that keeps growing and shrinking. Items like milk, bread, eggs, and cheese pop in and out with gentle sparkles. Background: a cozy space-market aisle with glowing shelves. Style: vibrant children’s book illustration, playful, high quality.]"></p>
+<p><img src="assets/images/8.1.png" alt="[Illustration: A cute cartoon crab (Ferris) holding a magical floating shopping list that keeps growing and shrinking. Items like milk, bread, eggs, and cheese pop in and out with gentle sparkles. Background: a cozy space-market aisle with glowing shelves. Style: vibrant children’s book illustration, playful, high quality.]"></p>
 <h3 id="812-introducing-vect"><a class="header" href="#812-introducing-vect">8.1.2. Introducing <code>Vec&lt;T&gt;</code></a></h3>
 <p><code>Vec&lt;T&gt;</code> is a smart box that can hold many items of the same type (<code>T</code>) in a row. That <code>T</code> can be anything: numbers, text, or even <code>struct</code>s we built ourselves! The best thing about vectors is that their size isn’t fixed. You can add or remove items anytime.</p>
 <h3 id="813-creating-a-vector"><a class="header" href="#813-creating-a-vector">8.1.3. Creating a Vector</a></h3>
@@ -272,12 +272,12 @@ for item in &amp;mut shopping_list {
     println!("Sum: {}", sum);
     println!("Average: {:.2}", average); // Two decimal places
 }</code></pre>
-<p><img src="../assets/images/8.2.png" alt="[Illustration: A cartoon vector visualized as a train of glowing train cars. Each car holds a different item (Milk, Bread, Eggs, Apple). A crab is pushing a new car “Cheese” onto the end, and another crab is popping off the last car. Style: playful, educational, bright colors, 16:9.]"></p>
+<p><img src="assets/images/8.2.png" alt="[Illustration: A cartoon vector visualized as a train of glowing train cars. Each car holds a different item (Milk, Bread, Eggs, Apple). A crab is pushing a new car “Cheese” onto the end, and another crab is popping off the last car. Style: playful, educational, bright colors, 16:9.]"></p>
 <hr>
 <h2 id="82-the-secret-address-book-hashmap"><a class="header" href="#82-the-secret-address-book-hashmap">8.2. The Secret Address Book (HashMap)</a></h2>
 <h3 id="821-the-story-ferriss-contact-book"><a class="header" href="#821-the-story-ferriss-contact-book">8.2.1. The Story: Ferris’s Contact Book</a></h3>
 <p>Ferris has many friends across the galaxy: Bill, Luna, Stella… 🌌 He keeps a magical notebook. Whenever he opens it to a friend’s name, their space phone number magically appears. In this book, every name is connected to a number. In programming, we call this a <strong>Map</strong>. In Rust, it’s called <code>HashMap</code>.</p>
-<p><img src="../assets/images/8.3.png" alt="[Illustration: A cartoon crab holding a glowing magical address book. When a page labeled “Luna” opens, a holographic phone number floats out. The background shows a starry galaxy with tiny planets. Style: whimsical, educational children’s book illustration, bright colors.]"></p>
+<p><img src="assets/images/8.3.png" alt="[Illustration: A cartoon crab holding a glowing magical address book. When a page labeled “Luna” opens, a holographic phone number floats out. The background shows a starry galaxy with tiny planets. Style: whimsical, educational children’s book illustration, bright colors.]"></p>
 <h3 id="822-introducing-hashmapk-v"><a class="header" href="#822-introducing-hashmapk-v">8.2.2. Introducing <code>HashMap&lt;K, V&gt;</code></a></h3>
 <p><code>HashMap&lt;K, V&gt;</code> is a smart box that connects a <strong>Key</strong> (<code>K</code>) to a <strong>Value</strong> (<code>V</code>). Its superpower is speed: finding a value by its key is incredibly fast, even if we have millions of entries!
 Before using it, we must bring it into our code from the standard library:</p>
@@ -370,7 +370,7 @@ fn main() {
         println!("{}: {}", word, count);
     }
 }</code></pre>
-<p><img src="../assets/images/8.4.png" alt="[Illustration: A cartoon address book with pages that have key-value pairs (Ferris→12345, Bill→67890, Luna→99999). A magical magnifying glass highlights the “Luna” page, and a holographic number pops out. Style: educational, whimsical, bright colors, 16:9.]"></p>
+<p><img src="assets/images/8.4.png" alt="[Illustration: A cartoon address book with pages that have key-value pairs (Ferris→12345, Bill→67890, Luna→99999). A magical magnifying glass highlights the “Luna” page, and a holographic number pops out. Style: educational, whimsical, bright colors, 16:9.]"></p>
 <hr>
 <h2 id="83-story-collecting-rpg-items"><a class="header" href="#83-story-collecting-rpg-items">8.3. Story: Collecting RPG Items</a></h2>
 <p>Let’s build a mini adventure together! Ferris explores an unknown planet and collects items. 🗺️💎</p>
@@ -440,7 +440,7 @@ fn search_treasure(map: &amp;HashMap&lt;String, u32&gt;, place: &amp;str) -&gt; 
         None =&gt; println!("❌ No treasure found in {}.", place),
     }
 }</code></pre>
-<p><img src="../assets/images/8.5.png" alt="[Illustration: A cartoon RPG game scene. Ferris stands in front of a treasure chest with a map in hand. A vector backpack is on his back with item slots (Wooden Sword, Health Potion). A glowing map table shows locations: Dark Cave, Misty Forest, Snowy Peak. Style: fantasy children’s book illustration, adventurous, bright, 16:9.]"></p>
+<p><img src="assets/images/8.5.png" alt="[Illustration: A cartoon RPG game scene. Ferris stands in front of a treasure chest with a map in hand. A vector backpack is on his back with item slots (Wooden Sword, Health Potion). A glowing map table shows locations: Dark Cave, Misty Forest, Snowy Peak. Style: fantasy children’s book illustration, adventurous, bright, 16:9.]"></p>
 <hr>
 <h2 id="84-performance--choosing-the-right-tool"><a class="header" href="#84-performance--choosing-the-right-tool">8.4. Performance &amp; Choosing the Right Tool</a></h2>
 <h3 id="841-when-to-use-a-vector"><a class="header" href="#841-when-to-use-a-vector">8.4.1. When to Use a Vector?</a></h3>
@@ -479,7 +479,7 @@ fn main() {
     let common: Vec&lt;_&gt; = set_a.intersection(&amp;set_b).collect();
     println!("Common numbers: {:?}", common); // [4, 5]
 }</code></pre>
-<p><img src="../assets/images/8.6.png" alt="[Illustration: Two overlapping magical circles labeled “List A” and “List B”. In the intersection, glowing numbers “4” and “5” float with sparkles. Ferris the crab stands nearby holding a magnifying glass. Style: educational vector illustration, clean, bright.]"></p>
+<p><img src="assets/images/8.6.png" alt="[Illustration: Two overlapping magical circles labeled “List A” and “List B”. In the intersection, glowing numbers “4” and “5” float with sparkles. Ferris the crab stands nearby holding a magnifying glass. Style: educational vector illustration, clean, bright.]"></p>
 <hr>
 <h2 id="85-project-interactive-phonebook"><a class="header" href="#85-project-interactive-phonebook">8.5. Project: Interactive Phonebook</a></h2>
 <p>Let’s combine everything into a complete terminal-based phonebook project! 📞</p>
@@ -577,7 +577,7 @@ fn main() {
     }
 }
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/8.7.png" alt="[Illustration: A cartoon smartphone screen showing Ferris’s Phonebook app interface. The screen displays menu options (Add, Search, Delete, Show All) and a sample contact list. Ferris sits next to the phone holding a pen and notebook. Style: clean, educational, bright UI metaphor, 16:9.]"></p>
+<p><img src="assets/images/8.7.png" alt="[Illustration: A cartoon smartphone screen showing Ferris’s Phonebook app interface. The screen displays menu options (Add, Search, Delete, Show All) and a sample contact list. Ferris sits next to the phone holding a pen and notebook. Style: clean, educational, bright UI metaphor, 16:9.]"></p>
 <hr>
 <h2 id="86-summary--challenge"><a class="header" href="#86-summary--challenge">8.6. Summary &amp; Challenge</a></h2>
 <h3 id="861-what-you-learned"><a class="header" href="#861-what-you-learned">8.6.1. What You Learned</a></h3>
@@ -621,7 +621,7 @@ fn main() {
 }</code></pre>
 <p>Now you know how to use vectors and hash maps to store dynamic, real-world data! 🎒📦
 In the next chapter, we’ll dive into <strong>Error Handling</strong>: learning how to prevent crashes and manage mistakes like a true programming hero! 🛡️🦀</p>
-<p><img src="../assets/images/8.8.png" alt="[Illustration: Ferris wearing a graduation cap, holding a glowing “Chapter 8 Master” badge. Floating around him are colorful Vectors, HashMaps, and Set symbols transforming into a neat digital backpack. Style: encouraging, vibrant children’s book illustration.]"></p>
+<p><img src="assets/images/8.8.png" alt="[Illustration: Ferris wearing a graduation cap, holding a glowing “Chapter 8 Master” badge. Floating around him are colorful Vectors, HashMaps, and Set symbols transforming into a neat digital backpack. Style: encouraging, vibrant children’s book illustration.]"></p>
 
                     </main>
 

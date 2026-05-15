@@ -221,7 +221,7 @@ fn main() {
     let shapes: Vec&lt;Box&lt;dyn Draw&gt;&gt; = vec![Box::new(Circle), Box::new(Square)];
     for shape in shapes { shape.draw(); }
 }</code></pre>
-<p><img src="../assets/images/15.1.png" alt="[Illustration: A friendly cartoon crab (Ferris) holding a small glowing gift box labeled “Box&lt;T&gt;”. Inside the box, a larger, heavy golden item sits safely. A conveyor belt moves the box to a large warehouse labeled “Heap”, while a small barcode tag stays on a desk labeled “Stack”. Style: vibrant children’s book illustration, educational metaphor, soft lighting, 16:9.]"></p>
+<p><img src="assets/images/15.1.png" alt="[Illustration: A friendly cartoon crab (Ferris) holding a small glowing gift box labeled “Box&lt;T&gt;”. Inside the box, a larger, heavy golden item sits safely. A conveyor belt moves the box to a large warehouse labeled “Heap”, while a small barcode tag stays on a desk labeled “Stack”. Style: vibrant children’s book illustration, educational metaphor, soft lighting, 16:9.]"></p>
 <hr>
 <h3 id="152-the-librarys-shared-book-rc"><a class="header" href="#152-the-librarys-shared-book-rc">15.2. The Library’s Shared Book (Rc<t>)</t></a></h3>
 <h4 id="1521-story-a-book-several-people-read-at-the-same-time"><a class="header" href="#1521-story-a-book-several-people-read-at-the-same-time">15.2.1. Story: A Book Several People Read at the Same Time</a></h4>
@@ -261,7 +261,7 @@ fn main() {
 }</code></pre>
 <h4 id="1527-the-memory-leak-problem-and-the-weak-solution"><a class="header" href="#1527-the-memory-leak-problem-and-the-weak-solution">15.2.7. The Memory Leak Problem and the Weak Solution</a></h4>
 <p>Up to here everything is fine, but there is a trap! If we create a <strong>cycle</strong> with <code>Rc</code> (for example, node A points to B and B points back to A), the counters will never drop to zero. That means the memory of those nodes <strong>leaks</strong> until the program ends. 😟<br>To solve this problem, Rust has another smart pointer called <code>Weak&lt;T&gt;</code>. <code>Weak</code> is like <code>Rc</code> but it does not increase the strong count (it has its own weak count). To turn an <code>Rc</code> into a <code>Weak</code> we use <code>Rc::downgrade</code>.<br>In projects like bidirectional graphs or doubly‑linked lists, we use <code>Weak</code> for one of the directions to break the cycle. Don’t worry – we’ll mention it in the challenge at the end of the chapter and see more of it in later advanced chapters.</p>
-<p><img src="../assets/images/15.2.png" alt="[Illustration: A cartoon library desk with a single glowing book. Three children hold transparent “Rc” cards connected by dotted lines to the book. A small digital counter on the book shows “3”. Ferris stands nearby holding a clipboard, smiling. Style: clean educational vector, bright colors, clear metaphor, 16:9.]"></p>
+<p><img src="assets/images/15.2.png" alt="[Illustration: A cartoon library desk with a single glowing book. Three children hold transparent “Rc” cards connected by dotted lines to the book. A small digital counter on the book shows “3”. Ferris stands nearby holding a clipboard, smiling. Style: clean educational vector, bright colors, clear metaphor, 16:9.]"></p>
 <hr>
 <h3 id="153-the-group-notebook-refcell"><a class="header" href="#153-the-group-notebook-refcell">15.3. The Group Notebook (RefCell<t>)</t></a></h3>
 <h4 id="1531-story-a-notebook-everyone-can-write-in"><a class="header" href="#1531-story-a-notebook-everyone-can-write-in">15.3.1. Story: A Notebook Everyone Can Write In</a></h4>
@@ -313,7 +313,7 @@ fn main() {
     multiply_by_three(&amp;n);
     println!("Result: {}", n.borrow()); // 36
 }</code></pre>
-<p><img src="../assets/images/15.3.png" alt="[Illustration: A cartoon notebook on a table with a glowing lock icon. One hand holds a blue key labeled “borrow”, another hand waits with a golden key labeled “borrow_mut”. A traffic light shows green for reading, red for simultaneous writing. Ferris explains with a pointer. Style: playful educational illustration, clear visual rules, bright, 16:9.]"></p>
+<p><img src="assets/images/15.3.png" alt="[Illustration: A cartoon notebook on a table with a glowing lock icon. One hand holds a blue key labeled “borrow”, another hand waits with a golden key labeled “borrow_mut”. A traffic light shows green for reading, red for simultaneous writing. Ferris explains with a pointer. Style: playful educational illustration, clear visual rules, bright, 16:9.]"></p>
 <hr>
 <h3 id="154-project-a-simple-graph-system"><a class="header" href="#154-project-a-simple-graph-system">15.4. Project: A Simple Graph System</a></h3>
 <p>Now let’s put all these boxes together and build a space map! A graph is a set of nodes that can be connected to each other. 🌌🔗</p>
@@ -354,7 +354,7 @@ struct Node {
 <span class="boring">}</span></code></pre>
 <h4 id="1544-simple-traversal-and-cycle-warning"><a class="header" href="#1544-simple-traversal-and-cycle-warning">15.4.4. Simple Traversal and Cycle Warning</a></h4>
 <p>⚠️ <strong>Important warning:</strong> If the graph contains a cycle, a simple traversal might run forever! For safe traversal we must keep a <code>HashSet</code> of already‑visited nodes.<br>⚠️ <strong>Memory leak:</strong> If the graph has a cycle and all connections use <code>Rc</code>, the memory of those nodes will never be freed (the same problem as in section 15.2.7). To build professional graphs we should use <code>Weak</code> for some of the edges. Don’t worry – this chapter is only an introduction to these ideas.</p>
-<p><img src="../assets/images/15.4.png" alt="[Illustration: A star map with glowing planet nodes labeled A, B, C. Glowing lines connect them bidirectionally. Small floating boxes labeled “Rc” and “RefCell” hover near each node, showing data flow. Ferris points to a connection with a space pen. Style: cozy sci-fi workspace, educational vector, soft glow, 16:9.]"></p>
+<p><img src="assets/images/15.4.png" alt="[Illustration: A star map with glowing planet nodes labeled A, B, C. Glowing lines connect them bidirectionally. Small floating boxes labeled “Rc” and “RefCell” hover near each node, showing data flow. Ferris points to a connection with a space pen. Style: cozy sci-fi workspace, educational vector, soft glow, 16:9.]"></p>
 <hr>
 <h3 id="155-summary-and-challenge"><a class="header" href="#155-summary-and-challenge">15.5. Summary and Challenge</a></h3>
 <h4 id="1551-concept-review"><a class="header" href="#1551-concept-review">15.5.1. Concept Review</a></h4>
@@ -387,7 +387,7 @@ struct Node {
 }
 <span class="boring">}</span></code></pre>
 <p>For now, it’s okay to practice with only <code>Rc</code> – but know that for real‑world code you should use <code>Weak</code>. If you feel adventurous, you can replace it right now and access the data with <code>upgrade</code>. 🧠</p>
-<p><img src="../assets/images/15.5.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 15 Master” badge. Floating around him are a gift box (Box), a shared book (Rc), a notebook with a lock (RefCell), and a small star map graph. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
+<p><img src="assets/images/15.5.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 15 Master” badge. Floating around him are a gift box (Box), a shared book (Rc), a notebook with a lock (RefCell), and a small star map graph. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
 
                     </main>
 

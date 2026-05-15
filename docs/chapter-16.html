@@ -242,7 +242,7 @@ fn main() {
     h2.join().unwrap();
     println!("✅ All ants finished their work!");
 }</code></pre>
-<p><img src="../assets/images/16.1.png" alt="[Illustration: Cartoon illustration of a giant leaf being carried by a team of cute worker ants. One ant wears a crown labeled “Main Thread”, others wear small hard hats labeled “Thread 1”, “Thread 2”. Above them, a progress bar fills up. Background: grassy field with soft sunlight. Style: vibrant children’s book, educational metaphor, friendly characters, 16:9.]"></p>
+<p><img src="assets/images/16.1.png" alt="[Illustration: Cartoon illustration of a giant leaf being carried by a team of cute worker ants. One ant wears a crown labeled “Main Thread”, others wear small hard hats labeled “Thread 1”, “Thread 2”. Above them, a progress bar fills up. Background: grassy field with soft sunlight. Style: vibrant children’s book, educational metaphor, friendly characters, 16:9.]"></p>
 <blockquote>
 <p>👨‍👩‍👧 <strong>Note for parents and teachers</strong><br>Concurrency is one of the most advanced topics in programming. This chapter only introduces the basic concepts. If the child struggles with <code>Arc</code> or <code>Mutex</code>, don’t worry – these tools are used in professional projects and mastering them takes time. The official Rust book has a full chapter on concurrency:<br><a href="https://doc.rust-lang.org/book/ch16-00-concurrency.html">doc.rust-lang.org/book/ch16-00-concurrency.html</a></p>
 </blockquote>
@@ -322,7 +322,7 @@ fn main() {
     let sum: i32 = rx.iter().sum();
     println!("Sum of numbers: {}", sum); // 55
 }</code></pre>
-<p><img src="../assets/images/16.2.png" alt="[Illustration: Cartoon underground pipe system connecting two ant hills. One hill has a sender ant dropping glowing message bottles into the pipe. The other hill has a receiver ant catching them. Labels “tx” and “rx” float above the hills. Style: playful educational vector, bright colors, clear technical metaphor, 16:9.]"></p>
+<p><img src="assets/images/16.2.png" alt="[Illustration: Cartoon underground pipe system connecting two ant hills. One hill has a sender ant dropping glowing message bottles into the pipe. The other hill has a receiver ant catching them. Labels “tx” and “rx” float above the hills. Style: playful educational vector, bright colors, clear technical metaphor, 16:9.]"></p>
 <hr>
 <h3 id="163-the-narrow-hallway-mutex"><a class="header" href="#163-the-narrow-hallway-mutex">16.3. The Narrow Hallway (Mutex)</a></h3>
 <h4 id="1631-story-the-oneway-hallway"><a class="header" href="#1631-story-the-oneway-hallway">16.3.1. Story: The One‑Way Hallway</a></h4>
@@ -387,7 +387,7 @@ fn main() {
     for h in handles { h.join().unwrap(); }
     println!("Final result: {}", *counter.lock().unwrap());
 }</code></pre>
-<p><img src="../assets/images/16.3.png" alt="[Illustration: A narrow cartoon hallway with a large padlock on the door. One ant holds a golden key labeled “Mutex Guard”, walking inside. Other ants wait politely in line with numbered tickets. A glowing clipboard labeled “Arc” hangs on the wall. Style: clear educational metaphor, bright, friendly, children’s book, 16:9.]"></p>
+<p><img src="assets/images/16.3.png" alt="[Illustration: A narrow cartoon hallway with a large padlock on the door. One ant holds a golden key labeled “Mutex Guard”, walking inside. Other ants wait politely in line with numbered tickets. A glowing clipboard labeled “Arc” hangs on the wall. Style: clear educational metaphor, bright, friendly, children’s book, 16:9.]"></p>
 <hr>
 <h3 id="164-project-concurrent-counter-with-threads"><a class="header" href="#164-project-concurrent-counter-with-threads">16.4. Project: Concurrent Counter with Threads</a></h3>
 <h4 id="1641-without-a-mutex-data-race"><a class="header" href="#1641-without-a-mutex-data-race">16.4.1. Without a Mutex: Data Race</a></h4>
@@ -396,7 +396,7 @@ fn main() {
 <p>The code from exercise 16.3.5 is the standard, safe solution. Just make sure to use <code>Arc::clone</code> correctly and store all <code>join</code> handles before waiting for them.</p>
 <h4 id="1643-run-and-observe-the-result"><a class="header" href="#1643-run-and-observe-the-result">16.4.3. Run and Observe the Result</a></h4>
 <p>Run the program several times. You’ll see that it always prints exactly <code>1000000</code>. The number never changes. That means Rust is doing its job perfectly! 🎉</p>
-<p><img src="../assets/images/16.4.png" alt="[Illustration: A split illustration. Left side: two ants trying to write on the same small notebook at the same time, causing a chaotic mess labeled “Data Race ❌”. Right side: ants taking turns using a clipboard with a lock, result shows a perfect checkmark “1,000,000 ✅”. Ferris stands in the middle giving a thumbs up. Style: educational vector, clear contrast, bright colors, 16:9.]"></p>
+<p><img src="assets/images/16.4.png" alt="[Illustration: A split illustration. Left side: two ants trying to write on the same small notebook at the same time, causing a chaotic mess labeled “Data Race ❌”. Right side: ants taking turns using a clipboard with a lock, result shows a perfect checkmark “1,000,000 ✅”. Ferris stands in the middle giving a thumbs up. Style: educational vector, clear contrast, bright colors, 16:9.]"></p>
 <hr>
 <h3 id="165-summary-and-challenge"><a class="header" href="#165-summary-and-challenge">16.5. Summary and Challenge</a></h3>
 <h4 id="1651-concept-review"><a class="header" href="#1651-concept-review">16.5.1. Concept Review</a></h4>
@@ -461,7 +461,7 @@ fn main() {
     for h in handles { h.join().unwrap(); }
 }</code></pre>
 <p>Now you know how to use the power of ants (threads) to do several things at once, how to send messages between them, and how to protect your data with locks. 🐜⚡<br>In the next chapter we’ll see how Rust implements object‑oriented ideas in its own unique way. Ready? 🦀✨</p>
-<p><img src="../assets/images/16.5.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 16 Master” badge. Floating around him are thread spools, a channel pipe, a mutex lock, and an Arc clipboard. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
+<p><img src="assets/images/16.5.png" alt="[Illustration: Ferris wearing a graduation cap and safety goggles, holding a glowing “Chapter 16 Master” badge. Floating around him are thread spools, a channel pipe, a mutex lock, and an Arc clipboard. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
 
                     </main>
 

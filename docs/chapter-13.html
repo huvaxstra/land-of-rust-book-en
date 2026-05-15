@@ -251,7 +251,7 @@ for name in &amp;names {   // &amp;names is exactly the same as names.iter()
     }
 }</code></pre>
 <p><code>while let</code> means: “As long as <code>next</code> returns <code>Some</code>, run the code. When it returns <code>None</code>, stop automatically.” Very clean! ✨</p>
-<p><img src="../assets/images/13.1.png" alt="[Illustration: A friendly cartoon crab (Ferris) standing on a platform next to a colorful train. Each train car has a glowing gem inside. A conveyor arm lifts one gem at a time as the train moves slowly. Background: starry sky with a control panel showing “next() → Some(gem)”. Style: vibrant children’s book illustration, playful tech metaphor, soft lighting, 16:9.]"></p>
+<p><img src="assets/images/13.1.png" alt="[Illustration: A friendly cartoon crab (Ferris) standing on a platform next to a colorful train. Each train car has a glowing gem inside. A conveyor arm lifts one gem at a time as the train moves slowly. Background: starry sky with a control panel showing “next() → Some(gem)”. Style: vibrant children’s book illustration, playful tech metaphor, soft lighting, 16:9.]"></p>
 <hr>
 <h3 id="132-machines-along-the-track-adapter-methods"><a class="header" href="#132-machines-along-the-track-adapter-methods">13.2. Machines Along the Track (Adapter Methods)</a></h3>
 <h4 id="1321-map-transforming-each-element"><a class="header" href="#1321-map-transforming-each-element">13.2.1. <code>map</code>: Transforming Each Element</a></h4>
@@ -312,7 +312,7 @@ println!("{:?}", result); // [20, 40]
     println!("{:?}", result); // [4, 16, 36, 64, 100]
 }</code></pre>
 <p><code>(1..=10)</code> is a Range that already implements Iterator – no need for <code>vec!</code>!</p>
-<p><img src="../assets/images/13.2.png" alt="[Illustration: A cartoon factory conveyor belt with labeled machines: “filter”, “map”, “collect”. Glowing cubes travel through, changing shape and color at each station. Ferris operates a control panel with a big green “Run” button. Style: educational vector, bright, clean, 16:9.]"></p>
+<p><img src="assets/images/13.2.png" alt="[Illustration: A cartoon factory conveyor belt with labeled machines: “filter”, “map”, “collect”. Glowing cubes travel through, changing shape and color at each station. Ferris operates a control panel with a big green “Run” button. Style: educational vector, bright, clean, 16:9.]"></p>
 <hr>
 <h3 id="133-the-spy-backpack-closures"><a class="header" href="#133-the-spy-backpack-closures">13.3. The Spy Backpack (Closures)</a></h3>
 <h4 id="1331-story-ferriss-secret-tool"><a class="header" href="#1331-story-ferriss-secret-tool">13.3.1. Story: Ferris’s Secret Tool</a></h4>
@@ -385,7 +385,7 @@ fn main() {
     println!("{}", double(5));  // 10
     println!("{}", triple(5));  // 15
 }</code></pre>
-<p><img src="../assets/images/13.3.png" alt="[Illustration: A cartoon crab wearing a futuristic backpack with glowing memory chips. Around the crab float variables like “factor = 3” and “x” being pulled into the backpack. A “move” tag is stamped on the backpack. Style: playful sci-fi educational, bright colors, 16:9.]"></p>
+<p><img src="assets/images/13.3.png" alt="[Illustration: A cartoon crab wearing a futuristic backpack with glowing memory chips. Around the crab float variables like “factor = 3” and “x” being pulled into the backpack. A “move” tag is stamped on the backpack. Style: playful sci-fi educational, bright colors, 16:9.]"></p>
 <hr>
 <h3 id="134-combining-iterator-and-closure"><a class="header" href="#134-combining-iterator-and-closure">13.4. Combining Iterator and Closure</a></h3>
 <h4 id="1341-map-with-a-closure"><a class="header" href="#1341-map-with-a-closure">13.4.1. <code>map</code> with a Closure</a></h4>
@@ -431,7 +431,7 @@ let numbers: Vec&lt;i32&gt; = strings.iter()
 println!("{:?}", numbers); // [3, 8, 10]
 <span class="boring">}</span></code></pre>
 <p><code>.ok()</code> is a helper method that turns a <code>Result</code> into an <code>Option</code>. Very handy for cleaning up data! 🧼</p>
-<p><img src="../assets/images/13.4.png" alt="[Illustration: A cartoon sorting machine with a “filter_map” label. As items pass through, some are converted and drop into a “Collected” box while invalid items slide into a “Rejected” bin. Ferris watches the process. Style: educational, playful, bright colors, 16:9.]"></p>
+<p><img src="assets/images/13.4.png" alt="[Illustration: A cartoon sorting machine with a “filter_map” label. As items pass through, some are converted and drop into a “Collected” box while invalid items slide into a “Rejected” bin. Ferris watches the process. Style: educational, playful, bright colors, 16:9.]"></p>
 <hr>
 <h3 id="135-project-processing-a-log-file"><a class="header" href="#135-project-processing-a-log-file">13.5. Project: Processing a Log File</a></h3>
 <p>Now it’s time to put it all together in a real project. Suppose you have a file <code>log.txt</code> that records system status:</p>
@@ -485,7 +485,7 @@ for (msg, count) in &amp;counts {
 }
 <span class="boring">}</span></code></pre>
 <p><code>strip_prefix</code> returns the rest of the line only if it starts with <code>"ERROR: "</code>. Then we use <code>entry</code> and <code>or_insert</code> to count occurrences. The code is clean, fast, and nice! ⚡</p>
-<p><img src="../assets/images/13.5.png" alt="[Illustration: A cartoon control desk with a scrolling screen of log lines. A glowing filter machine catches only “ERROR” tags and drops them into a counting jar. Ferris adjusts a dial labeled “filter_map”. Style: cozy tech workspace, educational vector, warm lighting, 16:9.]"></p>
+<p><img src="assets/images/13.5.png" alt="[Illustration: A cartoon control desk with a scrolling screen of log lines. A glowing filter machine catches only “ERROR” tags and drops them into a counting jar. Ferris adjusts a dial labeled “filter_map”. Style: cozy tech workspace, educational vector, warm lighting, 16:9.]"></p>
 <hr>
 <h3 id="136-summary-and-challenge"><a class="header" href="#136-summary-and-challenge">13.6. Summary and Challenge</a></h3>
 <h4 id="1361-concept-review"><a class="header" href="#1361-concept-review">13.6.1. Concept Review</a></h4>

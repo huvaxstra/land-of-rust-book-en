@@ -220,7 +220,7 @@ cd minigrep
 </code></pre>
 <p>Open <code>src/main.rs</code>. For simplicity, we’ll write all the code right here.</p>
 <p><em>(💡 Tip: If you want to use <code>edition = "2024"</code> in <code>Cargo.toml</code>, that’s perfectly fine – our code works with both editions.)</em></p>
-<p><img src="../assets/images/12.1.png" alt="[Illustration: A friendly cartoon crab (Ferris) standing next to a small, boxy robot with a magnifying glass lens. The robot is scanning an open giant notebook with glowing search lines. Background: cozy spaceship desk with a starry window. Style: vibrant children’s book illustration, soft lighting, playful tech metaphor.]"></p>
+<p><img src="assets/images/12.1.png" alt="[Illustration: A friendly cartoon crab (Ferris) standing next to a small, boxy robot with a magnifying glass lens. The robot is scanning an open giant notebook with glowing search lines. Background: cozy spaceship desk with a starry window. Style: vibrant children’s book illustration, soft lighting, playful tech metaphor.]"></p>
 <hr>
 <h2 id="122-getting-command-line-arguments"><a class="header" href="#122-getting-command-line-arguments">12.2. Getting Command-Line Arguments</a></h2>
 <h3 id="1221-introducing-stdenvargs"><a class="header" href="#1221-introducing-stdenvargs">12.2.1. Introducing <code>std::env::args</code></a></h3>
@@ -281,7 +281,7 @@ fn main() {
     println!("🔍 Searching for '{}' in file '{}'", config.query, config.file_path);
 }</code></pre>
 <p>📌 <code>eprintln!</code> is like <code>println!</code>, but it writes to the error output (<code>stderr</code>). This way, if you save the program’s output to a file, error messages won’t get mixed up with the data!</p>
-<p><img src="../assets/images/12.2.png" alt="[Illustration: A cartoon command-line terminal with floating speech bubbles. One bubble says “cargo run – word file.txt”. A small config card labeled “Config { query, path }” is being stamped “APPROVED”. Ferris watches with a checklist. Style: clean educational vector, bright colors, clear UI metaphor.]"></p>
+<p><img src="assets/images/12.2.png" alt="[Illustration: A cartoon command-line terminal with floating speech bubbles. One bubble says “cargo run – word file.txt”. A small config card labeled “Config { query, path }” is being stamped “APPROVED”. Ferris watches with a checklist. Style: clean educational vector, bright colors, clear UI metaphor.]"></p>
 <hr>
 <h2 id="123-reading-a-file"><a class="header" href="#123-reading-a-file">12.3. Reading a File</a></h2>
 <h3 id="1231-using-stdfs"><a class="header" href="#1231-using-stdfs">12.3.1. Using <code>std::fs</code></a></h3>
@@ -302,7 +302,7 @@ fn main() {
 <span class="boring">}</span></code></pre>
 <h3 id="1233-handling-file-opening-errors"><a class="header" href="#1233-handling-file-opening-errors">12.3.3. Handling File-Opening Errors</a></h3>
 <p>If the file doesn’t exist or we don’t have permission to read it, <code>unwrap_or_else</code> catches the error, prints a friendly message, and exits the program. This way, the user isn’t left confused! 📂🔍</p>
-<p><img src="../assets/images/12.3.png" alt="[Illustration: A cartoon file cabinet with one drawer open. A glowing document floats out labeled “contents: String”. A small robot arm holds a stamp reading “READ SUCCESS”. Ferris stands nearby giving a thumbs up. Style: clean educational vector, bright colors, 16:9.]"></p>
+<p><img src="assets/images/12.3.png" alt="[Illustration: A cartoon file cabinet with one drawer open. A glowing document floats out labeled “contents: String”. A small robot arm holds a stamp reading “READ SUCCESS”. Ferris stands nearby giving a thumbs up. Style: clean educational vector, bright colors, 16:9.]"></p>
 <hr>
 <h2 id="124-the-search-logic"><a class="header" href="#124-the-search-logic">12.4. The Search Logic</a></h2>
 <h3 id="1241-the-search-function"><a class="header" href="#1241-the-search-function">12.4.1. The <code>search</code> Function</a></h3>
@@ -339,7 +339,7 @@ if results.is_empty() {
 }
 <span class="boring">}</span></code></pre>
 <p>If nothing is found, it says “Nothing found.” If something is found, it shows each line one by one! ✅</p>
-<p><img src="../assets/images/12.4.png" alt="[Illustration: A magnifying glass hovering over a long scroll of text. Highlighted lines glow with a soft yellow light while others remain dim. A tiny conveyor belt carries matching lines into a box labeled “Vec&lt;&amp;str&gt;”. Ferris operates the controls. Style: playful technical metaphor, warm lighting, children’s book illustration.]"></p>
+<p><img src="assets/images/12.4.png" alt="[Illustration: A magnifying glass hovering over a long scroll of text. Highlighted lines glow with a soft yellow light while others remain dim. A tiny conveyor belt carries matching lines into a box labeled “Vec&lt;&amp;str&gt;”. Ferris operates the controls. Style: playful technical metaphor, warm lighting, children’s book illustration.]"></p>
 <hr>
 <h2 id="125-testing-our-mini-robot"><a class="header" href="#125-testing-our-mini-robot">12.5. Testing Our Mini-Robot</a></h2>
 <h3 id="1251-writing-a-test-for-search"><a class="header" href="#1251-writing-a-test-for-search">12.5.1. Writing a Test for <code>search</code></a></h3>
@@ -370,7 +370,7 @@ I am afraid of dinosaurs.";
 <pre><code class="language-bash">cargo test
 </code></pre>
 <p>You should see a green output: <code>test tests::test_search_one_result ... ok</code>. This means our robot is working correctly! 🟢</p>
-<p><img src="../assets/images/12.5.png" alt="[Illustration: A cartoon laboratory setting with a test tube rack. One tube glows green labeled “search test ✅”. A checklist shows “assert_eq! passed”. Ferris wears safety goggles and smiles. Style: playful, educational, bright colors, 16:9.]"></p>
+<p><img src="assets/images/12.5.png" alt="[Illustration: A cartoon laboratory setting with a test tube rack. One tube glows green labeled “search test ✅”. A checklist shows “assert_eq! passed”. Ferris wears safety goggles and smiles. Style: playful, educational, bright colors, 16:9.]"></p>
 <hr>
 <h2 id="126-making-it-smarter"><a class="header" href="#126-making-it-smarter">12.6. Making It Smarter</a></h2>
 <h3 id="1261-case-sensitivity"><a class="header" href="#1261-case-sensitivity">12.6.1. Case Sensitivity</a></h3>
@@ -435,7 +435,7 @@ impl Config {
     search(&amp;config.query, &amp;contents)
 };
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/12.6.png" alt="[Illustration: A cartoon control panel with two switches: “Case-Sensitive (ON)” and “Case-Insensitive (OFF)”. A glowing environment variable label “CASE_INSENSITIVE=1” flips the switch. Ferris adjusts a dial with a smile. Style: clean, educational infographic, bright colors.]"></p>
+<p><img src="assets/images/12.6.png" alt="[Illustration: A cartoon control panel with two switches: “Case-Sensitive (ON)” and “Case-Insensitive (OFF)”. A glowing environment variable label “CASE_INSENSITIVE=1” flips the switch. Ferris adjusts a dial with a smile. Style: clean, educational infographic, bright colors.]"></p>
 <hr>
 <h2 id="127-summary--challenge"><a class="header" href="#127-summary--challenge">12.7. Summary &amp; Challenge</a></h2>
 <h3 id="1271-what-you-learned"><a class="header" href="#1271-what-you-learned">12.7.1. What You Learned</a></h3>

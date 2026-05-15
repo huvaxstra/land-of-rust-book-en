@@ -190,7 +190,7 @@
 🔹 <strong>IP address:</strong> like a house address. Every computer on a network has a unique number. <code>127.0.0.1</code> is a special address that always points to “your own computer” (it’s called <code>localhost</code>).
 🔹 <strong>Port:</strong> like an apartment number. A single computer can run several network programs at the same time. Each program listens on a specific port. We will use port <code>7878</code>.
 🔹 <strong>Server and Client:</strong> The server is like a hotel receptionist – it waits for someone to come. The client is like a guest – it knocks and connects.</p>
-<p><img src="../assets/images/20.1.png" alt="[Illustration: Cartoon illustration of two friendly space crabs in separate spaceship cabins, talking via glowing walkie-talkies. Between them, a floating holographic map shows an IP address “127.0.0.1” and a port number “7878” connected by a dotted light beam. Style: vibrant children’s book, playful tech metaphor, soft lighting, 16:9.]"></p>
+<p><img src="assets/images/20.1.png" alt="[Illustration: Cartoon illustration of two friendly space crabs in separate spaceship cabins, talking via glowing walkie-talkies. Between them, a floating holographic map shows an IP address “127.0.0.1” and a port number “7878” connected by a dotted light beam. Style: vibrant children’s book, playful tech metaphor, soft lighting, 16:9.]"></p>
 <h4 id="2013-the-networking-toolbox-stdnet"><a class="header" href="#2013-the-networking-toolbox-stdnet">20.1.3. The Networking Toolbox: <code>std::net</code></a></h4>
 <p>The good news is that Rust has a ready‑made module called <code>std::net</code> that contains all the necessary networking tools. In this chapter we will use the <strong>TCP</strong> protocol. TCP is like a reliable phone call: first a connection is established, then messages are sent and received in order, without getting lost. 📞</p>
 <hr>
@@ -251,7 +251,7 @@ fn main() -&gt; std::io::Result&lt;()&gt; {
 <p>If you run the server in one terminal and the client in another terminal, you will see that the messages are successfully exchanged! 🎉</p>
 <h4 id="2023-exercise-sending-a-reply-from-the-server"><a class="header" href="#2023-exercise-sending-a-reply-from-the-server">20.2.3. Exercise: Sending a Reply from the Server</a></h4>
 <p>Modify the server so that instead of sending a fixed text, it sends back the same client message in uppercase (<code>to_uppercase()</code>).<br>💡 <strong>Hint:</strong> Simply change the <code>response</code> line to <code>let response = message.to_uppercase();</code>.</p>
-<p><img src="../assets/images/20.2.png" alt="[Illustration: Split-screen educational graphic. Left: a cartoon server rack with a glowing “Listening…” sign. Right: a friendly laptop with a “Connecting…” progress bar. A glowing message bubble travels between them. Ferris watches with a checklist, smiling. Style: clean vector illustration, bright, educational metaphor, 16:9.]"></p>
+<p><img src="assets/images/20.2.png" alt="[Illustration: Split-screen educational graphic. Left: a cartoon server rack with a glowing “Listening…” sign. Right: a friendly laptop with a “Connecting…” progress bar. A glowing message bubble travels between them. Ferris watches with a checklist, smiling. Style: clean vector illustration, bright, educational metaphor, 16:9.]"></p>
 <hr>
 <h3 id="203-improving-the-messenger-twoway-chat"><a class="header" href="#203-improving-the-messenger-twoway-chat">20.3. Improving the Messenger: Two‑Way Chat</a></h3>
 <h4 id="2031-the-problem-taking-turns-is-boring"><a class="header" href="#2031-the-problem-taking-turns-is-boring">20.3.1. The Problem: Taking Turns Is Boring</a></h4>
@@ -299,7 +299,7 @@ fn main() -&gt; std::io::Result&lt;()&gt; {
     Ok(())
 }</code></pre>
 <p>📌 <code>stream.try_clone()</code> is very important! Sockets are like keys. Two threads cannot use the same socket at the same time unless you make a copy of it.</p>
-<p><img src="../assets/images/20.3.png" alt="[Illustration: Cartoon scene showing a split pathway. Left side: a user typing on a keyboard, messages flowing UP to a server. Right side: messages flowing DOWN from the server to a screen. Two glowing threads labeled “Thread 1” and “Thread 2” weave together smoothly. Ferris stands in the middle conducting traffic like an orchestra leader. Style: dynamic, educational children’s book, bright colors, 16:9.]"></p>
+<p><img src="assets/images/20.3.png" alt="[Illustration: Cartoon scene showing a split pathway. Left side: a user typing on a keyboard, messages flowing UP to a server. Right side: messages flowing DOWN from the server to a screen. Two glowing threads labeled “Thread 1” and “Thread 2” weave together smoothly. Ferris stands in the middle conducting traffic like an orchestra leader. Style: dynamic, educational children’s book, bright colors, 16:9.]"></p>
 <hr>
 <h3 id="204-final-project-ferrisnet-group-chat"><a class="header" href="#204-final-project-ferrisnet-group-chat">20.4. Final Project: FerrisNet Group Chat</a></h3>
 <h4 id="2041-idea-broadcasting-messages-to-everyone"><a class="header" href="#2041-idea-broadcasting-messages-to-everyone">20.4.1. Idea: Broadcasting Messages to Everyone</a></h4>
@@ -376,7 +376,7 @@ path = "src/client.rs"
 <p>Then run <code>cargo run --bin server</code> and <code>cargo run --bin client</code>. Open several terminals, start the server, and run <code>cargo run --bin client</code> multiple times. Now anything you type in one terminal will appear in all the others! 🎊</p>
 <h4 id="2045-challenge-adding-a-username"><a class="header" href="#2045-challenge-adding-a-username">20.4.5. Challenge: Adding a Username</a></h4>
 <p>Right now every message starts with <code>[User]</code>. Can you change the program so that it first asks for a username, and the server shows that username instead?<br>💡 <strong>Hint:</strong> The first message the client sends could be its name. The server could read it and use it for all later messages. Or, even simpler, the client could add <code>[username]: </code> to every message before sending it.</p>
-<p><img src="../assets/images/20.4.png" alt="[Illustration: A cozy cartoon chat room with floating speech bubbles connecting three different laptops. Each screen shows a friendly avatar and messages flowing in real-time. In the center, a glowing server hub labeled “Arc&lt;Mutex&lt;Vec&gt;&gt;” safely routes messages. Ferris sits at a control desk giving a thumbs up. Style: warm, inviting children’s book illustration, clear network metaphor, 16:9.]"></p>
+<p><img src="assets/images/20.4.png" alt="[Illustration: A cozy cartoon chat room with floating speech bubbles connecting three different laptops. Each screen shows a friendly avatar and messages flowing in real-time. In the center, a glowing server hub labeled “Arc&lt;Mutex&lt;Vec&gt;&gt;” safely routes messages. Ferris sits at a control desk giving a thumbs up. Style: warm, inviting children’s book illustration, clear network metaphor, 16:9.]"></p>
 <hr>
 <h3 id="205-farewell-and-the-road-ahead"><a class="header" href="#205-farewell-and-the-road-ahead">20.5. Farewell and the Road Ahead</a></h3>
 <h4 id="2051-congratulations-you-are-a-true-rustacean"><a class="header" href="#2051-congratulations-you-are-a-true-rustacean">20.5.1. Congratulations! You Are a True Rustacean</a></h4>
@@ -391,7 +391,7 @@ path = "src/client.rs"
 <blockquote>
 <p><em>“My friend, you are amazing! You have mastered the hardest concepts and shown that with a little patience and practice, anything is possible. I, Ferris, am proud of you. Now your spaceship is ready to fly into the far galaxies of programming. 🚀</em><br><em>Remember: the compiler is your friend, not your enemy. Making mistakes means you are learning. The simplest code that works is better than the most complicated code that doesn’t.</em><br><em>Go ahead, code, build, break, and build again. The world of software needs people like you. Goodbye, dear Rustacean. Until the next adventure… 🦀💙”</em></p>
 </blockquote>
-<p><img src="../assets/images/20.5.png" alt="[Illustration: Ferris the crab standing proudly on a small wooden crate labeled “Chapter 20 Complete”. He holds a glowing Rust gear in one claw and waves with the other. Behind him, a starry galaxy forms the shape of a heart. Floating text: “Thank You for Coding!”. Style: emotional, celebratory children’s book illustration, warm sunset lighting, 16:9.]"></p>
+<p><img src="assets/images/20.5.png" alt="[Illustration: Ferris the crab standing proudly on a small wooden crate labeled “Chapter 20 Complete”. He holds a glowing Rust gear in one claw and waves with the other. Behind him, a starry galaxy forms the shape of a heart. Floating text: “Thank You for Coding!”. Style: emotional, celebratory children’s book illustration, warm sunset lighting, 16:9.]"></p>
 
                     </main>
 

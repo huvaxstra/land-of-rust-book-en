@@ -204,7 +204,7 @@ let power = 100;
 <p>For one monster, it’s fine. But what if we have ten monsters? We’d end up with messy names like <code>name2</code>, <code>color3</code>, and it would be impossible to pass all that information to a function as one neat package.</p>
 <h3 id="513-introducing-struct-as-an-id-card-template"><a class="header" href="#513-introducing-struct-as-an-id-card-template">5.1.3. Introducing <code>struct</code> as an ID Card Template</a></h3>
 <p>A <code>struct</code> lets us group several pieces of data together under one name. Think of it like a blank ID card template. First, we design the template (deciding what fields it will have), and then we fill out real cards for different monsters.</p>
-<p><img src="../assets/images/5.1.png" alt="[Illustration: A magical notebook open on a wooden desk. The left page shows messy scattered variables tied together with tangled string. The right page displays a clean, glowing ID card template with labeled slots: “Name”, “Color”, “Legs”, “Power”. Ferris stands proudly pointing at the organized page. Style: vibrant children’s book illustration, educational metaphor, soft lighting, 16:9.]"></p>
+<p><img src="assets/images/5.1.png" alt="[Illustration: A magical notebook open on a wooden desk. The left page shows messy scattered variables tied together with tangled string. The right page displays a clean, glowing ID card template with labeled slots: “Name”, “Color”, “Legs”, “Power”. Ferris stands proudly pointing at the organized page. Style: vibrant children’s book illustration, educational metaphor, soft lighting, 16:9.]"></p>
 <hr>
 <h2 id="52-the-monster-application-form-defining-a-struct"><a class="header" href="#52-the-monster-application-form-defining-a-struct">5.2. The Monster Application Form (Defining a Struct)</a></h2>
 <h3 id="521-writing-a-simple-struct"><a class="header" href="#521-writing-a-simple-struct">5.2.1. Writing a Simple Struct</a></h3>
@@ -254,7 +254,7 @@ struct Monster {
     model: String,
 }
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/5.2.png" alt="[Illustration: An educational infographic showing a Rust struct definition as a blueprint sheet. Fields are highlighted with colorful tags matching their data types (String=blue, u8=green, u32=orange). Ferris holds a ruler and pencil, drawing the blueprint. Style: clean, modern educational cartoon, bright colors, 16:9.]"></p>
+<p><img src="assets/images/5.2.png" alt="[Illustration: An educational infographic showing a Rust struct definition as a blueprint sheet. Fields are highlighted with colorful tags matching their data types (String=blue, u8=green, u32=orange). Ferris holds a ruler and pencil, drawing the blueprint. Style: clean, modern educational cartoon, bright colors, 16:9.]"></p>
 <hr>
 <h2 id="53-introducing-a-new-monster-creating-instances"><a class="header" href="#53-introducing-a-new-monster-creating-instances">5.3. Introducing a New Monster (Creating Instances)</a></h2>
 <h3 id="531-making-a-real-monster-instance"><a class="header" href="#531-making-a-real-monster-instance">5.3.1. Making a Real Monster (Instance)</a></h3>
@@ -317,7 +317,7 @@ let monster = Monster {
 <span class="boring">}</span></code></pre>
 <p>⚠️ <strong>Important Note</strong>: This moves ownership for <code>String</code> fields! Because <code>String</code> doesn’t implement <code>Copy</code>, <code>monster1.name</code> now belongs to <code>monster2</code>. You can’t use <code>monster1.name</code> after this line. But numbers like <code>legs</code> and <code>power</code> <em>are</em> <code>Copy</code>, so they get copied safely.
 Remember: <code>..</code> is convenient, but always keep Chapter 4’s ownership rules in mind!</p>
-<p><img src="../assets/images/5.3.png" alt="[Illustration: Split scene: Left shows a crab holding a “monster blueprint” copying data to a new card using a “..” stamp. Right shows a friendly warning sign: “String fields move ownership!”. Ferris explains with a helpful gesture. Style: playful technical metaphor, children’s book illustration, clear visual cues, 16:9.]"></p>
+<p><img src="assets/images/5.3.png" alt="[Illustration: Split scene: Left shows a crab holding a “monster blueprint” copying data to a new card using a “..” stamp. Right shows a friendly warning sign: “String fields move ownership!”. Ferris explains with a helpful gesture. Style: playful technical metaphor, children’s book illustration, clear visual cues, 16:9.]"></p>
 <hr>
 <h2 id="54-things-monsters-can-do-methods"><a class="header" href="#54-things-monsters-can-do-methods">5.4. Things Monsters Can Do (Methods)</a></h2>
 <h3 id="541-function-vs-method"><a class="header" href="#541-function-vs-method">5.4.1. Function vs Method</a></h3>
@@ -398,7 +398,7 @@ dodo.roar();  // Prints: "Dodo roooooaaar!"
 );
 <span class="boring">}</span></code></pre>
 <p>This feels like a “monster factory”! 🏭</p>
-<p><img src="../assets/images/5.4.png" alt="[Illustration: Cartoon scene showing a “Method Factory” conveyor belt. Crabs input raw monster parts, a machine labeled “impl Monster” adds behaviors (roar, attack, heal) via &amp;self/&amp;mut self tags, and finished monsters roll out with speech bubbles. Ferris operates a control panel. Style: dynamic, educational, bright colors, 16:9.]"></p>
+<p><img src="assets/images/5.4.png" alt="[Illustration: Cartoon scene showing a “Method Factory” conveyor belt. Crabs input raw monster parts, a machine labeled “impl Monster” adds behaviors (roar, attack, heal) via &amp;self/&amp;mut self tags, and finished monsters roll out with speech bubbles. Ferris operates a control panel. Style: dynamic, educational, bright colors, 16:9.]"></p>
 <hr>
 <h2 id="55-project-the-monster-roster"><a class="header" href="#55-project-the-monster-roster">5.5. Project: The Monster Roster</a></h2>
 <p>Now let’s build a small program that stores a list of monsters and performs actions on them.</p>
@@ -465,7 +465,7 @@ println!("Strongest monster: {} with power {}", champ.name, champ.power);
     println!("Dodo is stronger than Bombi!");
 }
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/5.5.png" alt="[Illustration: A cozy notebook open to a “Monster Roster” page. Each entry shows a mini ID card with a cartoon monster sketch and stats. A golden trophy icon highlights the strongest monster. Ferris sits on the desk stamping “Approved” with a smile. Style: warm, inviting children’s book illustration, detailed UI metaphor, 16:9.]"></p>
+<p><img src="assets/images/5.5.png" alt="[Illustration: A cozy notebook open to a “Monster Roster” page. Each entry shows a mini ID card with a cartoon monster sketch and stats. A golden trophy icon highlights the strongest monster. Ferris sits on the desk stamping “Approved” with a smile. Style: warm, inviting children’s book illustration, detailed UI metaphor, 16:9.]"></p>
 <hr>
 <h2 id="56-summary--challenge"><a class="header" href="#56-summary--challenge">5.6. Summary &amp; Challenge</a></h2>
 <h3 id="561-what-you-learned"><a class="header" href="#561-what-you-learned">5.6.1. What You Learned</a></h3>
@@ -511,7 +511,7 @@ fn main() {
     }
 }</code></pre>
 <p>Now you know how to organize related data into <code>struct</code>s and give them behaviors with methods! In the next chapter, we’ll explore <code>enum</code> and learn how to handle different states (like weather, game modes, or traffic lights) in a clean, safe way. 🌈✨</p>
-<p><img src="../assets/images/5.6.png" alt="[Illustration: Ferris wearing a graduation cap, holding a glowing “Chapter 5 Complete” badge. Floating around him are mini structs, impl blocks, and &amp;self tags turning into a neat organized library. Encouraging, bright lighting, children’s book style.]"></p>
+<p><img src="assets/images/5.6.png" alt="[Illustration: Ferris wearing a graduation cap, holding a glowing “Chapter 5 Complete” badge. Floating around him are mini structs, impl blocks, and &amp;self tags turning into a neat organized library. Encouraging, bright lighting, children’s book style.]"></p>
 
                     </main>
 

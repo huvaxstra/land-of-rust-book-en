@@ -223,7 +223,7 @@
 let tomorrow = Weather::Rainy;
 <span class="boring">}</span></code></pre>
 <p>The <code>::</code> means: <em>“From inside this enum, pick this specific option.”</em></p>
-<p><img src="../assets/images/6.1.png" alt="[Illustration: Ferris the crab stands in front of a magical weather map. Four glowing icons float above: a sun, a rain cloud, a snowflake, and a gray cloud. A friendly selector tool connects them to a dropdown menu. Style: vibrant children’s book illustration, clear educational metaphor, soft lighting, 16:9.]"></p>
+<p><img src="assets/images/6.1.png" alt="[Illustration: Ferris the crab stands in front of a magical weather map. Four glowing icons float above: a sun, a rain cloud, a snowflake, and a gray cloud. A friendly selector tool connects them to a dropdown menu. Style: vibrant children’s book illustration, clear educational metaphor, soft lighting, 16:9.]"></p>
 <hr>
 <h2 id="62-a-wardrobe-full-of-clothes-enum-with-data"><a class="header" href="#62-a-wardrobe-full-of-clothes-enum-with-data">6.2. A Wardrobe Full of Clothes (Enum with Data)</a></h2>
 <h3 id="621-not-all-sunny-days-are-the-same"><a class="header" href="#621-not-all-sunny-days-are-the-same">6.2.1. Not All Sunny Days Are the Same</a></h3>
@@ -253,7 +253,7 @@ let cloudy_day = WeatherInfo::Cloudy;
 <h3 id="624-enum-vs-struct"><a class="header" href="#624-enum-vs-struct">6.2.4. <code>enum</code> vs <code>struct</code></a></h3>
 <p>🔹 <strong><code>struct</code></strong>: All fields are always present. A <code>Monster</code> always has a name, color, legs, and power.
 🔹 <strong><code>enum</code></strong>: Only <em>one</em> variant is active at a time. A <code>WeatherInfo</code> is either Sunny, Rainy, Snowy, or Cloudy. It can’t have a temperature AND an umbrella color simultaneously!</p>
-<p><img src="../assets/images/6.2.png" alt="[Illustration: Split educational graphic. Left: a “struct” box showing all four slots filled at once. Right: an “enum” wardrobe with four drawers, but only ONE drawer is open at a time. Ferris points to the open drawer explaining the difference. Style: clean, cartoon, bright colors, clear visual metaphor, 16:9.]"></p>
+<p><img src="assets/images/6.2.png" alt="[Illustration: Split educational graphic. Left: a “struct” box showing all four slots filled at once. Right: an “enum” wardrobe with four drawers, but only ONE drawer is open at a time. Ferris points to the open drawer explaining the difference. Style: clean, cartoon, bright colors, clear visual metaphor, 16:9.]"></p>
 <hr>
 <h2 id="63-the-lost-bag-option"><a class="header" href="#63-the-lost-bag-option">6.3. The Lost Bag (<code>Option</code>)</a></h2>
 <h3 id="631-the-story-searching-for-the-spaceship-key"><a class="header" href="#631-the-story-searching-for-the-spaceship-key">6.3.1. The Story: Searching for the Spaceship Key</a></h3>
@@ -305,7 +305,7 @@ fn main() {
         None =&gt; println!("Error: Cannot divide by zero!"),
     }
 }</code></pre>
-<p><img src="../assets/images/6.3.png" alt="[Illustration: Ferris opening two floating treasure chests. One chest contains a glowing key labeled “Some(key)”. The other chest is empty with a gentle “None” tag. A friendly compiler robot holds a checklist saying “Always check both!”. Style: playful, educational, warm lighting, children’s book, 16:9.]"></p>
+<p><img src="assets/images/6.3.png" alt="[Illustration: Ferris opening two floating treasure chests. One chest contains a glowing key labeled “Some(key)”. The other chest is empty with a gentle “None” tag. A friendly compiler robot holds a checklist saying “Always check both!”. Style: playful, educational, warm lighting, children’s book, 16:9.]"></p>
 <hr>
 <h2 id="64-the-smart-remote-control-match"><a class="header" href="#64-the-smart-remote-control-match">6.4. The Smart Remote Control (<code>match</code>)</a></h2>
 <h3 id="641-the-problem-how-to-decide-based-on-an-enum"><a class="header" href="#641-the-problem-how-to-decide-based-on-an-enum">6.4.1. The Problem: How to Decide Based on an <code>enum</code>?</a></h3>
@@ -389,7 +389,7 @@ fn value_in_cents(coin: Coin) -&gt; u8 {
     }
 }
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/6.4.png" alt="[Illustration: A cartoon remote control with four glowing buttons labeled with enum variants (Sunny, Rainy, Snowy, Cloudy). A hand presses “Rainy” and a speech bubble pops up saying “Take an umbrella!”. Ferris watches from the side holding a checklist. Style: dynamic, educational vector illustration, bright colors, 16:9.]"></p>
+<p><img src="assets/images/6.4.png" alt="[Illustration: A cartoon remote control with four glowing buttons labeled with enum variants (Sunny, Rainy, Snowy, Cloudy). A hand presses “Rainy” and a speech bubble pops up saying “Take an umbrella!”. Ferris watches from the side holding a checklist. Style: dynamic, educational vector illustration, bright colors, 16:9.]"></p>
 <hr>
 <h2 id="65-project-the-smart-shirt-recommender"><a class="header" href="#65-project-the-smart-shirt-recommender">6.5. Project: The Smart Shirt Recommender</a></h2>
 <p>Let’s build a small program that asks the user for the weather and suggests a shirt color!</p>
@@ -455,7 +455,7 @@ let final_color = match preferred_color {
 
 println!("Final color choice: {}", final_color);
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/6.5.png" alt="[Illustration: A friendly cartoon robot display panel showing a weather input screen. A dropdown enum selector points to a suggested shirt popping out of a slot. Ferris stands beside holding a rainbow-colored shirt. Style: cozy tech, children’s book illustration, bright and inviting, 16:9.]"></p>
+<p><img src="assets/images/6.5.png" alt="[Illustration: A friendly cartoon robot display panel showing a weather input screen. A dropdown enum selector points to a suggested shirt popping out of a slot. Ferris stands beside holding a rainbow-colored shirt. Style: cozy tech, children’s book illustration, bright and inviting, 16:9.]"></p>
 <hr>
 <h2 id="66-summary--challenge"><a class="header" href="#66-summary--challenge">6.6. Summary &amp; Challenge</a></h2>
 <h3 id="661-what-you-learned"><a class="header" href="#661-what-you-learned">6.6.1. What You Learned</a></h3>
@@ -492,7 +492,7 @@ fn main() {
     }
 }</code></pre>
 <p>Now you know how to manage different states beautifully with <code>enum</code> and <code>match</code>. In the next chapter, we’ll learn how to organize our code into files and modules, turning our program into a tidy, professional library! 📚✨</p>
-<p><img src="../assets/images/6.6.png" alt="[Illustration: Ferris wearing a graduation cap, holding a glowing “Chapter 6 Complete” badge. Floating around him are colorful enum tags, match arms, Option/Result boxes, and a small weather remote. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
+<p><img src="assets/images/6.6.png" alt="[Illustration: Ferris wearing a graduation cap, holding a glowing “Chapter 6 Complete” badge. Floating around him are colorful enum tags, match arms, Option/Result boxes, and a small weather remote. Encouraging, bright lighting, children’s book style, 16:9.]"></p>
 
                     </main>
 

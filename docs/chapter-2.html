@@ -199,7 +199,7 @@
 <h3 id="212-random-numbers-are-like-rolling-dice"><a class="header" href="#212-random-numbers-are-like-rolling-dice">2.1.2. Random Numbers Are Like Rolling Dice</a></h3>
 <p>Computers are logical machines. They can’t truly “pick randomly” on their own. But we can use a clever math formula that acts just like rolling dice! We call these <strong>pseudo-random numbers</strong>.</p>
 <p>In Rust, engineers built a ready-to-use toolbox called <code>rand</code> that does this for us. We just need to add it to our project.</p>
-<p><img src="../assets/images/2.1.png" alt="[Illustration: A cartoon scene of Ferris holding a glowing cosmic die. Floating around it are numbers like 42, 7, and 99. The background shows a cozy spaceship control panel with soft blinking lights. Style: playful, vibrant children’s book illustration, warm lighting.]"></p>
+<p><img src="assets/images/2.1.png" alt="[Illustration: A cartoon scene of Ferris holding a glowing cosmic die. Floating around it are numbers like 42, 7, and 99. The background shows a cozy spaceship control panel with soft blinking lights. Style: playful, vibrant children’s book illustration, warm lighting.]"></p>
 <h3 id="213-adding-the-rand-crate"><a class="header" href="#213-adding-the-rand-crate">2.1.3. Adding the <code>rand</code> Crate</a></h3>
 <p>Open your terminal and create a new project:</p>
 <pre><code class="language-bash">cargo new guess_the_number
@@ -274,7 +274,7 @@ x = 6; // ❌ Error! You can't change `x`.
 y = 20; // ✅ Now it's totally fine!
 <span class="boring">}</span></code></pre>
 <p>In our game, <code>guess</code> needs to hold different answers from the player, so we must create it with <code>let mut</code>.</p>
-<p><img src="../assets/images/2.2.png" alt="[Illustration: An educational cartoon showing two labeled boxes on a wooden desk. Box 1: “let x = 5” (secured with a small padlock). Box 2: “let mut y = 10” (open, with a tiny wrench inside). Ferris stands beside them, pointing at the difference. Style: bright, clear, infographic-style children’s illustration.]"></p>
+<p><img src="assets/images/2.2.png" alt="[Illustration: An educational cartoon showing two labeled boxes on a wooden desk. Box 1: “let x = 5” (secured with a small padlock). Box 2: “let mut y = 10” (open, with a tiny wrench inside). Ferris stands beside them, pointing at the difference. Style: bright, clear, infographic-style children’s illustration.]"></p>
 <h3 id="224-our-friendly-guide-compiler-errors"><a class="header" href="#224-our-friendly-guide-compiler-errors">2.2.4. Our Friendly Guide: Compiler Errors</a></h3>
 <p>If you get an error in Rust, don’t worry! The Rust compiler acts like a kind teacher. It shows exactly where you slipped up and often suggests a fix. For example, if you forget <code>mut</code>, it says:</p>
 <pre><code>help: consider making this binding mutable: `mut guess`
@@ -302,7 +302,7 @@ y = 20; // ✅ Now it's totally fine!
 🔹 <code>.expect("Failed to read input")</code> → <em>“If something breaks the connection, show this message and stop safely.”</em></p>
 <h3 id="233-why-mut-guess-handing-over-the-key"><a class="header" href="#233-why-mut-guess-handing-over-the-key">2.3.3. Why <code>&amp;mut guess</code>? (Handing Over the Key)</a></h3>
 <p>The <code>&amp;mut</code> symbol means <strong>temporary key</strong>. The <code>read_line</code> function wants to write inside our <code>guess</code> box. We give it permission to do that, but we don’t give away ownership of the box. For now, just remember: <code>&amp;mut</code> means <em>“You’re allowed to change what’s inside this box.”</em> (We’ll dive deeper into these permissions in Chapter 4!)</p>
-<p><img src="../assets/images/2.3.png" alt="[Illustration: Ferris handing a glowing key labeled “&amp;mut” to a small, friendly robot labeled “read_line”. The robot stands next to an open box named “guess”. Background: a soft, tech-themed workspace. Style: metaphorical, warm children’s book illustration.]"></p>
+<p><img src="assets/images/2.3.png" alt="[Illustration: Ferris handing a glowing key labeled “&amp;mut” to a small, friendly robot labeled “read_line”. The robot stands next to an open box named “guess”. Background: a soft, tech-themed workspace. Style: metaphorical, warm children’s book illustration.]"></p>
 <hr>
 <h2 id="24-type-conversion-text-to-number"><a class="header" href="#24-type-conversion-text-to-number">2.4. Type Conversion (Text to Number)</a></h2>
 <h3 id="241-the-problem-text-vs-numbers"><a class="header" href="#241-the-problem-text-vs-numbers">2.4.1. The Problem: Text vs. Numbers</a></h3>
@@ -366,7 +366,7 @@ y = 20; // ✅ Now it's totally fine!
 <p>🔹 <code>=</code> means <strong>Assignment</strong>: <em>“Put the right side into the left box.”</em> (<code>let x = 5;</code>)
 🔹 <code>==</code> means <strong>Comparison</strong>: <em>“Are these two things equal?”</em> (<code>if x == 5</code>)</p>
 <p>If you accidentally use <code>=</code> inside an <code>if</code>, the compiler will complain because it’s looking for a question, not an instruction!</p>
-<p><img src="../assets/images/2.4.png" alt="[Illustration: A split-screen educational graphic. Left: a balancing scale showing “x = 5” with a loading arrow. Right: a magnifying glass examining “x == 5” with a green checkmark. Ferris stands in the middle explaining. Style: clean, modern educational illustration, bright colors.]"></p>
+<p><img src="assets/images/2.4.png" alt="[Illustration: A split-screen educational graphic. Left: a balancing scale showing “x = 5” with a loading arrow. Right: a magnifying glass examining “x == 5” with a green checkmark. Ferris stands in the middle explaining. Style: clean, modern educational illustration, bright colors.]"></p>
 <hr>
 <h2 id="26-the-repeat-loop-loop"><a class="header" href="#26-the-repeat-loop-loop">2.6. The Repeat Loop (<code>loop</code>)</a></h2>
 <h3 id="261-the-problem-the-game-ends-too-soon"><a class="header" href="#261-the-problem-the-game-ends-too-soon">2.6.1. The Problem: The Game Ends Too Soon</a></h3>
@@ -403,7 +403,7 @@ loop {
 }
 <span class="boring">}</span></code></pre>
 <p><code>count += 1</code> is the fastest way to add one!</p>
-<p><img src="../assets/images/2.5.png" alt="[Illustration: Ferris running on a circular track labeled “loop”. He holds a counter flag showing “1, 2, 3…”. At one point, a red gate labeled “break” swings open. Style: dynamic, cartoon motion lines, encouraging mood.]"></p>
+<p><img src="assets/images/2.5.png" alt="[Illustration: Ferris running on a circular track labeled “loop”. He holds a counter flag showing “1, 2, 3…”. At one point, a red gate labeled “break” swings open. Style: dynamic, cartoon motion lines, encouraging mood.]"></p>
 <hr>
 <h2 id="27-gentle-error-handling-match"><a class="header" href="#27-gentle-error-handling-match">2.7. Gentle Error Handling (<code>match</code>)</a></h2>
 <h3 id="271-what-if-the-player-types-words"><a class="header" href="#271-what-if-the-player-types-words">2.7.1. What If the Player Types Words?</a></h3>
@@ -427,7 +427,7 @@ loop {
 </ul>
 <h3 id="273-in-simple-words"><a class="header" href="#273-in-simple-words">2.7.3. In Simple Words</a></h3>
 <p><em>“Try to turn the text into a number. If it works, great! Keep going. If it fails, show a polite message and ask again without crashing.”</em> Now the game never freezes! 🛡️</p>
-<p><img src="../assets/images/2.6.png" alt="[Illustration: A cartoon sorting machine labeled “match”. Left chute: text “abc” goes in, comes out as “❌ Try again!”. Right chute: text “42” goes in, comes out as a golden “42 ✅”. Ferris operates the machine with a friendly smile. Style: playful, technical metaphor, children’s book.]"></p>
+<p><img src="assets/images/2.6.png" alt="[Illustration: A cartoon sorting machine labeled “match”. Left chute: text “abc” goes in, comes out as “❌ Try again!”. Right chute: text “42” goes in, comes out as a golden “42 ✅”. Ferris operates the machine with a friendly smile. Style: playful, technical metaphor, children’s book.]"></p>
 <hr>
 <h2 id="28-summary--challenge"><a class="header" href="#28-summary--challenge">2.8. Summary &amp; Challenge</a></h2>
 <h3 id="281-what-you-learned"><a class="header" href="#281-what-you-learned">2.8.1. What You Learned</a></h3>
@@ -495,7 +495,7 @@ fn main() {
 <blockquote>
 <p>🔚 <strong>End of Chapter 2</strong></p>
 </blockquote>
-<p><img src="../assets/images/2.7.png" alt="[Illustration: A child sitting at a desk, smiling at a terminal screen showing a green checkmark. Ferris stands on the desk giving a thumbs up. Floating above is playful text saying “Great job!”. Style: encouraging, bright, cartoon children’s book illustration.]"></p>
+<p><img src="assets/images/2.7.png" alt="[Illustration: A child sitting at a desk, smiling at a terminal screen showing a green checkmark. Ferris stands on the desk giving a thumbs up. Floating above is playful text saying “Great job!”. Style: encouraging, bright, cartoon children’s book illustration.]"></p>
 
                     </main>
 

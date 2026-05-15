@@ -214,7 +214,7 @@ let y = x; // x is copied here, not moved
 println!("x = {}, y = {}", x, y); // Both work fine!
 <span class="boring">}</span></code></pre>
 <p>Why? Because copying a number is like remembering a fact in your head: instant and free! But a <code>String</code> can be huge (like a thousand-page book). Copying it would waste time and memory. So Rust prefers to just move the ownership. We call types that copy automatically <strong>Copy types</strong>.</p>
-<p><img src="../assets/images/4.1.png" alt="[Illustration: Two labeled boxes side-by-side. Box “s1” is empty with a faded cross mark. Box “s2” holds a shiny red toy tractor. A curved arrow shows ownership moving from s1 to s2. Ferris stands beside them, pointing at the boxes with a surprised but happy expression. Style: bright children’s book illustration, clean lines, educational metaphor, 16:9 aspect ratio.]"></p>
+<p><img src="assets/images/4.1.png" alt="[Illustration: Two labeled boxes side-by-side. Box “s1” is empty with a faded cross mark. Box “s2” holds a shiny red toy tractor. A curved arrow shows ownership moving from s1 to s2. Ferris stands beside them, pointing at the boxes with a surprised but happy expression. Style: bright children’s book illustration, clean lines, educational metaphor, 16:9 aspect ratio.]"></p>
 <hr>
 <h2 id="42-borrowing-cards-borrowing--references"><a class="header" href="#42-borrowing-cards-borrowing--references">4.2. Borrowing Cards (Borrowing &amp; References)</a></h2>
 <h3 id="421-solving-the-fight-a-borrowing-card-instead-of-giving-away-the-toy"><a class="header" href="#421-solving-the-fight-a-borrowing-card-instead-of-giving-away-the-toy">4.2.1. Solving the Fight: A Borrowing Card Instead of Giving Away the Toy</a></h3>
@@ -275,7 +275,7 @@ let r2 = &amp;mut s; // ❌ Error! Two mutable references at once are forbidden
 let r1 = &amp;s;        // Normal card (look only)
 let r2 = &amp;mut s;    // ❌ Error! You can't look and change at the same time
 <span class="boring">}</span></code></pre>
-<p><img src="../assets/images/4.2.png" alt="[Illustration: A cartoon scene at a “Borrowing Club” desk. On the left, several kids hold blue cards labeled “&amp;” while looking at a toy. On the right, one kid holds a golden card labeled “&amp;mut” and is carefully painting the toy. Ferris stands behind the desk holding a large rulebook. Style: playful, educational, vibrant colors, clear visual metaphor, 16:9 aspect ratio.]"></p>
+<p><img src="assets/images/4.2.png" alt="[Illustration: A cartoon scene at a “Borrowing Club” desk. On the left, several kids hold blue cards labeled “&amp;” while looking at a toy. On the right, one kid holds a golden card labeled “&amp;mut” and is carefully painting the toy. Ferris stands behind the desk holding a large rulebook. Style: playful, educational, vibrant colors, clear visual metaphor, 16:9 aspect ratio.]"></p>
 <hr>
 <h2 id="43-the-club-guard-borrow-checker"><a class="header" href="#43-the-club-guard-borrow-checker">4.3. The Club Guard: Borrow Checker</a></h2>
 <h3 id="431-meet-the-guard"><a class="header" href="#431-meet-the-guard">4.3.1. Meet the Guard</a></h3>
@@ -305,7 +305,7 @@ println!("{}", r); // ❌ Error! r points to a destroyed variable
     println!("{} {} {}", a, b, c);
 }</code></pre>
 <p>Run it and read the compiler’s error message carefully. See how precisely it tells you: <em>“cannot borrow <code>text</code> as mutable because it is also borrowed as immutable.”</em> That means the guard is protecting you! 🤝</p>
-<p><img src="../assets/images/4.3.png" alt="[Illustration: Ferris wearing a friendly security guard uniform, holding a flashlight and checking a rule clipboard. In the background, a cartoon compiler robot shows a red warning light next to broken code and a green checkmark next to safe code. Style: gentle technical metaphor, children’s book illustration, soft lighting, 16:9 aspect ratio.]"></p>
+<p><img src="assets/images/4.3.png" alt="[Illustration: Ferris wearing a friendly security guard uniform, holding a flashlight and checking a rule clipboard. In the background, a cartoon compiler robot shows a red warning light next to broken code and a green checkmark next to safe code. Style: gentle technical metaphor, children’s book illustration, soft lighting, 16:9 aspect ratio.]"></p>
 <hr>
 <h2 id="44-puzzle-pieces-slices"><a class="header" href="#44-puzzle-pieces-slices">4.4. Puzzle Pieces (Slices)</a></h2>
 <h3 id="441-sometimes-we-only-need-part-of-a-text"><a class="header" href="#441-sometimes-we-only-need-part-of-a-text">4.4.1. Sometimes We Only Need Part of a Text</a></h3>
@@ -344,7 +344,7 @@ fn main() {
     println!("First word: {}", word); // Output: Ferris
 }</code></pre>
 <p>This code is safe, fast, and exactly what a professional Rustacean would write! 🛠️</p>
-<p><img src="../assets/images/4.4.png" alt="[Illustration: A close-up of a cartoon magnifying glass hovering over a long paper strip labeled “Ferris the crab”. The glass brightly highlights only the word “Ferris”. A pair of scissors (representing slicing) rests nearby. Ferris proudly holds the magnifying glass. Style: clean educational vector, bright colors, clear metaphor, 16:9 aspect ratio.]"></p>
+<p><img src="assets/images/4.4.png" alt="[Illustration: A close-up of a cartoon magnifying glass hovering over a long paper strip labeled “Ferris the crab”. The glass brightly highlights only the word “Ferris”. A pair of scissors (representing slicing) rests nearby. Ferris proudly holds the magnifying glass. Style: clean educational vector, bright colors, clear metaphor, 16:9 aspect ratio.]"></p>
 <hr>
 <h2 id="45-summary--challenge"><a class="header" href="#45-summary--challenge">4.5. Summary &amp; Challenge</a></h2>
 <h3 id="451-the-three-main-rules-of-ownership"><a class="header" href="#451-the-three-main-rules-of-ownership">4.5.1. The Three Main Rules of Ownership</a></h3>
@@ -371,7 +371,7 @@ fn main() {
 <p>This chapter might have felt a bit hard or strange at first. That’s completely normal! Ownership is Rust’s most famous and challenging concept. Even experienced programmers sometimes wrestle with the Borrow Checker.</p>
 <p>But the good news is: the more you code, the more naturally these rules will click into place. It’s like riding a bicycle; it feels tricky at first, but soon you won’t even have to think about balancing. 🚴‍♂️💨</p>
 <p>In the next chapter, we’ll explore a super fun tool: <strong>Structs</strong>, which are like “ID cards for space monsters”! 🦑✨</p>
-<p><img src="../assets/images/4.5.png" alt="[Illustration: Ferris sitting at a cozy wooden desk, carefully writing the “3 Ownership Rules” on a glowing parchment. Floating around him are small icons: a locked box (ownership), a blue card (&amp;), a golden card (&amp;mut), and a magnifying glass (slice). Warm, encouraging lighting. Style: children’s book illustration, whimsical, high detail, 16:9 aspect ratio.]"></p>
+<p><img src="assets/images/4.5.png" alt="[Illustration: Ferris sitting at a cozy wooden desk, carefully writing the “3 Ownership Rules” on a glowing parchment. Floating around him are small icons: a locked box (ownership), a blue card (&amp;), a golden card (&amp;mut), and a magnifying glass (slice). Warm, encouraging lighting. Style: children’s book illustration, whimsical, high detail, 16:9 aspect ratio.]"></p>
 
                     </main>
 
